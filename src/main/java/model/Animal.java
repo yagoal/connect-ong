@@ -19,10 +19,10 @@ public class Animal {			//Entidade -> Table
 	private char sexo;
 	private String especie;
 	private String raca;
-	private double peso;
+	private Double peso;
 	private Date dataResgate;
-	private boolean castracao;
-	private boolean disponibilidade;	
+	private Boolean castracao;
+	private Boolean disponibilidade;	
 
 	public Animal() {
 		super();
@@ -99,11 +99,11 @@ public class Animal {			//Entidade -> Table
 		this.raca = raca;
 	}
 
-	public double getPeso() {
+	public Double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(double peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 
@@ -115,19 +115,19 @@ public class Animal {			//Entidade -> Table
 		this.dataResgate = dataResgate;
 	}
 
-	public boolean isCastracao() {
+	public Boolean isCastracao() {
 		return castracao;
 	}
 
-	public void setCastracao(boolean castracao) {
+	public void setCastracao(Boolean castracao) {
 		this.castracao = castracao;
 	}
 
-	public boolean isDisponibilidade() {
+	public Boolean isDisponibilidade() {
 		return disponibilidade;
 	}
 
-	public void setDisponibilidade(boolean disponibilidade) {
+	public void setDisponibilidade(Boolean disponibilidade) {
 		this.disponibilidade = disponibilidade;
 	}
 	
