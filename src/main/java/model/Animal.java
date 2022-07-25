@@ -23,6 +23,9 @@ public class Animal {			//Entidade -> Table
 	private Date dataResgate;
 	private Boolean castracao;
 	private Boolean disponibilidade;	
+	
+//	@ManyToOne
+	private Ong ong;
 
 	public Animal() {
 		super();
@@ -37,7 +40,8 @@ public class Animal {			//Entidade -> Table
 		Double peso, 
 		Date dataResgate,
 		Boolean castracao, 
-		Boolean disponibilidade
+		Boolean disponibilidade,
+		Ong ong
 	) {
 		super();
 		this.nome = nome;
@@ -49,6 +53,7 @@ public class Animal {			//Entidade -> Table
 		this.dataResgate = dataResgate;
 		this.castracao = castracao;
 		this.disponibilidade = disponibilidade;
+		this.ong = ong;
 	}
 
 	public Long getId() {
@@ -130,5 +135,14 @@ public class Animal {			//Entidade -> Table
 	public void setDisponibilidade(Boolean disponibilidade) {
 		this.disponibilidade = disponibilidade;
 	}
+
+	public Ong getOng() {
+		return ong;
+	}
+
+	public void setOng(Ong ong) {
+		this.ong = ong;
+	}
+	
 	
 }
