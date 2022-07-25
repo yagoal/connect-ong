@@ -10,7 +10,7 @@
 </head>
 <body>
 	<% 
-		Telefone telefone = new Telefone("8888-7777", "75", "+55");
+		Telefone telefone = new Telefone("8888-7777", "75", "+001");
 	%>
 	<h1> Hello World <% out.print(telefone.getNumero()); %> </h1>
 </body>
