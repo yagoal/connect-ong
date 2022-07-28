@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import org.hibernate.Session;
 
 import model.Telefone;
@@ -30,7 +32,6 @@ public class DaoTelefone {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Telefone tel = null;
 		try {
-			sessao.beginTransaction();
 			tel = (Telefone)sessao.createQuery("FROM Telefone WHERE id = "+id).uniqueResult();
 		} catch(Exception e) {
 			System.err.println(e);
@@ -38,6 +39,20 @@ public class DaoTelefone {
 			sessao.close();
 		}
 		return tel;
+	}
+	
+	public List<Telefone> retrieveAll() {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		List<Telefone> tels = null;
+		try {
+			sessao.beginTransaction();
+			tels = sessao.createQuery("FROM Telefone").list();
+		} catch(Exception e) {
+			System.err.println(e);
+		} finally {
+			sessao.close();
+		}
+		return tels;
 	}
 
 }
