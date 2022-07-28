@@ -3,22 +3,24 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<property name="hibernate.connection.url">jdbc:mysql:<!-- endereço do banco --></property>
-		<property name="hibernate.connection.username"><!-- usuario do banco --></property>
-		<property name="hibernate.connection.password"><!-- senha do banco --></property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/connect_ong</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password"></property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="show_sql">false</property>
 		<property name="format_sql">true</property>
 		<property name="connection.poolsize">10</property>
-		<property name="hbm2ddl.auto">create</property> <!-- create / drop / update -->
+		<property name="hbm2ddl.auto">update</property> <!-- create / drop / update -->
 		<!-- mapeando a classe para o banco de dados -->
+		<mapping class="model.Telefone"/>
+		<!--
 		<mapping class="model.Animal"/>
 		<mapping class="model.Endereco"/>
 		<mapping class="model.Ong"/>
 		<mapping class="model.Pessoa"/>
-		<mapping class="model.Telefone"/>
-		<mapping class="model.Usuario"/>
+		<mapping class="model.Usuario"/>  
+		-->
 	</session-factory>
 </hibernate-configuration>
 <!--  
