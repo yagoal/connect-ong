@@ -1,15 +1,15 @@
 package model;
 
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-//@Entity
+@Entity
 public class Telefone {
 
-//	@Id
-//	@GeneratedValue
-	private Long id;
+	@Id
+	@GeneratedValue
+	private Integer id;
 	
 	private String numero;
 	private String ddd;
@@ -26,11 +26,11 @@ public class Telefone {
 		this.codPais = codPais;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
