@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Telefone {
+public class Phone {
 
 	@Id
 	@GeneratedValue
@@ -15,11 +15,11 @@ public class Telefone {
 	private String ddd;
 	private String codPais;
 	
-	public Telefone() {
+	public Phone() {
 		super();
 	}
 
-	public Telefone(String numero, String ddd, String codPais) {
+	public Phone(String numero, String ddd, String codPais) {
 		super();
 		this.numero = numero;
 		this.ddd = ddd;
