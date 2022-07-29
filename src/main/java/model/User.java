@@ -5,7 +5,7 @@ package model;
 //import javax.persistence.Id;
 
 //@Entity
-public class Usuario{
+public class User{
 
 //	@Id
 //	@GeneratedValue
@@ -16,11 +16,11 @@ public class Usuario{
 	private Integer perfil;
 	private Pessoa pessoa;
 	
-	public Usuario() {
+	public User() {
 		super();
 	}
 
-	public Usuario(String login, String senha, Integer perfil, Pessoa pessoa) {
+	public User(String login, String senha, Integer perfil, Pessoa pessoa) {
 		super();
 		this.login = login;
 		this.senha = senha;
