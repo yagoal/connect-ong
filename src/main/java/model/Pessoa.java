@@ -8,7 +8,7 @@ import java.util.List;
 //import javax.persistence.Id;
 //
 //@Entity
-public abstract class Person { //Entidade -> Table
+public abstract class Pessoa { //Entidade -> Table
 
 //	@Id
 //	@GeneratedValue			//AutoInc -> 1,2,3,4...
@@ -22,11 +22,11 @@ public abstract class Person { //Entidade -> Table
 	private List<Telefone> telefones;
 	private Usuario usuario;
 	
-	public Person() {
+	public Pessoa() {
 		super();
 	}
 
-	public Person(String nome, Date dataNasc, char sexo, String documento, List<Endereco> enderecos,
+	public Pessoa(String nome, Date dataNasc, char sexo, String documento, List<Endereco> enderecos,
 			List<Telefone> telefones, Usuario usuario) {
 		super();
 		this.nome = nome;
