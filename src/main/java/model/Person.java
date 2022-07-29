@@ -16,11 +16,11 @@ public abstract class Person { //Entidade -> Table
 	
 	private String nome;	//Campos... 
 	private Date dataNasc;
-	private char sexo;
+	private Character sexo;
 	private String documento;
 	private List<Endereco> enderecos;
 	private List<Telefone> telefones;
-	private Usuario usuario;
+	private User usuario;
 	
 	public Person() {
 		super();
