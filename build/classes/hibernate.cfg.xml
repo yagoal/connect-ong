@@ -11,7 +11,7 @@
 		<property name="show_sql">false</property>
 		<property name="format_sql">true</property>
 		<property name="connection.poolsize">10</property>
-		<property name="hbm2ddl.auto">update</property> <!-- create / drop / update -->
+		<property name="hbm2ddl.auto">create</property> <!-- create / drop / update -->
 		<!-- mapeando a classe para o banco de dados -->
 		<mapping class="model.Telefone"/>
 		<!--
@@ -23,6 +23,3 @@
 		-->
 	</session-factory>
 </hibernate-configuration>
-<!--  
-		
--->
