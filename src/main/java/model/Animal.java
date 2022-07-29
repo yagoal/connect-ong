@@ -9,9 +9,8 @@ import java.util.Date;
 //@Entity
 public class Animal {			//Entidade -> Table
 
-//	@Id
 //	@GeneratedValue				//AutoInc -> 1,2,3,4...
-	private Long id;			//Primary Key
+	private Integer id;			//Primary Key
 	
 	private String nome;		//Campos...
 	private Date dataNasc;
@@ -55,11 +54,11 @@ public class Animal {			//Entidade -> Table
 		this.ong = ong;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
