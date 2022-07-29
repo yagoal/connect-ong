@@ -1,1 +1,8 @@
-# connect-ong
+# Connect-ONG
+
+Olá, tudo bem? Seja bem-vindo (a) ao Connect-ONG, um projeto pensado, organizado e realizado por Mariane Milene Xavier Rocha, Valdemilson Tavares Lins Júnior e Yago Augusto Guedes Pereira, estudantes do quarto semestre do Curso Técnico Subsequente em Informática no Instituto Federal de Educação, Ciência e Tecnologia da Bahia - IFBA, Campus Paulo Afonso. O projeto foi solicitado e será avaliado pelos professores Camila Araújo e Fabiano Vaz para as disciplinas Projeto Integrador e Desenvolvimento Web II, respectivamente.
+
+O Connect-ONG é um site destinado ao controle e ao gerenciamento de Organização Não-Governamentais (ONGs) ligadas à causa animal. Nele, é possível realizar o cadastro e o controle de pessoas (funcionários e parceiros) e de animais. Os parceiros, como são chamadas as pessoas que não têm vínculo empregatício ou voluntariado com a ONG, têm acesso à lista de animais resgatados pela ONG em questão e, devidamente cadastrados, poderão solicitar uma adoção. Ou seja, o principal objetivo do projeto é conectar seres humanos e animais. A palavra "conexão" pode ser descrita como a palavra-chave desse projeto, presente não apenas em seu nome ("Connect"), como também em sua essência. Aborda a conexão em 3 sentidos: 
+- tecnológico, devido à disponibilização de dados sobre os animais e da possibilidade de solicitar uma adoção;
+- emocional, relacionado às reações que podem surgir ao visualizar a foto de um animal, como a empatia gerada em vê-lo à procura de uma família;
+- sentimental, relacionado ao sentimento de compaixão pelo animal e ao sentimento de amor que surgirá entre ser humano e animal, quando o parceiro resolve adotá-lo. 

@@ -5,7 +5,7 @@ package model;
 //import javax.persistence.Id;
 
 //@Entity
-public class Endereco {
+public class Address {
 
 //	@Id
 //	@GeneratedValue
@@ -19,11 +19,11 @@ public class Endereco {
 	private String cidade;
 	
 	
-	public Endereco() {
+	public Address() {
 		super();
 	}
 
-	public Endereco(String logradouro, Integer numero, String bairro, String cep, String estado, String cidade) {
+	public Address(String logradouro, Integer numero, String bairro, String cep, String estado, String cidade) {
 		super();
 		this.logradouro = logradouro;
 		this.numero = numero;
