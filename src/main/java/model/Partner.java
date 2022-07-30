@@ -11,34 +11,34 @@ import model.Adoption;
 //@Entity
 public class Partner extends Person { //Entidade -> Table
 	
-	private Path foto;	
-	private List<Adoption> adocoes;
+	private Path photo;	
+	private List<Adoption> adoptions;
 	
 	public Partner() {
 		super();
 	}
 
-	public Partner(String nome, Date dataNasc, Character sexo, String cpfCnpj, List<Address> enderecos,
-			List<Phone> telefones, User usuario, Path foto, List<Adoption> adocoes) {
-		super(nome, dataNasc, sexo, cpfCnpj, enderecos, telefones, usuario);
-		this.foto = foto;
-		this.adocoes = adocoes;
+	public Partner(String nome, Date dataNasc, Character sexo, String document, List<Address> enderecos,
+			List<Phone> telefones, User usuario, Path foto, List<Adoption> adoptions) {
+		super(nome, dataNasc, sexo, document, enderecos, telefones, usuario);
+		this.photo = foto;
+		this.adoptions = adoptions;
 	}
 
 	public Path getFoto() {
-		return foto;
+		return photo;
 	}
 
-	public void setFoto(Path foto) {
-		this.foto = foto;
+	public void setPhoto(Path photo) {
+		this.photo = photo;
 	}
 
-	public List<Adoption> getAdocoes() {
-		return adocoes;
+	public List<Adoption> getAptions() {
+		return adoptions;
 	}
 
-	public void setAdocoes(List<Adoption> adocoes) {
-		this.adocoes = adocoes;
+	public void setAdocoes(List<Adoption> adoptions) {
+		this.adoptions = adoptions;
 	}
 	
 }

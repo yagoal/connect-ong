@@ -16,18 +16,18 @@ public class Adoption { //Entidade -> Table
 //	@GeneratedValue			//AutoInc -> 1,2,3,4...
 	private Integer id;        //Primary Key
 	
-	private Date data;
-	private Partner parceiro;
+	private Date date;
+	private Partner partner;
 	private Animal animal;
 	
 	public Adoption() {
 		super();
 	}
 
-	public Adoption(Date data, Partner parceiro, Animal animal) {
+	public Adoption(Date date, Partner partner, Animal animal) {
 		super();
-		this.data = data;
-		this.parceiro = parceiro;
+		this.date = date;
+		this.partner = partner;
 		this.animal = animal;
 	}
 
@@ -39,20 +39,20 @@ public class Adoption { //Entidade -> Table
 		this.id = id;
 	}
 
-	public Date getData() {
-		return data;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
-	public Partner getParceiro() {
-		return parceiro;
+	public Partner getPartner() {
+		return partner;
 	}
 
-	public void setParceiro(Partner parceiro) {
-		this.parceiro = parceiro;
+	public void setPartner(Partner partner) {
+		this.partner = partner;
 	}
 
 	public Animal getAnimal() {

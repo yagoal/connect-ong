@@ -12,20 +12,20 @@ public class User{
 	private Long id;
 	
 	private String login;
-	private String senha;
-	private Integer perfil;
-	private Pessoa pessoa;
+	private String password;
+	private Integer profile;
+	private Person person;
 	
 	public User() {
 		super();
 	}
 
-	public User(String login, String senha, Integer perfil, Pessoa pessoa) {
+	public User(String login, String password, Integer profile, Person person) {
 		super();
 		this.login = login;
-		this.senha = senha;
-		this.perfil = perfil;
-		this.pessoa = pessoa;
+		this.password = password;
+		this.profile = profile;
+		this.person = person;
 	}
 
 	public Long getId() {
@@ -44,28 +44,29 @@ public class User{
 		this.login = login;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public Integer getPerfil() {
-		return perfil;
+	public Integer getProfile() {
+		return profile;
 	}
 
-	public void setPerfil(Integer perfil) {
-		this.perfil = perfil;
+	public void setProfile(Integer profile) {
+		this.profile = profile;
 	}
 
-	public Pessoa getPessoa() {
-		return pessoa;
+	public Person getPerson() {
+		return person;
 	}
 
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
+	public void setPerson(Person person) {
+		this.person = person;
 	}
+	
 	
 }

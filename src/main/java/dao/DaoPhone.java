@@ -4,20 +4,20 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import model.Telefone;
+import model.Phone;
 
-public class DaoTelefone {
+public class DaoPhone {
 	
-	public void save(Telefone telefone) {
+	public void save(Phone Phone) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Integer idTelefone = telefone.getId();
+		Integer idPhone = Phone.getId();
 		
 		try {
 			session.beginTransaction();
-			if(idTelefone == null) {
-				session.save(telefone);
+			if(idPhone == null) {
+				session.save(Phone);
 			} else {
-				session.merge(telefone);
+				session.merge(Phone);
 			}
 			session.getTransaction().commit();
 		} catch (Exception e) {
@@ -28,11 +28,11 @@ public class DaoTelefone {
 		}
 	}
 	
-	public Telefone retrieveById(Integer id) {
+	public Phone retrieveById(Integer id) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		Telefone tel = null;
+		Phone tel = null;
 		try {
-			tel = (Telefone)sessao.createQuery("FROM Telefone WHERE id = "+id).uniqueResult();
+			tel = (Phone)sessao.createQuery("FROM Phone WHERE id = "+id).uniqueResult();
 		} catch(Exception e) {
 			System.err.println(e);
 		} finally {
@@ -41,12 +41,12 @@ public class DaoTelefone {
 		return tel;
 	}
 	
-	public List<Telefone> retrieveAll() {
+	public List<Phone> retrieveAll() {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		List<Telefone> tels = null;
+		List<Phone> tels = null;
 		try {
 			sessao.beginTransaction();
-			tels = sessao.createQuery("FROM Telefone").list();
+			tels = sessao.createQuery("FROM Phone").list();
 		} catch(Exception e) {
 			System.err.println(e);
 		} finally {

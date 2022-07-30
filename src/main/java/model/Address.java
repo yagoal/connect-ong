@@ -9,83 +9,97 @@ public class Address {
 
 //	@Id
 //	@GeneratedValue
-	private Long id;
+	private Integer id;
 	
-	private String logradouro;
-	private Integer numero;
-	private String bairro;
-	private String cep;
-	private String estado;
-	private String cidade;
+	private String street;
+	private Integer number;
+	private String neighborhood;
+	private String zipCode;
+	private String state;
+	private String city;
 	
 	
 	public Address() {
 		super();
 	}
-
-	public Address(String logradouro, Integer numero, String bairro, String cep, String estado, String cidade) {
+	
+	public Address(String street, Integer number, String neighborhood, String zipCode, String state, String city) {
 		super();
-		this.logradouro = logradouro;
-		this.numero = numero;
-		this.bairro = bairro;
-		this.cep = cep;
-		this.cidade = cidade;
+		this.street = street;
+		this.number = number;
+		this.neighborhood = neighborhood;
+		this.zipCode = zipCode;
+		this.state = state;
+		this.city = city;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getLogradouro() {
-		return logradouro;
+
+	public String getStreet() {
+		return street;
 	}
 
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
+
+	public void setStreet(String street) {
+		this.street = street;
 	}
 
-	public Integer getNumero() {
-		return numero;
+
+	public Integer getNumber() {
+		return number;
 	}
 
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+
+	public void setNumber(Integer number) {
+		this.number = number;
 	}
 
-	public String getBairro() {
-		return bairro;
+
+	public String getNeighborhood() {
+		return neighborhood;
 	}
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
+
+	public void setNeighborhood(String neighborhood) {
+		this.neighborhood = neighborhood;
 	}
 
-	public String getCep() {
-		return cep;
+
+	public String getZipCode() {
+		return zipCode;
 	}
 
-	public void setCep(String cep) {
-		this.cep = cep;
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 
-	public String getEstado() {
-		return estado;
+
+	public String getState() {
+		return state;
 	}
 
-	public void setEstado(String estado) {
-		this.estado = estado;
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
-	public String getCidade() {
-		return cidade;
+
+	public String getCity() {
+		return city;
 	}
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	

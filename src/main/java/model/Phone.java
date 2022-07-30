@@ -11,19 +11,19 @@ public class Phone {
 	@GeneratedValue
 	private Integer id;
 	
-	private String numero;
+	private String number;
 	private String ddd;
-	private String codPais;
+	private String countryCode;
 	
 	public Phone() {
 		super();
 	}
 
-	public Phone(String numero, String ddd, String codPais) {
+	public Phone(String number, String ddd, String countryCode) {
 		super();
-		this.numero = numero;
+		this.number = number;
 		this.ddd = ddd;
-		this.codPais = codPais;
+		this.countryCode = countryCode;
 	}
 
 	public Integer getId() {
@@ -34,12 +34,12 @@ public class Phone {
 		this.id = id;
 	}
 
-	public String getNumero() {
-		return numero;
+	public String getNumber() {
+		return number;
 	}
 
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setNumber(String number) {
+		this.number = number;
 	}
 
 	public String getDdd() {
@@ -50,12 +50,12 @@ public class Phone {
 		this.ddd = ddd;
 	}
 
-	public String getCodPais() {
-		return codPais;
+	public String getCountryCode() {
+		return countryCode;
 	}
 
-	public void setCodPais(String codPais) {
-		this.codPais = codPais;
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
 	}
 	
 }

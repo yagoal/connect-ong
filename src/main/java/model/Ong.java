@@ -10,19 +10,19 @@ public class Ong {  //Entidade -> Table
 	//@Id
 	//@GeneratedValue
 	private Integer id;
-	private String nome;
+	private String name;
 	private String cnpj;
-	private Date dataFundacao;
+	private Date foudingDate;
 	
 	public Ong() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Ong(String nome, String cnpj, Date dataFundacao) {
+	public Ong(String name, String cnpj, Date foudingDate) {
 		super();
-		this.nome = nome;
+		this.name = name;
 		this.cnpj = cnpj;
-		this.dataFundacao = dataFundacao;
+		this.foudingDate = foudingDate;
 	}
 
 	public Integer getId() {
@@ -33,12 +33,12 @@ public class Ong {  //Entidade -> Table
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCnpj() {
@@ -49,14 +49,12 @@ public class Ong {  //Entidade -> Table
 		this.cnpj = cnpj;
 	}
 
-	public Date getDataFundacao() {
-		return dataFundacao;
+	public Date getFoudingDate() {
+		return foudingDate;
 	}
 
-	public void setDataFundacao(Date dataFundacao) {
-		this.dataFundacao = dataFundacao;
-	}
+	public void setFoudingDate(Date foudingDate) {
+		this.foudingDate = foudingDate;
+	}	
 	
-	
-
 }

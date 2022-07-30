@@ -14,28 +14,28 @@ public abstract class Person { //Entidade -> Table
 //	@GeneratedValue			//AutoInc -> 1,2,3,4...
 	private Integer id;		//Primary Key
 	
-	private String nome;	//Campos... 
-	private Date dataNasc;
-	private Character sexo;
-	private String documento;
-	private List<Address> enderecos;
-	private List<Phone> telefones;
-	private User usuario;
+	private String name;	//Campos... 
+	private Date birthDate;
+	private Character gender;
+	private String document;
+	private List<Address> adresses;
+	private List<Phone> phones;
+	private User user;
 	
 	public Person() {
 		super();
 	}
 
-	public Person(String nome, Date dataNasc, char sexo, String documento, List<Address> enderecos,
-			List<Phone> telefones, User usuario) {
+	public Person(String name, Date birthDate, Character gender, String document, List<Address> adresses,
+			List<Phone> phones, User user) {
 		super();
-		this.nome = nome;
-		this.dataNasc = dataNasc;
-		this.sexo = sexo;
-		this.documento = documento;
-		this.enderecos = enderecos;
-		this.telefones = telefones;
-		this.usuario = usuario;
+		this.name = name;
+		this.birthDate = birthDate;
+		this.gender = gender;
+		this.document = document;
+		this.adresses = adresses;
+		this.phones = phones;
+		this.user = user;
 	}
 
 	public Integer getId() {
@@ -46,60 +46,60 @@ public abstract class Person { //Entidade -> Table
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Date getDataNasc() {
-		return dataNasc;
+	public Date getBirthDate() {
+		return birthDate;
 	}
 
-	public void setDataNasc(Date dataNasc) {
-		this.dataNasc = dataNasc;
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
-	public char getSexo() {
-		return sexo;
+	public Character getGender() {
+		return gender;
 	}
 
-	public void setSexo(char sexo) {
-		this.sexo = sexo;
+	public void setGender(Character gender) {
+		this.gender = gender;
 	}
 
-	public String getDocumento() {
-		return documento;
+	public String getDocument() {
+		return document;
 	}
 
-	public void setDocumento(String documento) {
-		this.documento = documento;
+	public void setDocument(String document) {
+		this.document = document;
 	}
 
-	public List<Address> getEnderecos() {
-		return enderecos;
+	public List<Address> getAdresses() {
+		return adresses;
 	}
 
-	public void setEnderecos(List<Address> enderecos) {
-		this.enderecos = enderecos;
+	public void setAdresses(List<Address> adresses) {
+		this.adresses = adresses;
 	}
 
-	public List<Phone> getTelefones() {
-		return telefones;
+	public List<Phone> getPhones() {
+		return phones;
 	}
 
-	public void setTelefones(List<Phone> telefones) {
-		this.telefones = telefones;
+	public void setPhones(List<Phone> phones) {
+		this.phones = phones;
 	}
 
-	public User getUsuario() {
-		return usuario;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUsuario(User usuario) {
-		this.usuario = usuario;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }
