@@ -14,9 +14,11 @@
 	<% 
 		DaoTelefone daoTelefone = new DaoTelefone();
 		Telefone telefone = new Telefone("8888-7777", "75", "+001");
+		DaoTelefone daotel = new DaoTelefone();
 	%>
 			
 		
-<h2>Hello World From Database <% out.print(telefone.getNumero()); %> </h2>
+<h2>Hello World <% out.print(telefone.getNumero()); %> </h2>
+<h2> Hello World from dataBase<%=daotel.retrieveById(1) %></h2>
 </body>
 </html>

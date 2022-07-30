@@ -1,5 +1,7 @@
 package model;
 
+import javax.persistence.OneToOne;
+
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.Id;
@@ -14,6 +16,8 @@ public class Usuario{
 	private String login;
 	private String senha;
 	private Integer perfil;
+	
+	@OneToOne
 	private Pessoa pessoa;
 	
 	public Usuario() {
