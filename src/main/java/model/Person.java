@@ -8,26 +8,26 @@ import java.util.List;
 //import javax.persistence.Id;
 //
 //@Entity
-public abstract class Pessoa { //Entidade -> Table
+public abstract class Person { //Entidade -> Table
 
 //	@Id
 //	@GeneratedValue			//AutoInc -> 1,2,3,4...
-	private Long id;		//Primary Key
+	private Integer id;		//Primary Key
 	
 	private String nome;	//Campos... 
 	private Date dataNasc;
-	private char sexo;
+	private Character sexo;
 	private String documento;
-	private List<Endereco> enderecos;
-	private List<Telefone> telefones;
-	private Usuario usuario;
+	private List<Address> enderecos;
+	private List<Phone> telefones;
+	private User usuario;
 	
-	public Pessoa() {
+	public Person() {
 		super();
 	}
 
-	public Pessoa(String nome, Date dataNasc, char sexo, String documento, List<Endereco> enderecos,
-			List<Telefone> telefones, Usuario usuario) {
+	public Person(String nome, Date dataNasc, char sexo, String documento, List<Address> enderecos,
+			List<Phone> telefones, User usuario) {
 		super();
 		this.nome = nome;
 		this.dataNasc = dataNasc;
@@ -38,11 +38,11 @@ public abstract class Pessoa { //Entidade -> Table
 		this.usuario = usuario;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -78,27 +78,27 @@ public abstract class Pessoa { //Entidade -> Table
 		this.documento = documento;
 	}
 
-	public List<Endereco> getEnderecos() {
+	public List<Address> getEnderecos() {
 		return enderecos;
 	}
 
-	public void setEnderecos(List<Endereco> enderecos) {
+	public void setEnderecos(List<Address> enderecos) {
 		this.enderecos = enderecos;
 	}
 
-	public List<Telefone> getTelefones() {
+	public List<Phone> getTelefones() {
 		return telefones;
 	}
 
-	public void setTelefones(List<Telefone> telefones) {
+	public void setTelefones(List<Phone> telefones) {
 		this.telefones = telefones;
 	}
 
-	public Usuario getUsuario() {
+	public User getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(User usuario) {
 		this.usuario = usuario;
 	}
 

@@ -2,12 +2,14 @@ package model;
 
 import java.util.Date;
 
+//import javax.persistence.Entity;
+
 //@Entity
-public class Ong {
+public class Ong {  //Entidade -> Table
 	
 	//@Id
 	//@GeneratedValue
-	private long id;
+	private Integer id;
 	private String nome;
 	private String cnpj;
 	private Date dataFundacao;
@@ -23,11 +25,11 @@ public class Ong {
 		this.dataFundacao = dataFundacao;
 	}
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

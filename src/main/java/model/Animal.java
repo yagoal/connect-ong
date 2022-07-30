@@ -14,7 +14,7 @@ public class Animal {			//Entidade -> Table
 	
 	private String nome;		//Campos...
 	private Date dataNasc;
-	private char sexo;
+	private Character sexo;
 	private String especie;
 	private String raca;
 	private Double peso;
