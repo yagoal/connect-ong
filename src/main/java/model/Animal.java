@@ -12,15 +12,15 @@ public class Animal {			//Entidade -> Table
 //	@GeneratedValue				//AutoInc -> 1,2,3,4...
 	private Integer id;			//Primary Key
 	
-	private String nome;		//Campos...
-	private Date dataNasc;
-	private char sexo;
-	private String especie;
-	private String raca;
-	private Double peso;
-	private Date dataResgate;
-	private Boolean castracao;
-	private Boolean disponibilidade;	
+	private String name;		//Campos...
+	private Date birthDate;
+	private Character gender;
+	private String specie;
+	private String breed;
+	private Double weight;
+	private Date redempetionDate;
+	private Boolean castration;
+	private Boolean availability;	
 	
 //	@ManyToOne
 	private Ong ong;
@@ -30,27 +30,27 @@ public class Animal {			//Entidade -> Table
 	}
 
 	public Animal(
-		String nome, 
-		Date dataNasc, 
-		char sexo, 
-		String especie, 
-		String raca, 
-		Double peso, 
-		Date dataResgate,
-		Boolean castracao, 
-		Boolean disponibilidade,
+		String name, 
+		Date birthDate, 
+		Character gender, 
+		String specie, 
+		String breed, 
+		Double weight, 
+		Date redempetionDate,
+		Boolean castration, 
+		Boolean availability,
 		Ong ong
 	) {
 		super();
-		this.nome = nome;
-		this.dataNasc = dataNasc;
-		this.sexo = sexo;
-		this.especie = especie;
-		this.raca = raca;
-		this.peso = peso;
-		this.dataResgate = dataResgate;
-		this.castracao = castracao;
-		this.disponibilidade = disponibilidade;
+		this.name = name;
+		this.birthDate = birthDate;
+		this.gender = gender;
+		this.specie = specie;
+		this.breed = breed;
+		this.weight = weight;
+		this.redempetionDate = redempetionDate;
+		this.castration = castration;
+		this.availability = availability;
 		this.ong = ong;
 	}
 
@@ -62,76 +62,76 @@ public class Animal {			//Entidade -> Table
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Date getDataNasc() {
-		return dataNasc;
+	public Date getBirthDate() {
+		return birthDate;
 	}
 
-	public void setDataNasc(Date dataNasc) {
-		this.dataNasc = dataNasc;
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
-	public char getSexo() {
-		return sexo;
+	public Character getGender() {
+		return gender;
 	}
 
-	public void setSexo(char sexo) {
-		this.sexo = sexo;
+	public void setGender(Character gender) {
+		this.gender = gender;
 	}
 
-	public String getEspecie() {
-		return especie;
+	public String getSpecie() {
+		return specie;
 	}
 
-	public void setEspecie(String especie) {
-		this.especie = especie;
+	public void setSpecie(String specie) {
+		this.specie = specie;
 	}
 
-	public String getRaca() {
-		return raca;
+	public String getBreed() {
+		return breed;
 	}
 
-	public void setRaca(String raca) {
-		this.raca = raca;
+	public void setBreed(String breed) {
+		this.breed = breed;
 	}
 
-	public Double getPeso() {
-		return peso;
+	public Double getWeight() {
+		return weight;
 	}
 
-	public void setPeso(Double peso) {
-		this.peso = peso;
+	public void setWeight(Double weight) {
+		this.weight = weight;
 	}
 
-	public Date getDataResgate() {
-		return dataResgate;
+	public Date getRedempetionDate() {
+		return redempetionDate;
 	}
 
-	public void setDataResgate(Date dataResgate) {
-		this.dataResgate = dataResgate;
+	public void setRedempetionDate(Date redempetionDate) {
+		this.redempetionDate = redempetionDate;
 	}
 
-	public Boolean isCastracao() {
-		return castracao;
+	public Boolean getCastration() {
+		return castration;
 	}
 
-	public void setCastracao(Boolean castracao) {
-		this.castracao = castracao;
+	public void setCastration(Boolean castration) {
+		this.castration = castration;
 	}
 
-	public Boolean isDisponibilidade() {
-		return disponibilidade;
+	public Boolean getAvailability() {
+		return availability;
 	}
 
-	public void setDisponibilidade(Boolean disponibilidade) {
-		this.disponibilidade = disponibilidade;
+	public void setAvailability(Boolean availability) {
+		this.availability = availability;
 	}
 
 	public Ong getOng() {
@@ -141,6 +141,5 @@ public class Animal {			//Entidade -> Table
 	public void setOng(Ong ong) {
 		this.ong = ong;
 	}
-	
 	
 }
