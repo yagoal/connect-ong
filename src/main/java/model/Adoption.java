@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Date;
+import java.util.Hashtable;
 
 import model.Animal;
 import model.Person;

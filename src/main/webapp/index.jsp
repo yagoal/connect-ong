@@ -1,6 +1,7 @@
+<%@page import="dao.DaoGeneric"%>
+<%@page import="model.Phone"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.DaoTelefone"%>
-<%@page import="model.Telefone"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -12,13 +13,14 @@
 </head>
 <body>
 	<% 
-		DaoTelefone daoTelefone = new DaoTelefone();
-		Telefone telefone = new Telefone("8888-7777", "75", "+001");
-		DaoTelefone daotel = new DaoTelefone();
+		Phone b = new Phone();
+		b.setNumber("irru");
+ 		 		
+		
+		
+		DaoGeneric.getInstance().save(b);
 	%>
 			
-		
-<h2>Hello World <% out.print(telefone.getNumero()); %> </h2>
-<h2> Hello World from dataBase<%=daotel.retrieveById(1) %></h2>
+
 </body>
 </html>

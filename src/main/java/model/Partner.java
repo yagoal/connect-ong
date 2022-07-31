@@ -4,14 +4,18 @@ import java.nio.file.Path;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
 import model.Adoption;
 
 //import javax.persistence.Entity;
 
-//@Entity
+@Entity
 public class Partner extends Person { //Entidade -> Table
 	
 	private Path photo;	
+	@OneToMany
 	private List<Adoption> adoptions;
 	
 	public Partner() {
