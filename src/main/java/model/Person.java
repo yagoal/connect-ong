@@ -3,23 +3,28 @@ package model;
 import java.util.Date;
 import java.util.List;
 
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
-//
-//@Entity
-public abstract class Person { //Entidade -> Table
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
-//	@Id
-//	@GeneratedValue			//AutoInc -> 1,2,3,4...
-	private Integer id;		//Primary Key
+@MappedSuperclass
+public abstract class Person {
+	@Id
+	@GeneratedValue
+	private Integer id;
 	
-	private String name;	//Campos... 
+	private String name;
 	private Date birthDate;
 	private Character gender;
 	private String document;
+	
+	@OneToMany
 	private List<Address> adresses;
+	@OneToMany
 	private List<Phone> phones;
+	@OneToOne
 	private User user;
 	
 	public Person() {

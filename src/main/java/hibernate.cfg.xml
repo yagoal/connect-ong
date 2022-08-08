@@ -13,14 +13,9 @@
 		<property name="connection.poolsize">10</property>
 		<property name="hbm2ddl.auto">update</property> <!-- create / drop / update -->
 		<!-- mapeando a classe para o banco de dados -->
-<!-- 		<mapping class="model.Telefone"/> -->
-		
-<!-- 		<mapping class="model.Animal"/> -->
-<!-- 		<mapping class="model.Endereco"/> -->
-<!-- 		<mapping class="model.Ong"/> -->
-<!-- 		<mapping class="model.Pessoa"/> -->
-<!-- 		<mapping class="model.Usuario"/>   -->
+
 			<mapping class="model.Phone"/> 
+			<mapping class="model.Address"/>
 		
 	</session-factory>
 </hibernate-configuration>

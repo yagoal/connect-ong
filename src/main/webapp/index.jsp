@@ -1,3 +1,4 @@
+<%@page import="model.Address"%>
 <%@page import="dao.DaoGeneric"%>
 <%@page import="model.Phone"%>
 <%@page import="java.util.List"%>
@@ -13,13 +14,29 @@
 </head>
 <body>
 	<% 
-		Phone b = new Phone();
-		b.setNumber("irru");
- 		 		
+		Address b = new Address();
 		
-		
-		DaoGeneric.getInstance().save(b);
+ 		List<Phone> lista = (List<Phone>)DaoGeneric.getInstance().retrieveAll(Phone.class); 
+ 		
+	for(Phone p : lista) {
+		out.print("<h1>"+ p.getNumber() +"</h1>");
+	}
+	
+	
 	%>
+	
+	<%
+		//Phone a = (Phone)DaoGeneric.getInstance().retrieveById(Phone.class, 7);
+		//out.print(a.getNumber());	
+		
+	%>
+	
+	<%
+	//out.print(a);
+	DaoGeneric.getInstance().delete(lista.get(0)); %>
+	
+	
+	
 			
 
 </body>

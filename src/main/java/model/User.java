@@ -1,19 +1,21 @@
 package model;
 
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
-//@Entity
+@Entity
 public class User{
 
-//	@Id
-//	@GeneratedValue
+	@Id
+	@GeneratedValue
 	private Long id;
 	
 	private String login;
 	private String password;
 	private Integer profile;
+	@OneToOne
 	private Person person;
 	
 	public User() {

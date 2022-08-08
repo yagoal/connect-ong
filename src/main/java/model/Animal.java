@@ -2,14 +2,21 @@ package model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.Id;
 
-//@Entity
+@Entity
 public class Animal {			//Entidade -> Table
 
-//	@GeneratedValue				//AutoInc -> 1,2,3,4...
+	@Id
+	@GeneratedValue				//AutoInc -> 1,2,3,4...
 	private Integer id;			//Primary Key
 	
 	private String name;		//Campos...
@@ -22,9 +29,11 @@ public class Animal {			//Entidade -> Table
 	private Boolean castration;
 	private Boolean availability;	
 	
-//	@ManyToOne
+	@ManyToOne
 	private Ong ong;
 
+	@OneToOne
+	private Adoption adoption;
 	public Animal() {
 		super();
 	}

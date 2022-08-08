@@ -2,27 +2,34 @@ package model;
 
 import java.util.Date;
 
-//import javax.persistence.Entity;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
-//@Entity
-public class Ong {  //Entidade -> Table
-	
-	//@Id
-	//@GeneratedValue
+@Entity
+public class Ong { 	
+	@Id
+	@GeneratedValue
 	private Integer id;
 	private String name;
 	private String cnpj;
 	private Date foudingDate;
+	@OneToOne
+	private Address address;
 	
 	public Ong() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Ong(String name, String cnpj, Date foudingDate) {
+	
+	public Ong(Integer id, String name, String cnpj, Date foudingDate, Address address) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.cnpj = cnpj;
 		this.foudingDate = foudingDate;
+		this.address = address;
 	}
 
 	public Integer getId() {
@@ -55,6 +62,14 @@ public class Ong {  //Entidade -> Table
 
 	public void setFoudingDate(Date foudingDate) {
 		this.foudingDate = foudingDate;
+	}
+
+	public Address getAdress() {
+		return address;
+	}
+
+	public void setAdress(Address adress) {
+		this.address = adress;
 	}	
 	
 }

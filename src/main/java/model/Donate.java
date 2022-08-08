@@ -1,66 +1,63 @@
 package model;
 
 import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 @Entity
-public class Adoption {
+public class Donate {
 
 	@Id
-	@GeneratedValue			
+	@GeneratedValue
 	private Integer id;
+	private Date DonateDate;
+	private Double value;
 	
-	private Date date;
 	@ManyToOne
 	private Partner partner;
-	@OneToOne
-	private Animal animal;
 	
-	public Adoption() {
+	
+	
+	public Donate(Date donateDate, Double value, Partner partner) {
 		super();
-	}
-
-	public Adoption(Date date, Partner partner, Animal animal) {
-		super();
-		this.date = date;
+		DonateDate = donateDate;
+		this.value = value;
 		this.partner = partner;
-		this.animal = animal;
 	}
-
+	
 	public Integer getId() {
 		return id;
 	}
-
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public Date getDate() {
-		return date;
+	
+	public Date getDonateDate() {
+		return DonateDate;
 	}
-
-	public void setDate(Date date) {
-		this.date = date;
+	
+	public void setDonateDate(Date donateDate) {
+		DonateDate = donateDate;
 	}
-
+	
+	public Double getValue() {
+		return value;
+	}
+	
+	public void setValue(Double value) {
+		this.value = value;
+	}
+	
 	public Partner getPartner() {
 		return partner;
 	}
-
+	
 	public void setPartner(Partner partner) {
 		this.partner = partner;
 	}
 
-	public Animal getAnimal() {
-		return animal;
-	}
-
-	public void setAnimal(Animal animal) {
-		this.animal = animal;
-	}
-	
 }
