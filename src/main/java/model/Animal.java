@@ -8,9 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
 
 @Entity
 public class Animal {			//Entidade -> Table
@@ -34,6 +31,7 @@ public class Animal {			//Entidade -> Table
 
 	@OneToOne
 	private Adoption adoption;
+	
 	public Animal() {
 		super();
 	}

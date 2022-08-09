@@ -8,14 +8,16 @@
 		<property name="hibernate.connection.password"></property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="show_sql">false</property>
+		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<property name="connection.poolsize">10</property>
 		<property name="hbm2ddl.auto">update</property> <!-- create / drop / update -->
 		<!-- mapeando a classe para o banco de dados -->
 
-			<mapping class="model.Phone"/> 
-			<mapping class="model.Address"/>
+			<mapping class="model.Phone"/> <!-- testada e aprovada no DaoGeneric -->
+			<mapping class="model.Address"/> <!-- testada e aprovada no DaoGeneric -->
+			<mapping class="model.Ong"/> <!-- testada e aprovada no DaoGeneric -->
+			<mapping class="model.User"/> <!-- testada e aprovada no DaoGeneric -->
 		
 	</session-factory>
 </hibernate-configuration>
