@@ -3,7 +3,6 @@ package model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
 public class User{
@@ -15,19 +14,16 @@ public class User{
 	private String login;
 	private String password;
 	private Integer profile;
-	@OneToOne
-	private Person person;
 	
 	public User() {
 		super();
 	}
 
-	public User(String login, String password, Integer profile, Person person) {
+	public User(String login, String password, Integer profile) {
 		super();
 		this.login = login;
 		this.password = password;
 		this.profile = profile;
-		this.person = person;
 	}
 
 	public Long getId() {
@@ -61,14 +57,5 @@ public class User{
 	public void setProfile(Integer profile) {
 		this.profile = profile;
 	}
-
-	public Person getPerson() {
-		return person;
-	}
-
-	public void setPerson(Person person) {
-		this.person = person;
-	}
-	
 	
 }

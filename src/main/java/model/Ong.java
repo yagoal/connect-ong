@@ -12,6 +12,7 @@ public class Ong {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
 	private String name;
 	private String cnpj;
 	private Date foudingDate;
@@ -23,9 +24,8 @@ public class Ong {
 	}
 
 	
-	public Ong(Integer id, String name, String cnpj, Date foudingDate, Address address) {
+	public Ong(String name, String cnpj, Date foudingDate, Address address) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.cnpj = cnpj;
 		this.foudingDate = foudingDate;
