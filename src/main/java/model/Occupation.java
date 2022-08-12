@@ -4,26 +4,37 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Collaborator extends Person {
+public class Occupation {
 
+	@Id
+	@GeneratedValue
+	private Integer id;
+	
 	private String occupation;
 	private Double salary;
 	
 	
-	public Collaborator() {
+	public Occupation() {
 		super();
 	}
 
-	public Collaborator(String name, Date birthDate, Character gender, String document, List<Address> adresses,
-			List<Phone> phones, User user, String occupation, Double salary) {
-		super(name, birthDate, gender, document, adresses, phones, user);
+	public Occupation(String occupation, Double salary) {
 		this.occupation = occupation;
 		this.salary = salary;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getOccupation() {

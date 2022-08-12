@@ -10,13 +10,13 @@ import javax.persistence.OneToOne;
 
 
 @Entity
-public class Animal {			//Entidade -> Table
+public class Animal {			
 
 	@Id
-	@GeneratedValue				//AutoInc -> 1,2,3,4...
-	private Integer id;			//Primary Key
+	@GeneratedValue				
+	private Integer id;			
 	
-	private String name;		//Campos...
+	private String name;
 	private Date birthDate;
 	private Character gender;
 	private String specie;
@@ -26,11 +26,6 @@ public class Animal {			//Entidade -> Table
 	private Boolean castration;
 	private Boolean availability;	
 	
-	@ManyToOne
-	private Ong ong;
-
-	@OneToOne
-	private Adoption adoption;
 	
 	public Animal() {
 		super();
@@ -45,8 +40,7 @@ public class Animal {			//Entidade -> Table
 		Double weight, 
 		Date redempetionDate,
 		Boolean castration, 
-		Boolean availability,
-		Ong ong
+		Boolean availability
 	) {
 		super();
 		this.name = name;
@@ -58,7 +52,6 @@ public class Animal {			//Entidade -> Table
 		this.redempetionDate = redempetionDate;
 		this.castration = castration;
 		this.availability = availability;
-		this.ong = ong;
 	}
 
 	public Integer getId() {
@@ -141,12 +134,5 @@ public class Animal {			//Entidade -> Table
 		this.availability = availability;
 	}
 
-	public Ong getOng() {
-		return ong;
-	}
-
-	public void setOng(Ong ong) {
-		this.ong = ong;
-	}
 	
 }

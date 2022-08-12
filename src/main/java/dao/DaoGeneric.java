@@ -25,7 +25,7 @@ public class DaoGeneric {
 	public void save(Object pModel)  {
 	
 		Class<?> classModel;
-		String 	className;
+		String 	className = null;
 		Integer id;
 		
 		Session session = openSession();
@@ -38,7 +38,7 @@ public class DaoGeneric {
 			session.beginTransaction();
 			if(id == null) {
 				session.save(pModel);
-				System.out.println("pClass do tipo "+ className+"salva");
+				System.out.println("Classe do tipo "+ className+" salva");
 			}
 			 else {				 
 				session.merge(pModel);
@@ -46,7 +46,7 @@ public class DaoGeneric {
 			
 			session.getTransaction().commit();
 		} catch (Exception e) {
-			System.err.println("Erro ao inserir no banco: "+e);
+			System.err.println("Erro ao inserir "+className+" no banco: "+e);
 			session.getTransaction().rollback();
 		} finally {
 			session.close();

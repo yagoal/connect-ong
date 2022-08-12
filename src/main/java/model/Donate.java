@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -16,18 +17,16 @@ public class Donate {
 	private Date DonateDate;
 	private Double value;
 	
-	@ManyToOne
-	private Partner partner;
+	public Donate() {}
 	
 	
-	
-	public Donate(Date donateDate, Double value, Partner partner) {
+	public Donate(Date donateDate, Double value) {
 		super();
 		DonateDate = donateDate;
 		this.value = value;
-		this.partner = partner;
 	}
-	
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -51,13 +50,8 @@ public class Donate {
 	public void setValue(Double value) {
 		this.value = value;
 	}
+
+
 	
-	public Partner getPartner() {
-		return partner;
-	}
-	
-	public void setPartner(Partner partner) {
-		this.partner = partner;
-	}
 
 }

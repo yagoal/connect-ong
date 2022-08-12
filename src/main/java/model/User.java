@@ -1,37 +1,42 @@
 package model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User{
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Integer id;
 	
+	@OneToOne
+	private Person person;
+
 	private String login;
 	private String password;
-	private Integer profile;
 	
-	public User() {
-		super();
-	}
+	public User() { }
 
-	public User(String login, String password, Integer profile) {
+	public User(Person person, String login, String password) {
 		super();
+		this.person = person;
 		this.login = login;
 		this.password = password;
-		this.profile = profile;
 	}
 
-	public Long getId() {
-		return id;
+	public Person getPerson() {
+		return person;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 
 	public String getLogin() {
@@ -50,12 +55,15 @@ public class User{
 		this.password = password;
 	}
 
-	public Integer getProfile() {
-		return profile;
+
+	public Integer getId() {
+		return id;
 	}
 
-	public void setProfile(Integer profile) {
-		this.profile = profile;
+	public void setId(Integer id) {
+		this.id = id;
 	}
+
+	
 	
 }
