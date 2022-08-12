@@ -2,21 +2,21 @@ package model;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.Id;
+//import javax.persistence.OneToOne;
 
-@Entity
+//@Entity
 public class Ong { 	
-	@Id
-	@GeneratedValue
+//	@Id
+//	@GeneratedValue
 	private Integer id;
 	
 	private String name;
 	private String cnpj;
 	private Date foudingDate;
-	@OneToOne
+//	@OneToOne
 	private Address address;
 	
 	public Ong() {

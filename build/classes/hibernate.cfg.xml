@@ -14,10 +14,15 @@
 		<property name="hbm2ddl.auto">update</property> <!-- create / drop / update -->
 		<!-- mapeando a classe para o banco de dados -->
 
-			<mapping class="model.Phone"/> <!-- testada e aprovada no DaoGeneric -->
+
+			<mapping class="model.Person"/>
 			<mapping class="model.Address"/> <!-- testada e aprovada no DaoGeneric -->
-			<mapping class="model.Ong"/> <!-- testada e aprovada no DaoGeneric -->
-			<mapping class="model.User"/> <!-- testada e aprovada no DaoGeneric -->
+			<mapping class="model.Phone"/>
+			<mapping class="model.User"/>
+			<mapping class="model.Donate"/>
+			<mapping class="model.Animal"/>
+			<mapping class="model.Occupation"/>
+			<mapping class="model.Employee"/>
 		
 	</session-factory>
 </hibernate-configuration>

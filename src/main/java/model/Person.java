@@ -1,110 +1,148 @@
 package model;
 
 import java.util.Date;
-import java.util.List;
-
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToMany;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 
-@MappedSuperclass
+
+
+@Entity @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Person {
+	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Integer id;
+
 	
 	private String name;
 	private Date birthDate;
 	private Character gender;
 	private String document;
+	private String email;
 	
-	@OneToMany
-	private List<Address> adresses;
-	@OneToMany
-	private List<Phone> phones;
-	@OneToOne
-	private User user;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Phone phone1;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Phone phone2;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Address address;
+
+
 	public Person() {
 		super();
 	}
 
-	public Person(String name, Date birthDate, Character gender, String document, List<Address> adresses,
-			List<Phone> phones, User user) {
+
+	public Person(String name, Date birthDate, Character gender, String document, String email,
+			Phone phone1, Phone phone2, Address address) {
 		super();
 		this.name = name;
 		this.birthDate = birthDate;
 		this.gender = gender;
 		this.document = document;
-		this.adresses = adresses;
-		this.phones = phones;
-		this.user = user;
+		this.email = email;
+		this.phone1 = phone1;
+		this.phone2 = phone2;
+		this.address = address;
 	}
 
 	public Integer getId() {
 		return id;
 	}
 
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 	public Date getBirthDate() {
 		return birthDate;
 	}
 
+
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
+
 
 	public Character getGender() {
 		return gender;
 	}
 
+
 	public void setGender(Character gender) {
 		this.gender = gender;
 	}
+
 
 	public String getDocument() {
 		return document;
 	}
 
+
 	public void setDocument(String document) {
 		this.document = document;
 	}
 
-	public List<Address> getAdresses() {
-		return adresses;
+
+	public Phone getPhone1() {
+		return phone1;
 	}
 
-	public void setAdresses(List<Address> adresses) {
-		this.adresses = adresses;
+
+	public void setPhone1(Phone phone1) {
+		this.phone1 = phone1;
 	}
 
-	public List<Phone> getPhones() {
-		return phones;
+
+	public Phone getPhone2() {
+		return phone2;
 	}
 
-	public void setPhones(List<Phone> phones) {
-		this.phones = phones;
+
+	public void setPhone2(Phone phone2) {
+		this.phone2 = phone2;
 	}
 
-	public User getUser() {
-		return user;
+
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	
 
 }
