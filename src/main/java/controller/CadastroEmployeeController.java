@@ -40,27 +40,7 @@ public class CadastroEmployeeController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nome;
-		String document;
-		Phone phone = new Phone("9888888888", "75", "+55");
-		String occupationId;
 		
-		nome = request.getParameter("inputName");
-		document = request.getParameter("inputEspecie");
-		occupationId = request.getParameter("occupationId");
-		phone.setCountryCode(request.getParameter("inputCountryCode"));
-		
-		
-		Occupation occupation = (Occupation) DaoGeneric.getInstance().retrieveById(Occupation.class, Integer.parseInt(occupationId));
-		Employee employee= new Employee();
-		employee.setName(nome);
-		employee.setOccupation(occupation);
-		employee.setPhone1(phone);
-		
-		DaoGeneric.getInstance().save(employee);
-		
-		PrintWriter out = response.getWriter();
-		out.print("salvo");
 	}
 
 }

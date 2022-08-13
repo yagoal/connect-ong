@@ -52,6 +52,12 @@ public class Donate {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Donate [id=" + id + ", DonateDate=" + DonateDate + ", value=" + value + "]";
+	}
+
+
 	
 
 }

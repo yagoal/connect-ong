@@ -67,13 +67,24 @@ public class teste {
 //		DaoGeneric.getInstance().save(a5);
 //		DaoGeneric.getInstance().save(a6);
 		
+//		
+//		Donate d1 = new Donate(new Date(), 200.0);
+//		Donate d2 = new Donate(new Date(), 100.0);
+//		Donate d3 = new Donate(new Date(), 2200.0);
+//		Donate d4 = new Donate(new Date(), 6200.0);
+//		Donate d5 = new Donate(new Date(), 20.0);
+//		List<Donate> dLista = new ArrayList();
+//		dLista.add(d1);
+//		dLista.add(d2);
+//		dLista.add(d3);
+//		dLista.add(d4);
+//		dLista.add(d5);
 		
-		Occupation o1 = (Occupation)DaoGeneric.getInstance().retrieveById(Occupation.class, 1);
-		Occupation o2 = (Occupation)DaoGeneric.getInstance().retrieveById(Occupation.class, 2);
-		Occupation o3 = (Occupation)DaoGeneric.getInstance().retrieveById(Occupation.class, 3);
 		
-		Employee e1 = new Employee("asdasdas", new Date(), 'm', "8798485465", null, null, null, null, null, o3);
-		DaoGeneric.getInstance().save(e1);
+		
+		Partner partner = (Partner) DaoGeneric.getInstance().retrieveById(Partner.class, 163840);
+		
+		System.out.println(partner.getDonates());
 		
 	}
 
