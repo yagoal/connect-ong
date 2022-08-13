@@ -13,17 +13,15 @@ public class Phone {
 	
 	private String number;
 	private String ddd;
-	private String countryCode;
 	
 	public Phone() {
 		super();
 	}
 
-	public Phone(String number, String ddd, String countryCode) {
+	public Phone(String number, String ddd) {
 		super();
 		this.number = number;
 		this.ddd = ddd;
-		this.countryCode = countryCode;
 	}
 
 	public Integer getId() {
@@ -50,12 +48,5 @@ public class Phone {
 		this.ddd = ddd;
 	}
 
-	public String getCountryCode() {
-		return countryCode;
-	}
-
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
-	}
 	
 }

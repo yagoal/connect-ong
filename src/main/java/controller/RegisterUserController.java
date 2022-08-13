@@ -41,27 +41,29 @@ public class RegisterUserController extends HttpServlet {
 		
 		address.setCity(request.getParameter("inputCity"));
 		address.setNeighborhood(request.getParameter("inputNeighborhood"));
-		address.setNumber(request.getParameter("inputNumber"));
+		address.setNumber(request.getParameter("inputAddressNumber"));
 		address.setState(request.getParameter("inputState"));
 		address.setStreet(request.getParameter("inputStreet"));
 		address.setZipCode(request.getParameter("inputZipCode"));
 		
-		phone1.setCountryCode(request.getParameter("inputCountryCode1"));
 		phone1.setDdd(request.getParameter("inputDDD1"));
-		phone1.setNumber(request.getParameter("inputNumber1"));
+		phone1.setNumber(request.getParameter("inputPhoneNumber1"));
 		
-		phone2.setCountryCode(request.getParameter("inputCountryCode2"));
 		phone2.setDdd(request.getParameter("inputDDD2"));
-		phone2.setNumber(request.getParameter("inputNumber2"));
+		phone2.setNumber(request.getParameter("inputPhoneNumber2"));
 		
 		
 		partner.setName(request.getParameter("inputName"));
 		partner.setEmail(request.getParameter("inputEmail"));
 		partner.setAddress(address);
-		SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
+		partner.setPhone1(phone1);
+		partner.setPhone2(phone2);
+		
+		SimpleDateFormat dateFormated = new SimpleDateFormat("yyyy-MM-dd"); 
+		
 		Date birthDate;
 		try {
-			birthDate = dateFormated.parse(request.getParameter("birthDate"));
+			birthDate = dateFormated.parse(request.getParameter("inputBirthDate"));
 			partner.setBirthDate(birthDate);
 		} catch (ParseException e) {
 			partner.setBirthDate(null);
@@ -70,7 +72,7 @@ public class RegisterUserController extends HttpServlet {
 		}
 		
 		partner.setDocument(request.getParameter("inputDocument"));
-		partner.setGender(request.getParameter("inputGender"));
+		partner.setGender( request.getParameter("inputGender"));
 		
 		String password = request.getParameter("inputPassword");
 		

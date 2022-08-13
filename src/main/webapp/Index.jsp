@@ -15,7 +15,7 @@
         </div>
 
         <div class="menu">
-            <a href="index.html"><li>Home</li></a>
+            <a href="index.jsp"><li>Home</li></a>
             <a href="#tela-dois"><li>Sobre</li></a>
             <a href="animais-disponiveis.html"><li>Animais Disponíveis</li></a>
             <a href="meu-perfil.html"><li>Meu Perfil</li></a>
@@ -58,7 +58,7 @@
                     <br><br>
 
                     <div class="senha-variante text-center">
-                        Ainda não se cadastrou? <a href="cadastro.html"><b>Clique aqui</b></a> <br>
+                        Ainda não se cadastrou? <a href="Cadastro.jsp"><b>Clique aqui</b></a> <br>
                     </div>
                 </form>
             </div>
