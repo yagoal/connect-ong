@@ -3,9 +3,9 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/connect_ong</property>
-		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.connection.url">jdbc:mysql://mysqlserver.c5afid3bvwxs.us-east-1.rds.amazonaws.com:3306/connectong</property>
+		<property name="hibernate.connection.username">admin</property>
+		<property name="hibernate.connection.password">1624178847</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="show_sql">true</property>
@@ -14,17 +14,16 @@
 		<property name="hbm2ddl.auto">update</property> <!-- create / drop / update -->
 		<!-- mapeando a classe para o banco de dados -->
 
-
-			<mapping class="model.Person"/>
+ 			<mapping class="model.Person"/>
 			<mapping class="model.Address"/> <!-- testada e aprovada no DaoGeneric -->
 			<mapping class="model.Phone"/>
 			<mapping class="model.User"/>
-			<mapping class="model.Donate"/>
+			<mapping class="model.Donate"/> 
 			<mapping class="model.Animal"/>
 			<mapping class="model.Occupation"/>
 			<mapping class="model.Employee"/>
 			<mapping class="model.Partner"/>
-			<mapping class="model.Adoption"/>
+			<mapping class="model.Adoption"/> 
 		
 	</session-factory>
 </hibernate-configuration>
