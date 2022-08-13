@@ -10,33 +10,33 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class User{
+public class User {
 
 	@Id
 	@GeneratedValue
 	private Integer id;
 	
 	@OneToOne
-	private Person person;
+	private Partner partner;
 
 	private String login;
 	private String password;
 	
 	public User() { }
 
-	public User(Person person, String login, String password) {
+	public User(Partner partner, String login, String Partner) {
 		super();
-		this.person = person;
+		this.partner = partner;
 		this.login = login;
 		this.password = password;
 	}
 
 	public Person getPerson() {
-		return person;
+		return partner;
 	}
 
-	public void setPerson(Person person) {
-		this.person = person;
+	public void setPartner(Partner partner) {
+		this.partner = partner;
 	}
 
 	public String getLogin() {

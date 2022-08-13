@@ -12,7 +12,7 @@ public class Address {
 	private Integer id;
 	
 	private String street;
-	private Integer number;
+	private String number;
 	private String neighborhood;
 	private String zipCode;
 	private String state;
@@ -23,7 +23,7 @@ public class Address {
 		super();
 	}
 	
-	public Address(String street, Integer number, String neighborhood, String zipCode, String state, String city) {
+	public Address(String street, String number, String neighborhood, String zipCode, String state, String city) {
 		super();
 		this.street = street;
 		this.number = number;
@@ -53,12 +53,12 @@ public class Address {
 	}
 
 
-	public Integer getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
 
-	public void setNumber(Integer number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 

@@ -18,7 +18,7 @@ public class Partner extends Person {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Partner(String name, Date birthDate, Character gender, String document, String email, Phone phone1,
+	public Partner(String name, Date birthDate, String gender, String document, String email, Phone phone1,
 			Phone phone2, Address address, List<Donate> donates, List<Adoption> adoptions) {
 		super(name, birthDate, gender, document, email, phone1, phone2, address);
 		this.donates = donates;

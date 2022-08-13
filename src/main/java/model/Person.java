@@ -18,11 +18,10 @@ public abstract class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Integer id;
-
 	
 	private String name;
 	private Date birthDate;
-	private Character gender;
+	private String gender;
 	private String document;
 	private String email;
 	
@@ -41,7 +40,7 @@ public abstract class Person {
 	}
 
 
-	public Person(String name, Date birthDate, Character gender, String document, String email,
+	public Person(String name, Date birthDate, String gender, String document, String email,
 			Phone phone1, Phone phone2, Address address) {
 		super();
 		this.name = name;
@@ -84,12 +83,12 @@ public abstract class Person {
 	}
 
 
-	public Character getGender() {
+	public String getGender() {
 		return gender;
 	}
 
 
-	public void setGender(Character gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
