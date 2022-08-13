@@ -68,12 +68,12 @@ public class teste {
 //		DaoGeneric.getInstance().save(a6);
 		
 		
-		Occupation o1 = (Occupation)DaoGeneric.getInstance().retrieveById(Occupation.class, 1);
-		Occupation o2 = (Occupation)DaoGeneric.getInstance().retrieveById(Occupation.class, 2);
-		Occupation o3 = (Occupation)DaoGeneric.getInstance().retrieveById(Occupation.class, 3);
-		
-		Employee e1 = new Employee("asdasdas", new Date(), 'm', "8798485465", null, null, null, null, null, o3);
-		DaoGeneric.getInstance().save(e1);
+//		Occupation o1 = (Occupation)DaoGeneric.getInstance().retrieveById(Occupation.class, 1);
+//		Occupation o2 = (Occupation)DaoGeneric.getInstance().retrieveById(Occupation.class, 2);
+//		Occupation o3 = (Occupation)DaoGeneric.getInstance().retrieveById(Occupation.class, 3);
+//		
+//		Employee e1 = new Employee("asdasdas", new Date(), 'm', "8798485465", null, null, null, null, null, o3);
+//		DaoGeneric.getInstance().save(e1);
 		
 	}
 

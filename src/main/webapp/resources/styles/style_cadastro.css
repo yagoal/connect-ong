@@ -1,0 +1,71 @@
+body{
+    margin: 0 auto;
+}
+
+li{
+    display: inline-block;
+    margin: 0px 35px 0px 0px;
+    color: white;
+}
+
+li:hover{
+    font-weight: 500;
+    transform: scale(1.2);
+}
+
+.logotipo{
+    display: flex;
+    justify-content: center;
+}
+
+.img-logotipo{
+    height: 13vh;
+}
+
+.menu{
+    height: 5vh;
+    width: 100vw;
+    background-color: #ffb273;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.form-cadastro{
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+.caixa{
+    width: 80%;
+    background-color: #ffb273;
+    padding: 60px;
+    border-radius: 35px;
+    background-color: #E3EFF2;
+    float: left;
+}
+
+.btn{
+    width: 100%;
+}
+
+.rodape{
+    height: 15vh;
+    width: 100%;
+    background-color: rgba(2, 117, 216, 0.8);
+    float: left;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: small;
+}

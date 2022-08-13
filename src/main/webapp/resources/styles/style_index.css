@@ -1,0 +1,225 @@
+body{
+    margin: 0 auto;
+}
+
+li{
+	transition: all 0.2s;
+    display: inline-block;
+    margin: 0px 35px 0px 0px;
+    color: white;
+}
+
+li:hover{
+    transform: scale(1.2);
+}
+
+.logotipo{
+    display: flex;
+    justify-content: center;
+}
+
+.img-logotipo{
+    height: 13vh;
+}
+
+.menu{
+    height: 5vh;
+    width: 100vw;
+    background-color: #ffb273;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-bottom: 1.5vh;
+}
+
+.mensagem{
+    height: 10vh;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin: 0px 0px 1vh 5%;
+}
+
+.msg{
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-info{
+    color: black;
+}
+
+.img-index{
+    height: fit-content;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.animais{
+    height: 67vh;
+    float: left;
+    cursor: url(../components/cursor-patinha.svg), default;
+}
+
+.formulario{
+    height: 67vh;
+    width: 40%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #0275d8;
+}
+
+.form{
+    width: 70%;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: #E3EFF2;
+}
+
+.btn{
+    width: 100%;
+}
+
+.senha-variante{
+    text-align: right;
+}
+
+#tela-dois{
+    height: 100vh;
+    width: 60%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+#connect-ong{
+    height: 15vh;
+}
+
+.texto{
+    width: 90%;
+    text-align: justify;
+    padding: 70px;
+}
+
+.segunda-imagem{
+    height: 100vh;
+    width: 40%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.gato-e-cachorro{
+    height: 80%;
+    border-radius: 35px;
+    float: left;
+}
+
+.gato-e-cachorro:hover{
+	transition: all 0.3s;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+    cursor: url(../components/cursor-patinha.svg), default;
+}
+
+#perguntas-frequentes{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+#img-perguntas{
+    height: 50px;
+}
+
+.perguntas{
+    height: fit-content;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: justify;
+    float: left;
+    border: 4px solid #E3EFF2;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.question {
+    border-bottom: 1px solid #0275d8;
+    padding: 10px 0;
+    float: left;
+}
+
+.question input,
+.question .answer {
+    display: none; 
+}
+
+.question .answer{
+    color: white;
+    background-color: #0275d8;
+}
+  
+.question label {
+    font-weight: 500;
+}
+  
+.question input:checked ~ .answer {
+    display: block;
+}
+
+#fale-conosco{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.formulario-mensagem{
+    width: 60%;
+    height: 85%;
+}
+
+.form-email-input{
+    width: 100%;
+}
+
+.rodape{
+    height: 15vh;
+    width: 100%;
+    background-color: rgba(2, 117, 216, 0.8);
+    float: left;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: small;
+}

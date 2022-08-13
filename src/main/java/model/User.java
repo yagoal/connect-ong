@@ -24,7 +24,7 @@ public class User {
 	
 	public User() { }
 
-	public User(Partner partner, String login, String Partner) {
+	public User(Partner partner, String login, String password) {
 		super();
 		this.partner = partner;
 		this.login = login;
