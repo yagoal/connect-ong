@@ -23,6 +23,8 @@
 			<mapping class="model.Animal"/>
 			<mapping class="model.Occupation"/>
 			<mapping class="model.Employee"/>
+			<mapping class="model.Partner"/>
+			<mapping class="model.Adoption"/>
 		
 	</session-factory>
 </hibernate-configuration>
