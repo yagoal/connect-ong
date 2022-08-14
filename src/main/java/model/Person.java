@@ -2,6 +2,7 @@ package model;
 
 import java.util.Date;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,8 @@ public abstract class Person {
 	private Date birthDate;
 	private String gender;
 	private String document;
+	
+	@Column(unique = true)
 	private String email;
 	
 	@OneToOne(cascade = CascadeType.ALL)
