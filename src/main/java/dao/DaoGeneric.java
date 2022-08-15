@@ -1,8 +1,11 @@
 package dao;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 import org.hibernate.Session;
+
+import model.User;
 
 public class DaoGeneric {
 	
@@ -104,8 +107,25 @@ public class DaoGeneric {
 			session.close();
 		}
 
-		return classModels;
+			return classModels;
 		}
 	
+	public User hasUser(String pLogin, String pPassword) {
+		User user;
+		Session session = openSession();
+		try {
+			session.beginTransaction();
+			user = (User) session.createQuery("FROM User WHERE login='"+pLogin+"' AND password='"+pPassword+"'").uniqueResult();
+			System.out.println(user);
+			if(user != null) {
+				return user;
+			} 
+		} catch (Exception e) {
+			System.err.println(e);
+		} finally {
+			session.close();
+		}
+		return null;
+	}
 
 }
