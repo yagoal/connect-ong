@@ -10,7 +10,10 @@ public class teste {
 
 	public static void main(String[] args) {
 		
-
+		String login = "valdemilson.lins@gmail.com";
+		String password = "jumento";
+		
+		System.out.println(DaoGeneric.getInstance().hasUser(login, password));
 		
 //		Person ad1 = (Person) DaoGeneric.getInstance().retrieveById(Person.class, 1);
 //		Person ad2 = (Person) DaoGeneric.getInstance().retrieveById(Person.class, 2);
