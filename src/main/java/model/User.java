@@ -30,7 +30,7 @@ public class User {
 		this.password = password;
 	}
 
-	public Person getPerson() {
+	public Partner getPartner() {
 		return partner;
 	}
 
