@@ -39,21 +39,21 @@
         <aside>
             <div class="formulario">
                 <h5>Bem-vindo(a) ao <a class="boas-vindas" href=#tela-dois style="text-decoration: none;"><b>Connect-ONG</b></a></h5>
-                <form class="form">
+                <form action="UserLogin" method="post" class="form">
                     <div class="form-group">
                       <label for="exampleInputEmail1">E-mail</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
+                      <input type="email" name="inputLogin" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Senha</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+                      <input type="password" name="inputPassword" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
 
                       <div class="senha-variante">
                         <a href="redefinir-senha.html">Esqueci a senha</a>
                       </div>
                     </div>
 
-                    <a class="btn btn-primary" href="meu-perfil.html" role="button">ACESSAR</a>
+                    <button type="submit" class="btn btn-primary" role="button">ACESSAR</button>
 
                     <br><br>
 
