@@ -31,24 +31,22 @@
                 <div class="card">
                         <div class="card-body">
                             <p class="card-text">
-                                <b>Nome completo: </b> Mariane Milene Xavier Rocha <br>
-                                <b>Nome de usuário: </b> marianemxr <br>
-                                <b>CPF: </b> 000.000.000-00 <br>
-                                <b>Sexo: </b> Feminino <br>
-                                <b>Data de nascimento: </b> 31/12/2000 <br>
-                                <b>Animais adotados: </b> 1 <br> <br>
+                                <b>Nome completo: </b> <%=session.getAttribute("nome") %> <br>
+                                <b>CPF: </b> <%=session.getAttribute("cpf") %> <br>
+                                <b>Sexo: </b> <%=session.getAttribute("sexo") %> <br>
+                                <b>Data de nascimento: </b> <%=session.getAttribute("dataNasc") %> <br>
+                                <b>Animais adotados: </b> <%=session.getAttribute("listaAdo") %> <br> <br>
 
-                                <b>Logradouro: </b> São Severino <br>
-                                <b>Número: </b> 8 <br>
-                                <b>Bairro: </b> Perpétuo Socorro <br>
-                                <b>Cidade: </b> Paulo Afonso <br>
-                                <b>Estado: </b> Bahia <br>
-                                <b>CEP: </b> 48603-125 <br> <br>
+                                <b>Logradouro: </b> <%=session.getAttribute("rua") %> <br>
+                                <b>Número: </b> <%=session.getAttribute("numero") %> <br>
+                                <b>Bairro: </b> <%=session.getAttribute("bairro") %> <br>
+                                <b>Cidade: </b> <%=session.getAttribute("cidade") %> <br>
+                                <b>Estado: </b> <%=session.getAttribute("estado") %> <br>
+                                <b>CEP: </b> <%=session.getAttribute("cep") %> <br> <br>
 
-                                <b>E-mail: </b> marianemxr@gmail.com <br>                 
-                                <b>Telefone: </b> (75) XXXX-XXXX <br>
-                                <b>Celular 1: </b> (75) 9XXXX-XXXX <br>
-                                <b>Celular 2: </b> (75) 9XXXX-XXXX
+                                <b>E-mail: </b> <%=session.getAttribute("login") %>m <br>                 
+                                <b>Telefone 1: </b> <%=session.getAttribute("telefone1") %> <br>
+                                <b>Telefone 2: </b> <%=session.getAttribute("telefone2") %>
                             </p>
                         </div>
                 </div>
