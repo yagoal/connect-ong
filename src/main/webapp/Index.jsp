@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="resources/Bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/styles/style_index.css">
-<title>Connect Ong</title>
+<title>Connect-ONG</title>
 </head>
 <body>
     <header class="cabecalho">
@@ -15,12 +15,12 @@
         </div>
 
         <div class="menu">
-            <a href="index.jsp"><li>Home</li></a>
-            <a href="#tela-dois"><li>Sobre</li></a>
+            <a href="Index.jsp"><li>Home</li></a>
+            <a href="Index.jsp#tela-dois"><li>Sobre</li></a>
             <a href="animais-disponiveis.html"><li>Animais Disponíveis</li></a>
-            <a href="meu-perfil.html"><li>Meu Perfil</li></a>
-            <a href="#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
-            <a href="#fale-conosco"><li>Fale Conosco</li></a>
+            <a href="meuPerfil.jsp"><li>Meu Perfil</li></a>
+            <a href="Index.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
+            <a href="Index.jsp#fale-conosco"><li>Fale Conosco</li></a>
         </div>
     </header>
 
