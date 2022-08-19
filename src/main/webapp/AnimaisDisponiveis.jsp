@@ -40,7 +40,7 @@
                     <p class="card-text">Castração: Pendente</p>
                   </div>
                   <div class="card-footer">
-                    <a class="btn btn-primary" href="pagina-animal.html" role="button">+ Informações</a> <br><br>
+                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
                   </div>
                 </div>
 
@@ -56,7 +56,7 @@
                     <p class="card-text">Castração: Realizada</p>
                   </div>
                   <div class="card-footer">
-                    <a class="btn btn-primary" href="pagina-animal.html" role="button">+ Informações</a> <br><br>
+                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
                   </div>
                 </div>
 
@@ -72,7 +72,7 @@
                     <p class="card-text">Castração: Pendente</p>
                   </div>
                   <div class="card-footer">
-                    <a class="btn btn-primary" href="pagina-animal.html" role="button">+ Informações</a> <br><br>
+                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
                   </div>
                 </div>
 
@@ -91,7 +91,7 @@
                     <p class="card-text">Castração: Realizada</p>
                   </div>
                   <div class="card-footer">
-                    <a class="btn btn-primary" href="pagina-animal.html" role="button">+ Informações</a> <br><br>
+                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
                   </div>
                 </div>
 
@@ -107,7 +107,7 @@
                     <p class="card-text">Castração: Realizada</p>
                   </div>
                   <div class="card-footer">
-                    <a class="btn btn-primary" href="pagina-animal.html" role="button">+ Informações</a> <br><br>
+                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@
                     <p class="card-text">Castração: Pendente</p>
                   </div>
                   <div class="card-footer">
-                    <a class="btn btn-primary" href="pagina-animal.html" role="button">+ Informações</a> <br><br>
+                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
                   </div>
                 </div>
 

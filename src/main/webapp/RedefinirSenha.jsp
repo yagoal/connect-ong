@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="card-footer">
-                    <a class="btn btn-primary" href="index.html" role="button">Enviar</a>
+                    <a class="btn btn-primary" href="Index.jsp" role="button">Enviar</a>
                 </div>
             </div>
         </div>
