@@ -39,7 +39,7 @@
         <aside>
             <div class="formulario">
                 <h5>Bem-vindo(a) ao <a class="boas-vindas" href=#tela-dois style="text-decoration: none;"><b>Connect-ONG</b></a></h5>
-                <form action="UserLogin" method="post" class="form">
+                <form action="Login" method="post" class="form">
                     <div class="form-group">
                       <label for="exampleInputEmail1">E-mail</label>
                       <input type="email" name="inputLogin" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">

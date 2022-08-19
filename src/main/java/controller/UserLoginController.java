@@ -14,10 +14,8 @@ import javax.servlet.http.HttpSession;
 import dao.DaoGeneric;
 import model.User;
 
-/**
- * Servlet implementation class CadastroUsuario
- */
-@WebServlet("/UserLogin")
+
+@WebServlet("/Login")
 public class UserLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
