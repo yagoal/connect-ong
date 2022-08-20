@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="resources/styles/style_cadastro.css">
 <link rel="stylesheet" href="resources/Bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/styles/style_index.css">
 <title>Cadastro de Animais</title>
 </head>
 <body>
@@ -17,8 +17,8 @@
         <div class="menu">
             <a href="Index.jsp"><li>Home</li></a>
             <a href="Index.jsp#tela-dois"><li>Sobre</li></a>
-            <a href="animais-disponiveis.html"><li>Animais Disponíveis</li></a>
-            <a href="meuPerfil.jsp"><li>Meu Perfil</li></a>
+            <a href="AnimaisDisponiveis.jsp"><li>Animais Disponíveis</li></a>
+            <a href="MeuPerfil.jsp"><li>Meu Perfil</li></a>
             <a href="Index.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
             <a href="Index.jsp#fale-conosco"><li>Fale Conosco</li></a>
         </div>
@@ -111,8 +111,8 @@
         <footer>
             <div class="rodape">
                 <p> Controle e Gerenciamento para ONGs ligadas à causa animal <br>
-                Curso Técnico Subsequente em Informática - 3º Módulo <br>
-                2022 - Mariane Milene Xavier Rocha - Todos os direitos reservados </p>
+                Curso Técnico Subsequente em Informática - 4º Módulo <br>
+                2022 - Mariane Rocha, Valdemilson Lins e Yago Augusto - Todos os direitos reservados </p>
             </div>
         </footer>
 
