@@ -2,13 +2,13 @@ body{
     margin: 0 auto;
 }
 
-li{
+.menu li{
     display: inline-block;
     margin: 0px 35px 0px 0px;
     color: white;
 }
 
-li:hover{
+.menu li:hover{
     font-weight: 500;
     transform: scale(1.2);
 }
@@ -38,8 +38,6 @@ li:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    float: left;
-    padding: 200px;
 }
 
 .card{
