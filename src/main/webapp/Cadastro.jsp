@@ -38,7 +38,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCPF">CPF</label>
-                        <input type="text" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
+                        <input type="text" oninput="mascararCPF(this);validarCPF(this)" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
                     </div>
 
                     <div class="form-group col-md-4">
@@ -61,8 +61,12 @@
                     <label for="inputEmail4">Email</label>
                     <input type="email" class="form-control" id="inputEmail4" name="inputEmail" placeholder="Email" required>
                   </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-3">
                     <label for="inputPassword4">Senha</label>
+                    <input minlength="8" type="password" class="form-control" id="inputPassword4" name="inputPassword" placeholder="Senha" required>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputPassword4">Verificar senha</label>
                     <input type="password" class="form-control" id="inputPassword4" name="inputPassword" placeholder="Senha" required>
                   </div>
                 </div>
@@ -181,7 +185,7 @@
               </form>
         </div>
     </main>
-
+s
         <footer>
             <div class="rodape">
                 <p> Controle e Gerenciamento para ONGs ligadas à causa animal <br>
@@ -191,4 +195,6 @@
         </footer>
 
 </body>
+
+<script src="resources/js/cadastro.js"></script>
 </html>
