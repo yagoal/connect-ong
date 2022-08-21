@@ -1,4 +1,30 @@
+let form = document.querySelector('form')
+        const botao = document.querySelector('#finalizarCadastro')
+        form.addEventListener('change', function(){
+            const campos = document.querySelectorAll('input')
+            let libera = []
+            console.log(campos)
+            
+            campos.forEach(e => {
+                if(e.value){
+                    libera.push(true)
+                }
+                console.log(libera)
+            })
+            if(libera.length == campos.length){
+                $('#finalizarCadastro').removeAttr('disabled')
+                console.log('adicionado')
+                    
+            } else {
+                $('#finalizarCadastro').attr('disabled')
+                console.log('removido')
+            }
+        })
+
+
 function validarCPF(input){
+	$('#negado').remove()
+	
     let cpf = input.value
     cpf = Array.from(cpf)
     let calculo = 0
@@ -37,48 +63,30 @@ function validarCPF(input){
         if(primeiroDCpf == primeiroDCalculado && segundoDCpf == segundoDCalculado){
             console.log('cpf valido')
         } else {
-            document.querySelector('#inputCPF').setAttribute("aria-invalid", "true");
-            document.querySelector('#inputCPF').setCustomValidity('Preencha com um CPF valido');
+            input.insertAdjacentHTML('afterend',`<p id="negado">CPF invalido</p>`)
 
             console.log('cpf invalido')
         }
     }
 }
 
-function rgSomentenumeros(input){
-    let entrada = input.value
-
-    if(isNaN(entrada[entrada.length-1])){
-        return input.value = entrada.substring(0, entrada.length-1)
-    }
-
-}
-
 function verificarSenhas(input){
             $('#negado').remove()
-            let senha = document.getElementById('senha')
+            input.removeAttribute('aria-invalid')
+            
+            let senha = document.getElementById('inputPassword')
             let confirmaSenha = input.value
             
             if(senha.value != confirmaSenha) {
                 console.log('senhas diferentes')
                 input.insertAdjacentHTML('afterend',`<p id="negado">Senhas diferentes</p>`)
+                input.setAttribute("aria-invalid", "true")
+                input.oninvalid(setCustomValidity('senha incorreta'))
             } else {
                 console.log('senha correta')
             }
 }
 
-function mascararData(input){
-    let entrada = input.value
-    input.setAttribute('maxlength', '10')
-
-    if(isNaN(entrada[entrada.length-1])){
-        return input.value = entrada.substring(0, entrada.length-1)
-    }
-
-    if(entrada.length == 2 || entrada.length == 5 ){
-        input.value += '/'
-    }
-}
 
 function mascararCPF(input){
     let entrada = input.value

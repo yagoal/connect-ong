@@ -17,7 +17,7 @@
         <div class="menu">
             <a href="index.html"><li>Home</li></a>
             <a href="index.html#tela-dois"><li>Sobre</li></a>
-            <a href="animais-disponiveis.html"><li>Animais Disponíveis</li></a>
+            <a href="animais-disponiveis.html"><li>Animais Dispon?veis</li></a>
             <a href="meu-perfil.html"><li>Meu Perfil</li></a>
             <a href="index.html#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
             <a href="index.html#fale-conosco"><li>Fale Conosco</li></a>
@@ -52,7 +52,7 @@
 
                     <div class="form-group col-md-4">
                         <label for="inputName">Data de nascimento</label>
-                        <input type="date" class="form-control" id="inputName" name="inputBirthDate" required>
+                        <input type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" required>
                     </div>
                 </div>                
 
@@ -63,11 +63,11 @@
                   </div>
                   <div class="form-group col-md-3">
                     <label for="inputPassword4">Senha</label>
-                    <input minlength="8" type="password" class="form-control" id="inputPassword4" name="inputPassword" placeholder="Senha" required>
+                    <input minlength="8" type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Senha" required>
                   </div>
                   <div class="form-group col-md-3">
                     <label for="inputPassword4">Verificar senha</label>
-                    <input type="password" class="form-control" id="inputPassword4" name="inputPassword" placeholder="Senha" required>
+                    <input type="password" class="form-control" oninput="verificarSenhas(this)" id="inputPasswordValid" name="inputPasswordValid" placeholder="Verificar Senha" required>
                   </div>
                 </div>
 
@@ -80,7 +80,7 @@
                     </div>
 
                     <div class="form-group col-md-2">
-                        <label for="inputNumero">Número</label>
+                        <label for="inputNumero">N?mero</label>
                         <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
                     </div>
 
@@ -174,22 +174,22 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
-                      Aceito receber mensagens e ligações da Connect-ONG. 
+                      Aceito receber mensagens e liga??es da Connect-ONG. 
                     </label>
                   </div>
                 </div>
 
                 <br>
 
-                <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
+                <button disabled type="submit" id="finalizarCadastro" class="btn btn-primary">Finalizar Cadastro</button>
               </form>
         </div>
     </main>
 s
         <footer>
             <div class="rodape">
-                <p> Controle e Gerenciamento para ONGs ligadas à causa animal <br>
-                Curso Técnico Subsequente em Informática - 3º Módulo <br>
+                <p> Controle e Gerenciamento para ONGs ligadas ? causa animal <br>
+                Curso T?cnico Subsequente em Inform?tica - 3? M?dulo <br>
                 2022 - Mariane Milene Xavier Rocha - Todos os direitos reservados </p>
             </div>
         </footer>
@@ -197,4 +197,5 @@ s
 </body>
 
 <script src="resources/js/cadastro.js"></script>
+<script src="resources/js/jquery.js"></script>
 </html>
