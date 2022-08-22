@@ -103,3 +103,35 @@ function mascararCPF(input){
         input.value += '-'
     }
 }
+
+function buscarCep(input) {
+    const cep = input.value
+    const rua = document.querySelector('#inputRua')
+    const bairro = document.querySelector('#inputBairro')
+    const cidade = document.querySelector('#inputCity')
+    const estado = document.querySelector('#inputEstado')
+
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    .then(data => data.json())
+    .then(json => {
+	
+		if(!('erro' in json)) {
+	        const cepRecebido = json.cep
+	        const bairroRecebido = json.bairro
+	        const ruaRecebida = json.logradouro
+	        const cidadeRecebida = json.localidade
+	        const estadoRecebido = json.uf
+	
+	        rua.value = ruaRecebida
+	        bairro.value = bairroRecebido
+	        cidade.value = cidadeRecebida
+	        estado.value = estadoRecebido
+	        input.value = cepRecebido
+			
+		} else {
+			console.log('cep nao existe')
+		}
+
+        console.log(json)
+    })
+   }

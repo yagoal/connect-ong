@@ -80,14 +80,13 @@
                 <br> 
 
                 <div class="form-row">
+                	<div class="form-group col-md-2">
+                      <label for="inputCEP">CEP</label>
+                      <input onblur="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
+                    </div>
                     <div class="form-group col-md-5">
                         <label for="inputRua">Logradouro</label>
                         <input type="text" class="form-control" id="inputRua" name="inputStreet" placeholder="Avenida Marcondes Ferraz" required>
-                    </div>
-
-                    <div class="form-group col-md-2">
-                        <label for="inputNumero">N?mero</label>
-                        <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
                     </div>
 
                     <div class="form-group col-md-5">
@@ -135,8 +134,8 @@
                       </select>
                     </div>
                     <div class="form-group col-md-2">
-                      <label for="inputCEP">CEP</label>
-                      <input type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
+                        <label for="inputNumero">Número</label>
+                        <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
                     </div>
                   </div>
 
@@ -146,7 +145,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-1">
                         <label for="inputTelefone">DDD 1</label>
-                        <input type="tel" class="form-control" id="inputTelefone" name="inputDDD1">
+                        <input maxlength="2" type="tel" class="form-control" id="inputTelefone" name="inputDDD1">
                     </div>
                     <div class="form-group col-md-5">
                         <label for="inputTelefone">Telefone 1</label>
@@ -155,7 +154,7 @@
 
 					<div class="form-group col-md-1">
                         <label for="inputCelular2">DDD 2</label>
-                        <input type="tel" class="form-control" id="inputDDD2" name="inputDDD2">
+                        <input maxlength="2" type="tel" class="form-control" id="inputDDD2" name="inputDDD2">
                     </div>
                     <div class="form-group col-md-5">
                         <label for="inputCelular2">Telefone 2</label>
