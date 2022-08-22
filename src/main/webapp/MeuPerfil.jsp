@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Meu perfil</title>
+<title>Meu Perfil</title>
 <link rel="stylesheet" href="resources/styles/style_meu-perfil.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -16,12 +16,12 @@
         </div>
 
         <div class="menu">
-            <a href="index.html"><li>Home</li></a>
-            <a href="index.html#tela-dois"><li>Sobre</li></a>
-            <a href="animais-disponiveis.html"><li>Animais Disponíveis</li></a>
-            <a href="meu-perfil.html"><li>Meu Perfil</li></a>
-            <a href="index.html#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
-            <a href="index.html#fale-conosco"><li>Fale Conosco</li></a>
+            <a href="Index.jsp"><li>Home</li></a>
+            <a href="Index.jsp#tela-dois"><li>Sobre</li></a>
+            <a href="AnimaisDisponiveis.jsp"><li>Animais Disponíveis</li></a>
+            <a href="MeuPerfil.jsp"><li>Meu Perfil</li></a>
+            <a href="Index.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
+            <a href="Index.jsp#fale-conosco"><li>Fale Conosco</li></a>
         </div>
     </header>
 
@@ -76,8 +76,8 @@
         <footer>
             <div class="rodape">/connect-ong/src/main/webapp/resources/Bootstrap/js/bootstrap.min.js
                 <p> Controle e Gerenciamento para ONGs ligadas à causa animal <br>
-                Curso Técnico Subsequente em Informática - 3º Módulo <br>
-                2022 - Mariane Milene Xavier Rocha - Todos os direitos reservados </p>
+                Curso Técnico Subsequente em Informática - 4º Módulo <br>
+                2022 - Mariane Rocha, Valdemilson Lins e Yago Augusto - Todos os direitos reservados </p>
             </div>
         </footer>
 </body>
