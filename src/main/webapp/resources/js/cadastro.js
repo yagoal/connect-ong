@@ -1,29 +1,30 @@
+
+//script para verificar se todos os campos estão preenchidos corretamente para liberar o botão de submit
 let form = document.querySelector('form')
         const botao = document.querySelector('#finalizarCadastro')
-        form.addEventListener('change', function(){
-            const campos = document.querySelectorAll('input')
+        form.addEventListener('input', function(){
+			
             let libera = []
-            console.log(campos)
-            
-            campos.forEach(e => {
-                if(e.value){
-                    libera.push(true)
-                }
-                console.log(libera)
-            })
-            if(libera.length == campos.length){
-                $('#finalizarCadastro').removeAttr('disabled')
-                console.log('adicionado')
+            const campos = document.querySelectorAll('input')
+            const negados = document.querySelectorAll('.negado')
+           
+
+			campos.forEach(e => {
+	        	if(e.value){
+	            	libera.push(true)
+	            }          
+           	})
+            if(libera.length == campos.length && !negados.length){
+                botao.removeAttribute('disabled','')
                     
             } else {
-                $('#finalizarCadastro').attr('disabled')
-                console.log('removido')
+                botao.setAttribute('disabled','')
             }
         })
 
 
 function validarCPF(input){
-	$('#negado').remove()
+	$('#negadoCpf').remove()
 	
     let cpf = input.value
     cpf = Array.from(cpf)
@@ -63,7 +64,7 @@ function validarCPF(input){
         if(primeiroDCpf == primeiroDCalculado && segundoDCpf == segundoDCalculado){
             console.log('cpf valido')
         } else {
-            input.insertAdjacentHTML('afterend',`<p id="negado">CPF invalido</p>`)
+            input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoCpf">CPF invalido</p>`)
 
             console.log('cpf invalido')
         }
@@ -71,17 +72,14 @@ function validarCPF(input){
 }
 
 function verificarSenhas(input){
-            $('#negado').remove()
-            input.removeAttribute('aria-invalid')
+            $('#negadoSenha').remove()
             
             let senha = document.getElementById('inputPassword')
             let confirmaSenha = input.value
             
             if(senha.value != confirmaSenha) {
                 console.log('senhas diferentes')
-                input.insertAdjacentHTML('afterend',`<p id="negado">Senhas diferentes</p>`)
-                input.setAttribute("aria-invalid", "true")
-                input.oninvalid(setCustomValidity('senha incorreta'))
+                input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoSenha">Senhas diferentes</p>`)
             } else {
                 console.log('senha correta')
             }
@@ -105,6 +103,7 @@ function mascararCPF(input){
 }
 
 function buscarCep(input) {
+	$('#negadoCep').remove()
     const cep = input.value
     const rua = document.querySelector('#inputRua')
     const bairro = document.querySelector('#inputBairro')
@@ -129,6 +128,7 @@ function buscarCep(input) {
 	        input.value = cepRecebido
 			
 		} else {
+			input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoCep">CEP Inexistente</p>`)
 			console.log('cep nao existe')
 		}
 

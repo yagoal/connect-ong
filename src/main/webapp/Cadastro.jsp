@@ -82,7 +82,7 @@
                 <div class="form-row">
                 	<div class="form-group col-md-2">
                       <label for="inputCEP">CEP</label>
-                      <input onblur="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
+                      <input oninput="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
                     </div>
                     <div class="form-group col-md-5">
                         <label for="inputRua">Logradouro</label>
@@ -179,7 +179,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
-                      Aceito receber mensagens e liga??es da Connect-ONG. 
+                      Aceito receber mensagens e ligações da Connect-ONG. 
                     </label>
                   </div>
                 </div>
