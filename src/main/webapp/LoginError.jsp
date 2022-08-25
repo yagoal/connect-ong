@@ -36,8 +36,8 @@
                 </div>
 
                 <div class="card-footer">
-                    <a class="btn btn-primary" href="Login.jsp" role="button">Tentar novamente</a>
-                    <a class="btn btn-primary" href="RedefinirSenha.jsp" role="button">Redefinir senha</a>
+                    <a class="btn btn-primary" href="Login.jsp" role="button">Tentar Novamente</a>
+                    <a class="btn btn-primary" href="RedefinirSenha.jsp" role="button">Redefinir Senha</a>
                 </div>
             </div>
         </div>
