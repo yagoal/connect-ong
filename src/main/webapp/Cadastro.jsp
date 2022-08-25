@@ -7,6 +7,7 @@
 <title>Cadastro</title>
 <link rel="stylesheet" href="resources/Bootstrap/css/bootstrap.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="resources/js/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="resources/styles/style_cadastro.css">
 
@@ -34,14 +35,15 @@
     </header>
 
     <main>
+    	
         <div class="form-cadastro">
-            <form class="caixa" action="RegisterUserController" method="post">               
+            <form class="caixa" action="RegisterUserController" method="post"> 
+                          
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputName">Nome completo</label>
                         <input type="text" class="form-control" id="inputName" name="inputName" required>
-                    </div>
-						
+                    </div>	
                 </div>
 
                 <div class="form-row">
@@ -68,7 +70,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" name="inputEmail" placeholder="Email" required>
+                    <input oninput="verificarEmail(this)" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
                   </div>
                   <div class="form-group col-md-3">
                     <label for="inputPassword4">Senha</label>
@@ -208,5 +210,5 @@ s
 </body>
 
 <script src="resources/js/cadastro.js"></script>
-<script src="resources/js/jquery.js"></script>
+
 </html>
