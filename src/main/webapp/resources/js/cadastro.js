@@ -75,11 +75,12 @@ function verificarSenhas(input){
             $('#negadoSenha').remove()
             
             let senha = document.getElementById('inputPassword')
-            let confirmaSenha = input.value
+            let confirmaSenha = document.getElementById('inputPasswordValid')
+            console.log(senha.value)
             
-            if(senha.value != confirmaSenha) {
+            if(input.value != confirmaSenha.value || input.value != senha.value ) {
                 console.log('senhas diferentes')
-                input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoSenha">Senhas diferentes</p>`)
+                confirmaSenha.insertAdjacentHTML('afterend',`<p class="negado" id="negadoSenha">Senhas diferentes</p>`)
             } else {
                 console.log('senha correta')
             }
