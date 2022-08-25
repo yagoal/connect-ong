@@ -21,7 +21,9 @@ li:hover{
 .img-logotipo{
     height: 13vh;
 }
-
+.valido{
+	color:green;
+}
 .menu{
     height: 5vh;
     width: 100vw;

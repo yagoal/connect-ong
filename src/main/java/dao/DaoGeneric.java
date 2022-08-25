@@ -3,6 +3,8 @@ package dao;
 import java.sql.ResultSet;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.hibernate.Session;
 
 import model.User;
@@ -110,6 +112,9 @@ public class DaoGeneric {
 			return classModels;
 		}
 	
+	
+//	-------------------------------Regras de negocios--------------------
+	
 	public User hasUser(String pLogin, String pPassword) {
 		User user;
 		Session session = openSession();
@@ -128,4 +133,20 @@ public class DaoGeneric {
 		return null;
 	}
 
+	public User retrieveByEmail(String pEmail) {
+		User user = null;
+		Session session = openSession();
+		
+		try {
+			session.beginTransaction();
+			user = (User) session.createQuery("FROM User WHERE login='"+pEmail+"'").uniqueResult();
+		} catch (Exception e) {
+			System.err.println(e);
+		} finally {
+			session.close();
+		}
+		return user;
+		
+	}
+	
 }
