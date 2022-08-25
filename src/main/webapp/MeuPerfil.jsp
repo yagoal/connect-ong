@@ -16,18 +16,18 @@
         </div>
 
         <div class="menu">
-            <a href="Index.jsp"><li>Home</li></a>
-            <a href="Index.jsp#tela-dois"><li>Sobre</li></a>
-            <a href="AnimaisDisponiveis.jsp"><li>Animais Disponíveis</li></a>
+            <a href="Login.jsp"><li>Home</li></a>
+            <a href="Login.jsp#tela-dois"><li>Sobre</li></a>
+            <a href="AnimaisDisponiveis.jsp"><li>Animais Disponï¿½veis</li></a>
             <a href="MeuPerfil.jsp"><li>Meu Perfil</li></a>
-            <a href="Index.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
-            <a href="Index.jsp#fale-conosco"><li>Fale Conosco</li></a>
+            <a href="Login.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
+            <a href="Login.jsp#fale-conosco"><li>Fale Conosco</li></a>
         </div>
     </header>
 
     <main>
         <div class="perfil">
-            <img class="foto" src="resources/components/foto.svg" alt="Foto do Usuário" style="width: 10vw;">        
+            <img class="foto" src="resources/components/foto.svg" alt="Foto do Usuï¿½rio" style="width: 10vw;">        
     
                 <div class="card">
                         <div class="card-body">
@@ -39,7 +39,7 @@
                                 <b>Animais adotados: </b> <%=session.getAttribute("listaAdo") %> <br> <br>
 
                                 <b>Logradouro: </b> <%=session.getAttribute("rua") %> <br>
-                                <b>Número: </b> <%=session.getAttribute("numero") %> <br>
+                                <b>Nï¿½mero: </b> <%=session.getAttribute("numero") %> <br>
                                 <b>Bairro: </b> <%=session.getAttribute("bairro") %> <br>
                                 <b>Cidade: </b> <%=session.getAttribute("cidade") %> <br>
                                 <b>Estado: </b> <%=session.getAttribute("estado") %> <br>
@@ -75,8 +75,8 @@
 
         <footer>
             <div class="rodape">
-                <p> Controle e Gerenciamento para ONGs ligadas à causa animal <br>
-                Curso Técnico Subsequente em Informática - 4º Módulo <br>
+                <p> Controle e Gerenciamento para ONGs ligadas ï¿½ causa animal <br>
+                Curso Tï¿½cnico Subsequente em Informï¿½tica - 4ï¿½ Mï¿½dulo <br>
                 2022 - Mariane Rocha, Valdemilson Lins e Yago Augusto - Todos os direitos reservados </p>
             </div>
         </footer>

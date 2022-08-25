@@ -15,12 +15,12 @@
         </div>
 
         <div class="menu">
-            <a href="Index.jsp"><li>Home</li></a>
-            <a href="Index.jsp#tela-dois"><li>Sobre</li></a>
+            <a href="Login.jsp"><li>Home</li></a>
+            <a href="Login.jsp#tela-dois"><li>Sobre</li></a>
             <a href="AnimaisDisponiveis.jsp"><li>Animais Disponíveis</li></a>
             <a href="MeuPerfil.jsp"><li>Meu Perfil</li></a>
-            <a href="Index.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
-            <a href="Index.jsp#fale-conosco"><li>Fale Conosco</li></a>
+            <a href="Login.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
+            <a href="Login.jsp#fale-conosco"><li>Fale Conosco</li></a>
         </div>
     </header>
 
@@ -41,9 +41,9 @@
                     </div>
 
                     <div class="card-footer">
-                        <a class="btn btn-primary" href="Index.jsp" role="button">Retornar à Página Inicial</a>
-                        <a class="btn btn-primary" href="Index.jsp#perguntas-frequentes" role="button">Perguntas Frequentes</a>
-                        <a class="btn btn-primary" href="Index.jsp#fale-conosco" role="button">Fale Conosco</a>
+                        <a class="btn btn-primary" href="Login.jsp" role="button">Retornar à Página Inicial</a>
+                        <a class="btn btn-primary" href="Login.jsp#perguntas-frequentes" role="button">Perguntas Frequentes</a>
+                        <a class="btn btn-primary" href="Login.jsp#fale-conosco" role="button">Fale Conosco</a>
                     </div>
                 </div>
             </div>

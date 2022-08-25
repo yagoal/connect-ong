@@ -19,18 +19,12 @@
         </div>
 
         <div class="menu">
-            <a href="Index.jsp"><li>Home</li></a>
-            <a href="Index.jsp#tela-dois"><li>Sobre</li></a>
+            <a href="Login.jsp"><li>Home</li></a>
+            <a href="Login.jsp#tela-dois"><li>Sobre</li></a>
             <a href="AnimaisDisponiveis.jsp"><li>Animais Dispon�veis</li></a>
             <a href="MeuPerfil.jsp"><li>Meu Perfil</li></a>
-            <a href="Index.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
-            <a href="Index.jsp#fale-conosco"><li>Fale Conosco</li></a>
-            <a href="index.html"><li>Home</li></a>
-            <a href="index.html#tela-dois"><li>Sobre</li></a>
-            <a href="animais-disponiveis.html"><li>Animais Dispon?veis</li></a>
-            <a href="meu-perfil.html"><li>Meu Perfil</li></a>
-            <a href="index.html#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
-            <a href="index.html#fale-conosco"><li>Fale Conosco</li></a>
+            <a href="Login.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
+            <a href="Login.jsp#fale-conosco"><li>Fale Conosco</li></a>
         </div>
     </header>
 
