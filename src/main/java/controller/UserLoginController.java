@@ -2,8 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,10 +12,8 @@ import javax.servlet.http.HttpSession;
 import dao.DaoGeneric;
 import model.User;
 
-/**
- * Servlet implementation class CadastroUsuario
- */
-@WebServlet("/UserLogin")
+
+@WebServlet("/Login")
 public class UserLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
@@ -53,11 +49,10 @@ public class UserLoginController extends HttpServlet {
 			httpSession.setAttribute("telefone1", user.getPartner().getPhone1().getNumber());
 			httpSession.setAttribute("telefone2", user.getPartner().getPhone2().getNumber());
 			
-			response.sendRedirect("meuPerfil.jsp");
+			response.sendRedirect("MeuPerfil.jsp");
 		} else {
 			out.print("login error");
 		}
-		
 		
 		
 	}

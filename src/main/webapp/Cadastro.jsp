@@ -17,10 +17,16 @@
         <div class="menu">
             <a href="Index.jsp"><li>Home</li></a>
             <a href="Index.jsp#tela-dois"><li>Sobre</li></a>
-            <a href="AnimaisDisponiveis.jsp"><li>Animais Disponíveis</li></a>
+            <a href="AnimaisDisponiveis.jsp"><li>Animais Disponï¿½veis</li></a>
             <a href="MeuPerfil.jsp"><li>Meu Perfil</li></a>
             <a href="Index.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
             <a href="Index.jsp#fale-conosco"><li>Fale Conosco</li></a>
+            <a href="index.html"><li>Home</li></a>
+            <a href="index.html#tela-dois"><li>Sobre</li></a>
+            <a href="animais-disponiveis.html"><li>Animais Dispon?veis</li></a>
+            <a href="meu-perfil.html"><li>Meu Perfil</li></a>
+            <a href="index.html#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
+            <a href="index.html#fale-conosco"><li>Fale Conosco</li></a>
         </div>
     </header>
 
@@ -38,7 +44,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCPF">CPF</label>
-                        <input type="text" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
+                        <input type="text" oninput="mascararCPF(this);validarCPF(this)" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
                     </div>
 
                     <div class="form-group col-md-4">
@@ -52,7 +58,7 @@
 
                     <div class="form-group col-md-4">
                         <label for="inputName">Data de nascimento</label>
-                        <input type="date" class="form-control" id="inputName" name="inputBirthDate" required>
+                        <input type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" required>
                     </div>
                 </div>                
 
@@ -61,23 +67,26 @@
                     <label for="inputEmail4">Email</label>
                     <input type="email" class="form-control" id="inputEmail4" name="inputEmail" placeholder="Email" required>
                   </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-3">
                     <label for="inputPassword4">Senha</label>
-                    <input type="password" class="form-control" id="inputPassword4" name="inputPassword" placeholder="Senha" required>
+                    <input minlength="8" type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Senha" required>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputPassword4">Verificar senha</label>
+                    <input type="password" class="form-control" oninput="verificarSenhas(this)" id="inputPasswordValid" name="inputPasswordValid" placeholder="Verificar Senha" required>
                   </div>
                 </div>
 
                 <br> 
 
                 <div class="form-row">
+                	<div class="form-group col-md-2">
+                      <label for="inputCEP">CEP</label>
+                      <input oninput="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
+                    </div>
                     <div class="form-group col-md-5">
                         <label for="inputRua">Logradouro</label>
                         <input type="text" class="form-control" id="inputRua" name="inputStreet" placeholder="Avenida Marcondes Ferraz" required>
-                    </div>
-
-                    <div class="form-group col-md-2">
-                        <label for="inputNumero">Número</label>
-                        <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
                     </div>
 
                     <div class="form-group col-md-5">
@@ -125,8 +134,8 @@
                       </select>
                     </div>
                     <div class="form-group col-md-2">
-                      <label for="inputCEP">CEP</label>
-                      <input type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
+                        <label for="inputNumero">Número</label>
+                        <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
                     </div>
                   </div>
 
@@ -136,7 +145,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-1">
                         <label for="inputTelefone">DDD 1</label>
-                        <input type="tel" class="form-control" id="inputTelefone" name="inputDDD1">
+                        <input maxlength="2" type="tel" class="form-control" id="inputTelefone" name="inputDDD1">
                     </div>
                     <div class="form-group col-md-5">
                         <label for="inputTelefone">Telefone 1</label>
@@ -145,7 +154,7 @@
 
 					<div class="form-group col-md-1">
                         <label for="inputCelular2">DDD 2</label>
-                        <input type="tel" class="form-control" id="inputDDD2" name="inputDDD2">
+                        <input maxlength="2" type="tel" class="form-control" id="inputDDD2" name="inputDDD2">
                     </div>
                     <div class="form-group col-md-5">
                         <label for="inputCelular2">Telefone 2</label>
@@ -177,18 +186,24 @@
 
                 <br>
 
-                <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
+                <button disabled type="submit" id="finalizarCadastro" class="btn btn-primary">Finalizar Cadastro</button>
               </form>
         </div>
     </main>
-
+s
         <footer>
             <div class="rodape">
-                <p> Controle e Gerenciamento para ONGs ligadas à causa animal <br>
-                Curso Técnico Subsequente em Informática - 4º Módulo <br>
+                <p> Controle e Gerenciamento para ONGs ligadas ï¿½ causa animal <br>
+                Curso Tï¿½cnico Subsequente em Informï¿½tica - 4ï¿½ Mï¿½dulo <br>
                 2022 - Mariane Rocha, Valdemilson Lins e Yago Augusto - Todos os direitos reservados </p>
+                <p> Controle e Gerenciamento para ONGs ligadas ? causa animal <br>
+                Curso T?cnico Subsequente em Inform?tica - 3? M?dulo <br>
+                2022 - Mariane Milene Xavier Rocha - Todos os direitos reservados </p>
             </div>
         </footer>
 
 </body>
+
+<script src="resources/js/cadastro.js"></script>
+<script src="resources/js/jquery.js"></script>
 </html>

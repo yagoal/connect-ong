@@ -55,7 +55,12 @@ li:hover{
 .btn{
     width: 100%;
 }
-
+button[disabled]:hover{
+	cursor: not-allowed;
+}
+.negado {
+	color: red;
+}
 .rodape{
     height: 15vh;
     width: 100%;
