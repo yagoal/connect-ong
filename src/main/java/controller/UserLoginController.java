@@ -51,7 +51,7 @@ public class UserLoginController extends HttpServlet {
 			
 			response.sendRedirect("MeuPerfil.jsp");
 		} else {
-			out.print("login error");
+			response.sendRedirect("LoginError.jsp");
 		}
 		
 		
