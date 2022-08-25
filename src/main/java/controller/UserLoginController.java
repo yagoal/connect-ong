@@ -49,11 +49,10 @@ public class UserLoginController extends HttpServlet {
 			httpSession.setAttribute("telefone1", user.getPartner().getPhone1().getNumber());
 			httpSession.setAttribute("telefone2", user.getPartner().getPhone2().getNumber());
 			
-			response.sendRedirect("meuPerfil.jsp");
+			response.sendRedirect("MeuPerfil.jsp");
 		} else {
 			out.print("login error");
 		}
-		
 		
 		
 	}
