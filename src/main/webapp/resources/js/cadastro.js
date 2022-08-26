@@ -1,4 +1,3 @@
-
 //script para verificar se todos os campos estão preenchidos corretamente para liberar o botão de submit
 let form = document.querySelector('form')
         const botao = document.querySelector('#finalizarCadastro')
@@ -8,7 +7,7 @@ let form = document.querySelector('form')
             const campos = document.querySelectorAll('input')
             const negados = document.querySelectorAll('.negado')
            
-
+			console.log(negados)
 			campos.forEach(e => {
 	        	if(e.value){
 	            	libera.push(true)
@@ -21,6 +20,7 @@ let form = document.querySelector('form')
                 botao.setAttribute('disabled','')
             }
         })
+
 
 
 function validarCPF(input){
@@ -75,13 +75,14 @@ function verificarSenhas(input){
             $('#negadoSenha').remove()
             
             let senha = document.getElementById('inputPassword')
-            let confirmaSenha = input.value
+            let confirmaSenha = document.getElementById('inputPasswordValid')
+            //console.log(senha.value)
             
-            if(senha.value != confirmaSenha) {
-                console.log('senhas diferentes')
-                input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoSenha">Senhas diferentes</p>`)
+            if(input.value != confirmaSenha.value || input.value != senha.value ) {
+                //console.log('senhas diferentes')
+                confirmaSenha.insertAdjacentHTML('afterend',`<p class="negado" id="negadoSenha">Senhas diferentes</p>`)
             } else {
-                console.log('senha correta')
+                //console.log('senha correta')
             }
 }
 
@@ -135,3 +136,14 @@ function buscarCep(input) {
         console.log(json)
     })
    }
+function verificarEmail(input) {
+	$('#negadoEmail').remove()
+	$.ajax({
+		method: 'GET',
+		url: 'RegisterUserController',
+		data:{email: input.value}
+	}).done(() => {
+		input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoEmail">Email ja esta em uso</p>`)
+	})
+	
+}
