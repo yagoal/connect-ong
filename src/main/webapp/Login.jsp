@@ -36,7 +36,7 @@
                       <input type="password" name="inputPassword" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
 
                       <div class="senha-variante">
-                        <a href="redefinir-senha.html">Esqueci a senha</a>
+                        <a href="RedefinirSenha.jsp">Esqueci a senha</a>
                       </div>
                     </div>
 
