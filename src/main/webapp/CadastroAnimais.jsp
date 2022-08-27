@@ -9,21 +9,8 @@
 <title>Cadastro de Animais</title>
 </head>
 <body>
-    <header class="cabecalho">
-        <div class="logotipo">
-            <img class="img-logotipo" src="resources/components/img-temp.png" alt="Logotipo" >
-        </div>
-
-        <div class="menu">
-            <a href="Login.jsp"><li>Home</li></a>
-            <a href="Login.jsp#tela-dois"><li>Sobre</li></a>
-            <a href="AnimaisDisponiveis.jsp"><li>Animais Disponíveis</li></a>
-            <a href="MeuPerfil.jsp"><li>Meu Perfil</li></a>
-            <a href="Login.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
-            <a href="Login.jsp#fale-conosco"><li>Fale Conosco</li></a>
-        </div>
-    </header>
-
+    <%@ include file="Structs/NavBar.jsp"%>
+    
     <main>
         <div class="form-cadastro">
             <form class="caixa">               
@@ -107,14 +94,7 @@
               </form>
         </div>
     </main>
-
-        <footer>
-            <div class="rodape">
-                <p> Controle e Gerenciamento para ONGs ligadas à causa animal <br>
-                Curso Técnico Subsequente em Informática - 4º Módulo <br>
-                2022 - Mariane Rocha, Valdemilson Lins e Yago Augusto - Todos os direitos reservados </p>
-            </div>
-        </footer>
+	<%@ include file="Structs/Footer.jsp"%>
 
 </body>
 </html>
