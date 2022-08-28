@@ -92,7 +92,7 @@ public class RegisterUserController extends HttpServlet {
 		
 		DaoGeneric.getInstance().save(user);
 		
-		response.sendRedirect("Saved.jsp");
+		response.sendRedirect("SucessoCadastro.jsp");
 	}
 
 }
