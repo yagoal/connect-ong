@@ -1,9 +1,11 @@
 package dao;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.Session;
 
@@ -133,20 +135,24 @@ public class DaoGeneric {
 		return null;
 	}
 
-	public User retrieveByEmail(String pEmail) {
+	public User retrieveByEmail(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String email = request.getParameter("email");
 		User user = null;
 		Session session = openSession();
 		
 		try {
 			session.beginTransaction();
-			user = (User) session.createQuery("FROM User WHERE login='"+pEmail+"'").uniqueResult();
+			user = (User) session.createQuery("FROM User WHERE login='"+email+"'").uniqueResult();
+			if(user != null) {
+				return user;				
+			}
 		} catch (Exception e) {
 			System.err.println(e);
 		} finally {
 			session.close();
 		}
-		return user;
-		
+		response.setStatus(500);
+		return null;
 	}
 	
 }
