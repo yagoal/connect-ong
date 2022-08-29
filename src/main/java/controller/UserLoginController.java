@@ -34,6 +34,7 @@ public class UserLoginController extends HttpServlet {
 		if(user != null) {
 			HttpSession httpSession = request.getSession(true);
 			
+			httpSession.setAttribute("perfilImg", user.getPartner().getImgPath());
 			httpSession.setAttribute("nome", user.getPartner().getName());
 			httpSession.setAttribute("cpf", user.getPartner().getDocument());
 			httpSession.setAttribute("sexo", user.getPartner().getGender());
@@ -48,7 +49,6 @@ public class UserLoginController extends HttpServlet {
 			httpSession.setAttribute("login", user.getPartner().getEmail());
 			httpSession.setAttribute("telefone1", user.getPartner().getPhone1().getNumber());
 			httpSession.setAttribute("telefone2", user.getPartner().getPhone2().getNumber());
-			httpSession.setAttribute("perfilImg", user.getPartner().getImgPath());
 			
 			response.sendRedirect("MeuPerfil.jsp");
 		} else {
