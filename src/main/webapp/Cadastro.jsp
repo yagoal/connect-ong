@@ -12,23 +12,9 @@
 
 </head>
 <body>
-    <header class="cabecalho">
-        <div class="logotipo">
-            <img class="img-logotipo" src="resources/components/img-temp.png" alt="Logotipo" >
-        </div>
-
-        <div class="menu">
-            <a href="Login.jsp"><li>Home</li></a>
-            <a href="Login.jsp#tela-dois"><li>Sobre</li></a>
-            <a href="AnimaisDisponiveis.jsp"><li>Animais Disponï¿½veis</li></a>
-            <a href="MeuPerfil.jsp"><li>Meu Perfil</li></a>
-            <a href="Login.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
-            <a href="Login.jsp#fale-conosco"><li>Fale Conosco</li></a>
-        </div>
-    </header>
-
+	<%@ include file="Structs/NavBar.jsp"%>
+	
     <main>
-    
         <div class="form-cadastro">
             <form class="caixa" action="RegisterUserController" method="post" enctype="multipart/form-data"> 
                           <input type="file" name="file">
@@ -132,7 +118,7 @@
                       </select>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputNumero">Número</label>
+                        <label for="inputNumero">Nï¿½mero</label>
                         <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
                     </div>
                   </div>
@@ -177,7 +163,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
-                      Aceito receber mensagens e ligações da Connect-ONG. 
+                      Aceito receber mensagens e ligaï¿½ï¿½es da Connect-ONG. 
                     </label>
                   </div>
                 </div>
@@ -188,18 +174,7 @@
               </form>
         </div>
     </main>
-s
-        <footer>
-            <div class="rodape">
-                <p> Controle e Gerenciamento para ONGs ligadas ï¿½ causa animal <br>
-                Curso Tï¿½cnico Subsequente em Informï¿½tica - 4ï¿½ Mï¿½dulo <br>
-                2022 - Mariane Rocha, Valdemilson Lins e Yago Augusto - Todos os direitos reservados </p>
-                <p> Controle e Gerenciamento para ONGs ligadas ? causa animal <br>
-                Curso T?cnico Subsequente em Inform?tica - 3? M?dulo <br>
-                2022 - Mariane Milene Xavier Rocha - Todos os direitos reservados </p>
-            </div>
-        </footer>
-
+	<%@ include file="Structs/Footer.jsp"%>
 </body>
 
 <script src="resources/js/cadastro.js"></script>

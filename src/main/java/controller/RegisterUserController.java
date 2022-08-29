@@ -110,7 +110,7 @@ public class RegisterUserController extends HttpServlet {
 		
 		DaoGeneric.getInstance().save(user);
 		
-		response.sendRedirect("Saved.jsp");
+		response.sendRedirect("SucessoCadastro.jsp");
 	}
 	
 	//metodo para pegar o nome do arquivo atraves do header da requisição

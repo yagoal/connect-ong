@@ -10,20 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="cabecalho">
-        <div class="logotipo">
-            <img class="img-logotipo" src="resources/components/img-temp.png" alt="Logotipo" >
-        </div>
-
-        <div class="menu">
-            <a href="Login.jsp"><li>Home</li></a>
-            <a href="Login.jsp#tela-dois"><li>Sobre</li></a>
-            <a href="AnimaisDisponiveis.jsp"><li>Animais Disponï¿½veis</li></a>
-            <a href="MeuPerfil.jsp"><li>Meu Perfil</li></a>
-            <a href="Login.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a>
-            <a href="Login.jsp#fale-conosco"><li>Fale Conosco</li></a>
-        </div>
-    </header>
+   <%@ include file="Structs/NavBar.jsp"%>
 
     <main>
     <%=session.getAttribute("perfilImg") %>
@@ -40,7 +27,7 @@
                                 <b>Animais adotados: </b> <%=session.getAttribute("listaAdo") %> <br> <br>
 
                                 <b>Logradouro: </b> <%=session.getAttribute("rua") %> <br>
-                                <b>Nï¿½mero: </b> <%=session.getAttribute("numero") %> <br>
+                                <b>Número: </b> <%=session.getAttribute("numero") %> <br>
                                 <b>Bairro: </b> <%=session.getAttribute("bairro") %> <br>
                                 <b>Cidade: </b> <%=session.getAttribute("cidade") %> <br>
                                 <b>Estado: </b> <%=session.getAttribute("estado") %> <br>
@@ -73,13 +60,6 @@
                 </div>
         </div>
     </main>
-
-        <footer>
-            <div class="rodape">
-                <p> Controle e Gerenciamento para ONGs ligadas ï¿½ causa animal <br>
-                Curso Tï¿½cnico Subsequente em Informï¿½tica - 4ï¿½ Mï¿½dulo <br>
-                2022 - Mariane Rocha, Valdemilson Lins e Yago Augusto - Todos os direitos reservados </p>
-            </div>
-        </footer>
+	<%@ include file="Structs/Footer.jsp"%>
 </body>
 </html>
