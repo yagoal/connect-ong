@@ -26,8 +26,9 @@
     </header>
 
     <main>
+    <%=session.getAttribute("perfilImg") %>
         <div class="perfil">
-            <img class="foto" src="resources/components/foto.svg" alt="Foto do Usuï¿½rio" style="width: 10vw;">        
+            <img class="foto" src="<%=session.getAttribute("perfilImg") %>" alt="Foto do Usuário" style="width: 10vw;">        
     
                 <div class="card">
                         <div class="card-body">

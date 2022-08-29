@@ -24,6 +24,7 @@ public abstract class Person {
 	private Date birthDate;
 	private String gender;
 	private String document;
+	private String imgPath;
 	
 	@Column(unique = true)
 	private String email;
@@ -43,18 +44,20 @@ public abstract class Person {
 	}
 
 
-	public Person(String name, Date birthDate, String gender, String document, String email,
+	public Person(String name, Date birthDate, String gender, String document, String imgPath, String email,
 			Phone phone1, Phone phone2, Address address) {
 		super();
 		this.name = name;
 		this.birthDate = birthDate;
 		this.gender = gender;
 		this.document = document;
+		this.imgPath = imgPath;
 		this.email = email;
 		this.phone1 = phone1;
 		this.phone2 = phone2;
 		this.address = address;
 	}
+
 
 	public Integer getId() {
 		return id;
@@ -143,6 +146,16 @@ public abstract class Person {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+
+	public String getImgPath() {
+		return imgPath;
+	}
+
+
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
 	}
 
 	
