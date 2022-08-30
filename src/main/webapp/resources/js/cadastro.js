@@ -12,13 +12,13 @@ let form = document.querySelector('form')
 	        	if(e.value){
 	            	libera.push(true)
 	            }          
-           	})
             if(libera.length == campos.length && !negados.length){
                 botao.removeAttribute('disabled','')
                     
             } else {
                 botao.setAttribute('disabled','')
             }
+           	})
         })
 
 
@@ -82,7 +82,7 @@ function verificarSenhas(input){
                 //console.log('senhas diferentes')
                 confirmaSenha.insertAdjacentHTML('afterend',`<p class="negado" id="negadoSenha">Senhas diferentes</p>`)
             } else {
-                //console.log('senha correta')
+                console.log('senha correta')
             }
 }
 
@@ -137,13 +137,17 @@ function buscarCep(input) {
     })
    }
 function verificarEmail(input) {
-	$('#negadoEmail').remove()
+	$('#negadoEmail').remove();
+	
 	$.ajax({
 		method: 'GET',
 		url: 'RegisterUserController',
 		data:{email: input.value}
-	}).done(() => {
+	}).done((data) => {
+		console.log(data)
 		input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoEmail">Email ja esta em uso</p>`)
+	}).fail(()=>{
+		console.log('erro')
 	})
 	
 }

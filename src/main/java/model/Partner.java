@@ -25,12 +25,14 @@ public class Partner extends Person {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Partner(String name, Date birthDate, String gender, String document, String email, Phone phone1,
-			Phone phone2, Address address, List<Donate> donates, List<Adoption> adoptions) {
-		super(name, birthDate, gender, document, email, phone1, phone2, address);
+	public Partner(String name, Date birthDate, String gender, String document, String imgPath, String email,
+			Phone phone1, Phone phone2, Address address, List<Donate> donates, List<Adoption> adoptions) {
+		super(name, birthDate, gender, document, imgPath, email, phone1, phone2, address);
 		this.donates = donates;
 		this.adoptions = adoptions;
 	}
+
+
 
 	public List<Donate> getDonates() {
 		return donates;

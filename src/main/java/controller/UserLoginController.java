@@ -34,6 +34,7 @@ public class UserLoginController extends HttpServlet {
 		if(user != null) {
 			HttpSession httpSession = request.getSession(true);
 			
+			httpSession.setAttribute("perfilImg", user.getPartner().getImgPath());
 			httpSession.setAttribute("nome", user.getPartner().getName());
 			httpSession.setAttribute("cpf", user.getPartner().getDocument());
 			httpSession.setAttribute("sexo", user.getPartner().getGender());
