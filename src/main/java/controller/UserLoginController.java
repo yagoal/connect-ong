@@ -34,21 +34,21 @@ public class UserLoginController extends HttpServlet {
 		if(user != null) {
 			HttpSession httpSession = request.getSession(true);
 			
-			httpSession.setAttribute("perfilImg", user.getPartner().getImgPath());
-			httpSession.setAttribute("nome", user.getPartner().getName());
-			httpSession.setAttribute("cpf", user.getPartner().getDocument());
-			httpSession.setAttribute("sexo", user.getPartner().getGender());
-			httpSession.setAttribute("dataNasc", user.getPartner().getBirthDate());
-			httpSession.setAttribute("listaAdo", user.getPartner().getAdoptions().size());
-			httpSession.setAttribute("rua", user.getPartner().getAddress().getStreet());
-			httpSession.setAttribute("numero", user.getPartner().getAddress().getNumber());
-			httpSession.setAttribute("bairro", user.getPartner().getAddress().getNeighborhood());
-			httpSession.setAttribute("cidade", user.getPartner().getAddress().getCity());
-			httpSession.setAttribute("estado", user.getPartner().getAddress().getState());
-			httpSession.setAttribute("cep", user.getPartner().getAddress().getZipCode());
-			httpSession.setAttribute("login", user.getPartner().getEmail());
-			httpSession.setAttribute("telefone1", user.getPartner().getPhone1().getNumber());
-			httpSession.setAttribute("telefone2", user.getPartner().getPhone2().getNumber());
+			httpSession.setAttribute("perfilImg", user.getImgPath());
+			httpSession.setAttribute("nome", user.getName());
+			httpSession.setAttribute("cpf", user.getDocument());
+			httpSession.setAttribute("sexo", user.getGender());
+			httpSession.setAttribute("dataNasc", user.getBirthDate());
+			httpSession.setAttribute("listaAdo", user.getAdoptions().size());
+			httpSession.setAttribute("rua", user.getAddress().getStreet());
+			httpSession.setAttribute("numero", user.getAddress().getNumber());
+			httpSession.setAttribute("bairro", user.getAddress().getNeighborhood());
+			httpSession.setAttribute("cidade", user.getAddress().getCity());
+			httpSession.setAttribute("estado", user.getAddress().getState());
+			httpSession.setAttribute("cep", user.getAddress().getZipCode());
+			httpSession.setAttribute("login", user.getEmail());
+			httpSession.setAttribute("telefone1", user.getPhone1().getNumber());
+			httpSession.setAttribute("telefone2", user.getPhone2().getNumber());
 			
 			response.sendRedirect("MeuPerfil.jsp");
 		} else {
