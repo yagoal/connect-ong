@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@
     <main>
         <div class="form-cadastro">
             <form class="caixa" action="RegisterUserController" method="post" enctype="multipart/form-data"> 
-                          <input type="file" name="file">
+                          <input type="file" name="file" accept="img">
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputName">Nome completo</label>

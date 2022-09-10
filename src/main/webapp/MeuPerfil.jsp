@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Meu Perfil</title>
 <link rel="stylesheet" href="resources/styles/style_meu-perfil.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -13,9 +13,8 @@
    <%@ include file="Structs/NavBar.jsp"%>
 
     <main>
-    <%=session.getAttribute("perfilImg") %>
         <div class="perfil">
-            <img class="foto" src="<%=session.getAttribute("perfilImg") %>" alt="Foto do Usuário" style="width: 10vw;">        
+            <img class="foto" src="<%=session.getAttribute("perfilImg") %>" alt="Foto do UsuÃ¡rio" style="width: 10vw;">        
     
                 <div class="card">
                         <div class="card-body">
@@ -27,7 +26,7 @@
                                 <b>Animais adotados: </b> <%=session.getAttribute("listaAdo") %> <br> <br>
 
                                 <b>Logradouro: </b> <%=session.getAttribute("rua") %> <br>
-                                <b>Número: </b> <%=session.getAttribute("numero") %> <br>
+                                <b>NÃºmero: </b> <%=session.getAttribute("numero") %> <br>
                                 <b>Bairro: </b> <%=session.getAttribute("bairro") %> <br>
                                 <b>Cidade: </b> <%=session.getAttribute("cidade") %> <br>
                                 <b>Estado: </b> <%=session.getAttribute("estado") %> <br>
