@@ -20,7 +20,6 @@
 			<mapping class="model.User"/>
 			<mapping class="model.Donate"/> 
 			<mapping class="model.Animal"/>
-			<mapping class="model.Partner"/>
 			<mapping class="model.Adoption"/> 
 		
 	</session-factory>
