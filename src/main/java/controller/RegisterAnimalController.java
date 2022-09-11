@@ -70,14 +70,14 @@ public class RegisterAnimalController extends HttpServlet {
 		animal.setBreed(request.getParameter("inputBreed"));
 		animal.setWeight(Double.parseDouble(request.getParameter("inputWeight")));
 		animal.setCastration(Boolean.parseBoolean(request.getParameter("inputCastration")));
-		animal.setCastration(Boolean.parseBoolean(request.getParameter("inputAvaliability")));
+		animal.setAvailability(Boolean.parseBoolean(request.getParameter("inputAvailability")));
 		
 		
 		SimpleDateFormat dateFormated = new SimpleDateFormat("yyyy-MM-dd"); 
 		
 		Date redempetionDate;
 		try {
-			redempetionDate = dateFormated.parse(request.getParameter("inputsetRedempetionDate"));
+			redempetionDate = dateFormated.parse(request.getParameter("inputRedempetionDate"));
 			animal.setRedempetionDate(redempetionDate);
 		} catch (ParseException e) {
 			animal.setRedempetionDate(null);
