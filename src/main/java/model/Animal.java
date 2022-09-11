@@ -17,7 +17,8 @@ public class Animal {
 	private Integer id;			
 	
 	private String name;
-	private Date birthDate;
+	private String imgPath;
+	private String birthYearDate;
 	private Character gender;
 	private String specie;
 	private String breed;
@@ -33,7 +34,8 @@ public class Animal {
 
 	public Animal(
 		String name, 
-		Date birthDate, 
+		String imgPath,
+		String birthYearDate, 
 		Character gender, 
 		String specie, 
 		String breed, 
@@ -44,7 +46,8 @@ public class Animal {
 	) {
 		super();
 		this.name = name;
-		this.birthDate = birthDate;
+		this.imgPath = imgPath;
+		this.birthYearDate = birthYearDate;
 		this.gender = gender;
 		this.specie = specie;
 		this.breed = breed;
@@ -70,14 +73,22 @@ public class Animal {
 		this.name = name;
 	}
 
-	public Date getBirthDate() {
-		return birthDate;
+	public String getImgPath() {
+		return imgPath;
 	}
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
 	}
 
+	public String getBirthYearDate() {
+		return birthYearDate;
+	}
+
+	public void setBirthYearDate(String birthYearDate) {
+		this.birthYearDate = birthYearDate;
+	}
+	
 	public Character getGender() {
 		return gender;
 	}
