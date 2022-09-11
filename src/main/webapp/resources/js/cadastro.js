@@ -136,6 +136,7 @@ function buscarCep(input) {
         console.log(json)
     })
    }
+   
 function verificarEmail(input) {
 	$('#negadoEmail').remove();
 	

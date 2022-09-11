@@ -32,12 +32,8 @@ public class User extends Person {
 	@Fetch(value = FetchMode.SUBSELECT)
 	private List<Animal> animals;
 	
-	
-	
 	public User() { }
 
-	
-	
 	public User(String name, Date birthDate, String gender, String document, String imgPath, String email, Phone phone1,
 			Phone phone2, Address address, String password, String docType, List<Donate> donates,
 			List<Adoption> adoptions, List<Animal> animals) {
@@ -57,57 +53,43 @@ public class User extends Person {
 		this.password = password;
 	}
 
-
-
 	public String getDocType() {
 		return docType;
 	}
 
-
-
-	public void setDocType(String docType) {
-		this.docType = docType;
+	public void setDocType() {
+		if(getDocument().length() == 14) {
+			this.docType = "cpf";
+		} else {
+			this.docType = "cnpj";
+		}
 	}
-
-
 
 	public List<Donate> getDonates() {
 		return donates;
 	}
 
-
-
 	public void setDonates(List<Donate> donates) {
 		this.donates = donates;
 	}
-
-
 
 	public List<Adoption> getAdoptions() {
 		return adoptions;
 	}
 
-
-
 	public void setAdoptions(List<Adoption> adoptions) {
 		this.adoptions = adoptions;
 	}
-
-
 
 	public List<Animal> getAnimals() {
 		return animals;
 	}
 
-
-
 	public void setAnimals(List<Animal> animals) {
 		this.animals = animals;
 	}
 
-	public String verifyDocType(String document) {
-		String doc = document;
-		
+	public String verifyDocType(String doc) {
 		if(doc.length() == 14) {
 			return "cpf";
 		} else {

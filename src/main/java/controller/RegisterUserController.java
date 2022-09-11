@@ -100,9 +100,8 @@ public class RegisterUserController extends HttpServlet {
 		}
 		
 		user.setDocument(request.getParameter("inputDocument"));
-		user.setDocType(user.verifyDocType(request.getParameter("inputDocument")));
+		user.setDocType();
 		user.setGender( request.getParameter("inputGender"));
-		
 		user.setPassword(request.getParameter("inputPassword"));
 		
 		

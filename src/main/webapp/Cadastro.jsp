@@ -118,7 +118,7 @@
                       </select>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputNumero">Nï¿½mero</label>
+                        <label for="inputNumero">Númmero</label>
                         <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
                     </div>
                   </div>
@@ -145,28 +145,8 @@
                         <input type="tel" class="form-control" id="inputCelular2" name="inputPhoneNumber2">
                     </div>
                 </div>   
-                
-                <!--<label for="exampleFormControlFile1">Escolha uma foto sua:</label> <br>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                  </div>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="inputGroupFile01">Escolher arquivo</label>
-                  </div>
-                </div>  -->
 
                 <br>
-
-                <div class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Aceito receber mensagens e ligaï¿½ï¿½es da Connect-ONG. 
-                    </label>
-                  </div>
-                </div>
 
                 <br>
 
