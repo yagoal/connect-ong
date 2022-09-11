@@ -2,7 +2,6 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,7 +16,6 @@ import javax.servlet.http.Part;
 import dao.DaoGeneric;
 import model.User;
 import model.Address;
-import model.Partner;
 import model.Phone;
 
 
@@ -64,7 +62,7 @@ public class RegisterUserController extends HttpServlet {
 		System.out.println(savePath);
 		part.write(savePath);
 		
-		Partner partner = new Partner();
+		User user = new User();
 		Address address = new Address();
 		Phone phone1 = new Phone();
 		Phone phone2 = new Phone();
@@ -82,31 +80,31 @@ public class RegisterUserController extends HttpServlet {
 		phone2.setDdd(request.getParameter("inputDDD2"));
 		phone2.setNumber(request.getParameter("inputPhoneNumber2"));
 		
-		partner.setImgPath(imgPath);
-		partner.setName(request.getParameter("inputName"));
-		partner.setEmail(request.getParameter("inputEmail"));
-		partner.setAddress(address);
-		partner.setPhone1(phone1);
-		partner.setPhone2(phone2);
+		user.setImgPath(imgPath);
+		user.setName(request.getParameter("inputName"));
+		user.setEmail(request.getParameter("inputEmail"));
+		user.setAddress(address);
+		user.setPhone1(phone1);
+		user.setPhone2(phone2);
 		
 		SimpleDateFormat dateFormated = new SimpleDateFormat("yyyy-MM-dd"); 
 		
 		Date birthDate;
 		try {
 			birthDate = dateFormated.parse(request.getParameter("inputBirthDate"));
-			partner.setBirthDate(birthDate);
+			user.setBirthDate(birthDate);
 		} catch (ParseException e) {
-			partner.setBirthDate(null);
+			user.setBirthDate(null);
 			e.printStackTrace();
 			
 		}
 		
-		partner.setDocument(request.getParameter("inputDocument"));
-		partner.setGender( request.getParameter("inputGender"));
+		user.setDocument(request.getParameter("inputDocument"));
+		user.setDocType();
+		user.setGender( request.getParameter("inputGender"));
+		user.setPassword(request.getParameter("inputPassword"));
 		
-		String password = request.getParameter("inputPassword");
 		
-		User user = new User(partner, partner.getEmail(), password);
 		
 		DaoGeneric.getInstance().save(user);
 		

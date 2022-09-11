@@ -7,6 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ <%
+	String login = "valdemilson.lins@gmail.com";
+	String password = "jumento";
+	
+	String cpf = "000.000.000-00";
+	
+	cpf = cpf.replace(".", "");
+	cpf = cpf.replace("-", "");
+	
+	System.out.println(cpf);
+	
+ %>
 </body>
 </html>

@@ -60,7 +60,7 @@ public class RegisterJSON extends HttpServlet {
 		
 		User user = gson.fromJson(sb.toString(), User.class);
 		
-		user.setLogin(user.getPartner().getEmail());
+//		user.setLogin(user.getPartner().getEmail());
 		
 		PrintWriter pw = response.getWriter();
 		

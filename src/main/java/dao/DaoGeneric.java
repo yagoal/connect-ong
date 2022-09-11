@@ -1,7 +1,6 @@
 package dao;
 
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -122,7 +121,7 @@ public class DaoGeneric {
 		Session session = openSession();
 		try {
 			session.beginTransaction();
-			user = (User) session.createQuery("FROM User WHERE login='"+pLogin+"' AND password='"+pPassword+"'").uniqueResult();
+			user = (User) session.createQuery("FROM User WHERE email='"+pLogin+"' AND password='"+pPassword+"'").uniqueResult();
 			System.out.println(user);
 			if(user != null) {
 				return user;
