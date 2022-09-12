@@ -13,11 +13,10 @@ public class Animal {
 	@Id
 	@GeneratedValue				
 	private Integer id;			
-	
 	private String name;
 	private String imgPath;
-	private String birthYearDate;
-	private Character gender;
+	private Date birthYearDate;
+	private String gender;
 	private String specie;
 	private String breed;
 	private Double weight;
@@ -33,8 +32,8 @@ public class Animal {
 	public Animal(
 		String name, 
 		String imgPath,
-		String birthYearDate, 
-		Character gender, 
+		Date birthYearDate, 
+		String gender, 
 		String specie, 
 		String breed, 
 		Double weight, 
@@ -79,19 +78,19 @@ public class Animal {
 		this.imgPath = imgPath;
 	}
 
-	public String getBirthYearDate() {
+	public Date getYearDate() {
 		return birthYearDate;
 	}
 
-	public void setBirthYearDate(String birthYearDate) {
+	public void setYearDate(Date birthYearDate) {
 		this.birthYearDate = birthYearDate;
 	}
 	
-	public Character getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(Character gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 

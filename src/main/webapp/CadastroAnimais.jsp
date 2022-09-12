@@ -29,8 +29,8 @@
                         <label for="inputGender">Sexo</label>
                         <select id="inputGender" name="inputGender" class="form-control" required>
                           <option selected>Escolher...</option>
-                          <option value="F">Fêmea</option>
-                          <option value="M">Macho</option>
+                          <option value="Fêmea">Fêmea</option>
+                          <option value="Macho">Macho</option>
                         </select>
                     </div>
                 </div>           
@@ -40,8 +40,8 @@
                         <label for="inputSpecie">Espécie</label>
                         <select id="inputSpecie" name="inputSpecie" class="form-control" required>
                           <option selected>Escolher...</option>
-                          <option value="canino">Canino</option>
-                          <option value="felino">Felino</option>
+                          <option value="Canino">Canino</option>
+                          <option value="Felino">Felino</option>
                           <option value="outro">Outro</option>
                         </select>
                     </div>
@@ -53,7 +53,7 @@
 
                     <div class="form-group col-md-4">
                         <label for="inputWeight">Peso</label>
-                        <input type="text" name="inputWeight" class="form-control" id="inputWeight"  placeholder="Em gramas" required>
+                        <input type="text" name="inputWeight" class="form-control" id="inputWeight"  placeholder="Em quilogramas" required>
                     </div>
                 </div>
                 

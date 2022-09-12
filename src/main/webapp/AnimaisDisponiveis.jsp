@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="model.Animal" %>
+<%@ page import="dao.DaoGeneric" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,110 +16,43 @@
 <body>
 	<%@ include file="Structs/NavBar.jsp"%>
     <main>
-        <div class="caixa">
-            
-            <div class="card-deck">
-                <div class="card">
-                  <img class="card-img-top" src="resources/components/adocao-gato-1.png" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">LILICA</h5>
-                    <p class="card-text">Data de nascimento: 01/04/2022</p>
-                    <p class="card-text">Sexo: Fêmea</p>
-                    <p class="card-text">Raça: SRD</p>
-                    <p class="card-text">Peso: 900g</p>
-                    <p class="card-text">Data do resgate: 03/04/2022</p>
-                    <p class="card-text">Castração: Pendente</p>
-                  </div>
-                  <div class="card-footer">
-                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
-                  </div>
-                </div>
+    <% 
+    	List<Animal> animals = (List)DaoGeneric.getInstance().retrieveAll(Animal.class);
+		SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
+		SimpleDateFormat dateFormatedYear = new SimpleDateFormat("yyyy");  
 
-                <div class="card">
-                  <img class="card-img-top" src="resources/components/adocao-cachorro-1.png" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">PIPOCA</h5>
-                    <p class="card-text">Data de nascimento: 31/12/2021</p>
-                    <p class="card-text">Sexo: Macho</p>
-                    <p class="card-text">Raça: Golden Retrivier</p>
-                    <p class="card-text">Peso: 10kg</p>
-                    <p class="card-text">Data do resgate: 03/01/2022</p>
-                    <p class="card-text">Castração: Realizada</p>
-                  </div>
-                  <div class="card-footer">
-                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
-                  </div>
-                </div>
+		  
+     %>
+     <div class="row p-5" align="center" >
+		        <% for (Animal animal: animals) {
+					Date dateYear = animal.getYearDate();
+					String dateFromatedYearRender = dateFormatedYear.format(dateYear);
+					Date redempetion = animal.getRedempetionDate();
+					String dateFromatedRedempetionRender = dateFormated.format(redempetion);
+					String castracao = animal.getCastration() == true ? "Realizada" : "Pendente";
+					String imgPath = animal.getImgPath() == null ? "resources/components/no-photo.jpeg" : animal.getImgPath() ;
+				%>
+				<div class="col-sm-4 my-3">
+	                <div class="card">
+	                   <img class="card-img-top" src="<%= imgPath %>" alt="Imagem de capa do card">
+	                     <div class="card-body">
+		                    <h5 class="card-title"><%= animal.getName() %></h5>
+							<p class="card-text">Ano de Nascimento: <%= dateFromatedYearRender %></p>
+		                    <p class="card-text">Sexo: <%= animal.getGender() %></p>
+		                    <p class="card-text">Raça: <%= animal.getBreed() %></p>
+		                    <p class="card-text">Peso: <%= animal.getWeight() %> kg</p></p>
+		                    <p class="card-text">Data do resgate: <%= dateFromatedRedempetionRender %></p>
+		                    <p class="card-text">Castração: <%= castracao %></p>
+	                 	 </div>
+	                  	<div class="card-footer">
+	                    	<a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a>
+	                 	 </div>
+	               	</div>
+	             </div>
+                <% } %>
 
-                <div class="card">
-                  <img class="card-img-top" src="resources/components/adocao-gato-2.png" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">MILI</h5>
-                    <p class="card-text">Data de nascimento: 25/04/2022</p>
-                    <p class="card-text">Sexo: Fêmea</p>
-                    <p class="card-text">Raça: SRD</p>
-                    <p class="card-text">Peso: 900g</p>
-                    <p class="card-text">Data do resgate: 26/04/2022</p>
-                    <p class="card-text">Castração: Pendente</p>
-                  </div>
-                  <div class="card-footer">
-                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
-                  </div>
-                </div>
-
-            </div>
-
-            <div class="card-deck">
-                <div class="card">
-                  <img class="card-img-top" src="resources/components/adocao-cachorro-2.png" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">NINA</h5>
-                    <p class="card-text">Data de nascimento: 31/07/2021</p>
-                    <p class="card-text">Sexo: Fêmea</p>
-                    <p class="card-text">Raça: SRD</p>
-                    <p class="card-text">Peso: 8kg</p>
-                    <p class="card-text">Data do resgate: 03/04/2022</p>
-                    <p class="card-text">Castração: Realizada</p>
-                  </div>
-                  <div class="card-footer">
-                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <img class="card-img-top" src="resources/components/adocao-gato-3.png" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">CHURROS</h5>
-                    <p class="card-text">Data de nascimento: 05/03/2018</p>
-                    <p class="card-text">Sexo: Macho</p>
-                    <p class="card-text">Raça: SRD</p>
-                    <p class="card-text">Peso: 4kg</p>
-                    <p class="card-text">Data do resgate: 30/03/2018</p>
-                    <p class="card-text">Castração: Realizada</p>
-                  </div>
-                  <div class="card-footer">
-                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <img class="card-img-top" src="resources/components/adocao-cachorro-3.png" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">POPEYE</h5>
-                    <p class="card-text">Data de nascimento: 19/03/2022</p>
-                    <p class="card-text">Sexo: Macho</p>
-                    <p class="card-text">Raça: SRD</p>
-                    <p class="card-text">Peso: 4.5kg</p>
-                    <p class="card-text">Data do resgate: 03/04/2022</p>
-                    <p class="card-text">Castração: Pendente</p>
-                  </div>
-                  <div class="card-footer">
-                    <a class="btn btn-primary" href="PaginaAnimal.jsp" role="button">+ Informações</a> <br><br>
-                  </div>
-                </div>
-
-        </div>
-        
+     </div>
+         
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
 

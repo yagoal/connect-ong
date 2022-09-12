@@ -64,8 +64,7 @@ public class RegisterAnimalController extends HttpServlet {
 	
 		animal.setName(request.getParameter("inputName"));
 		animal.setImgPath(imgPath);
-		animal.setBirthYearDate(request.getParameter("inputBirthYearDate"));
-		animal.setGender(request.getParameter("inputGender").charAt(0));
+		animal.setGender(request.getParameter("inputGender"));
 		animal.setSpecie(request.getParameter("inputSpecie"));
 		animal.setBreed(request.getParameter("inputBreed"));
 		animal.setWeight(Double.parseDouble(request.getParameter("inputWeight")));
@@ -73,19 +72,23 @@ public class RegisterAnimalController extends HttpServlet {
 		animal.setAvailability(Boolean.parseBoolean(request.getParameter("inputAvailability")));
 		
 		
-		SimpleDateFormat dateFormated = new SimpleDateFormat("yyyy-MM-dd"); 
+		SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
+		SimpleDateFormat dateFormatedYear = new SimpleDateFormat("yyyy"); 
 		
 		Date redempetionDate;
+		Date birth;
 		try {
 			redempetionDate = dateFormated.parse(request.getParameter("inputRedempetionDate"));
 			animal.setRedempetionDate(redempetionDate);
+			birth = dateFormatedYear.parse(request.getParameter("inputBirthYearDate"));
+			animal.setYearDate(birth);
 		} catch (ParseException e) {
 			animal.setRedempetionDate(null);
+			animal.setYearDate(null);
 			e.printStackTrace();
 			
 		}
 
-		
 		DaoGeneric.getInstance().save(animal);
 		
 		response.sendRedirect("SucessoCadastro.jsp");
