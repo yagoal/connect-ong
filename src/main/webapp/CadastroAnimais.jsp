@@ -13,66 +13,71 @@
     
     <main>
         <div class="form-cadastro">
-            <form class="caixa">               
+            <form class="caixa" action="RegisterAnimalController" method="post" enctype="multipart/form-data">               
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-8">
                         <label for="inputName">Nome do animal</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Digite o nome" required>
+                        <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Digite o nome" required>
                     </div>
 
-                    <div class="form-group col-md-4">
-                        <label for="inputDataNasc">Data de nascimento</label>
-                        <input type="date" class="form-control" id="inputDataNasc" required>
+                    <div class="form-group col-md-2">
+                        <label for="inputBirthYearDate">Ano de nascimento</label>
+                        <input type="text" class="form-control"  name="inputBirthYearDate" id="inputBirthYearDate" placeholder="2018..., 2019..." required>
                     </div>
 
-                    <div class="form-group col-md-4">
-                        <label for="inputSexo">Sexo</label>
-                        <select id="inputSexo" class="form-control" required>
+                    <div class="form-group col-md-2">
+                        <label for="inputGender">Sexo</label>
+                        <select id="inputGender" name="inputGender" class="form-control" required>
                           <option selected>Escolher...</option>
-                          <option>Fêmea</option>
-                          <option>Macho</option>
+                          <option value="F">Fêmea</option>
+                          <option value="M">Macho</option>
                         </select>
                     </div>
                 </div>           
                 
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="inputEspecie">Espécie</label>
-                        <input type="text" class="form-control" id="inputEspecie" placeholder="Gato, cachorro..." required>
+                        <label for="inputSpecie">Espécie</label>
+                        <select id="inputSpecie" name="inputSpecie" class="form-control" required>
+                          <option selected>Escolher...</option>
+                          <option value="canino">Canino</option>
+                          <option value="felino">Felino</option>
+                          <option value="outro">Outro</option>
+                        </select>
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputRaca">Raça</label>
-                        <input type="text" class="form-control" id="inputRaca" placeholder="SRD (Sem Raça Definida), Pinscher..." required>
+                        <label for="inputBreed">Raça</label>
+                        <input type="text" class="form-control" id="inputBreed" name="inputBreed" placeholder="SRD (Sem Raça Definida), Pinscher..." required>
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputPeso">Peso</label>
-                        <input type="number" class="form-control" id="inputPeso"  placeholder="Em gramas" required>
+                        <label for="inputWeight">Peso</label>
+                        <input type="text" name="inputWeight" class="form-control" id="inputWeight"  placeholder="Em gramas" required>
                     </div>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="inputDataResg">Data do resgate</label>
-                        <input type="date" class="form-control" id="inputDataResg" required>
+                        <label for="inputRedempetionDate">Data do resgate</label>
+                        <input type="date" class="form-control" name="inputRedempetionDate" id="inputRedempetionDate" required>
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputCastracao">Castração</label>
-                        <select id="inputCastracao" class="form-control" required>
+                        <label for="inputCastration">Castração</label>
+                        <select id="inputCastration" name="inputCastration" class="form-control" required>
                             <option selected>Escolher...</option>
-                            <option>Pendente</option>
-                            <option>Realizada</option>
+                            <option value="false">Pendente</option>
+                            <option value="true">Realizada</option>
                           </select>
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputAdocao">Adoção</label>
-                        <select id="inputAdocao" class="form-control" required>
+                        <label for="inputAvailability">Adoção</label>
+                        <select id="inputAvailability" name="inputAvailability" class="form-control" required>
                             <option selected>Escolher...</option>
-                            <option>Disponível</option>
-                            <option>Adotado</option>
+                            <option value="true">Disponível</option>
+                            <option value="false">Adotado</option>
                           </select>
                     </div>
                 </div>
@@ -83,7 +88,7 @@
                     <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                   </div>
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                    <input type="file" class="custom-file-input" name="file" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
                     <label class="custom-file-label" for="inputGroupFile01">Escolher arquivo</label>
                   </div>
                 </div>
