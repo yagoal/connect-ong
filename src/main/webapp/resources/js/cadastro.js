@@ -22,7 +22,6 @@ let form = document.querySelector('form')
         })
 
 
-
 function validarCPF(input){
 	$('#negadoCpf').remove()
 	

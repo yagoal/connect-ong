@@ -17,7 +17,14 @@
     <main>
         <div class="form-cadastro">
             <form class="caixa" action="RegisterUserController" method="post" enctype="multipart/form-data"> 
-                          <input type="file" name="file" accept="img">
+					<div class="form-row justify-content-center">
+						<div class="form-group col-md-4 justify-content-center text-center ">
+						  <label for="formFile" class="form-label">Escolha uma foto de perfil:</label>
+						  <input class="form-control" name="file" accept="image/*" type="file" id="formFile">
+							<span class="preview"></span>
+						</div>  
+					</div>
+		                  
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputName">Nome completo</label>
@@ -156,7 +163,7 @@
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
 </body>
-
+<script src="resources/js/preview.js"></script>
 <script src="resources/js/cadastro.js"></script>
 <script src="resources/js/jquery.js"></script>
 </html>
