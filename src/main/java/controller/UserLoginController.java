@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +25,6 @@ public class UserLoginController extends HttpServlet {
 		String login;
 		String password;
 		User user;
-		PrintWriter out = response.getWriter();
 		
 		login = request.getParameter("inputLogin");
 		password = request.getParameter("inputPassword");
@@ -37,6 +35,7 @@ public class UserLoginController extends HttpServlet {
 			httpSession.setAttribute("perfilImg", user.getImgPath());
 			httpSession.setAttribute("nome", user.getName());
 			httpSession.setAttribute("cpf", user.getDocument());
+			httpSession.setAttribute("listaAnimais", user.getAnimals().size());
 			httpSession.setAttribute("sexo", user.getGender());
 			httpSession.setAttribute("dataNasc", user.getBirthDate());
 			httpSession.setAttribute("listaAdo", user.getAdoptions().size());
@@ -50,7 +49,11 @@ public class UserLoginController extends HttpServlet {
 			httpSession.setAttribute("telefone1", user.getPhone1().getNumber());
 			httpSession.setAttribute("telefone2", user.getPhone2().getNumber());
 			
-			response.sendRedirect("MeuPerfil.jsp");
+			if(user.getDocType().equals("cpf")) {
+				response.sendRedirect("MeuPerfil.jsp");				
+			} else {
+				response.sendRedirect("OngPerfil.jsp");
+			}
 		} else {
 			response.sendRedirect("LoginError.jsp");
 		}
