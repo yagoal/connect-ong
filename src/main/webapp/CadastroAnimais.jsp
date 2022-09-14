@@ -13,7 +13,15 @@
     
     <main>
         <div class="form-cadastro">
-            <form class="caixa" action="RegisterAnimalController" method="post" enctype="multipart/form-data">               
+            <form class="caixa" action="RegisterAnimalController" method="post" enctype="multipart/form-data">    
+            
+                <div class="form-row justify-content-center">
+						<div class="form-group col-md-4 justify-content-center text-center ">
+						  <label for="formFile" class="form-label">Escolha uma foto do animal:</label>
+						  <input class="form-control" name="file" accept="image/*" type="file" id="formFile">
+							<span class="preview"></span>
+						</div>  
+					</div>           
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="inputName">Nome do animal</label>
@@ -22,7 +30,7 @@
 
                     <div class="form-group col-md-2">
                         <label for="inputBirthYearDate">Ano de nascimento</label>
-                        <input type="text" class="form-control"  name="inputBirthYearDate" id="inputBirthYearDate" placeholder="2018..., 2019..." required>
+                        <input type="text" class="form-control"  name="inputBirthYearDate" id="inputBirthYearDate" placeholder="2018, 2019" required>
                     </div>
 
                     <div class="form-group col-md-2">
@@ -81,19 +89,6 @@
                           </select>
                     </div>
                 </div>
-                
-                <label for="exampleFormControlFile1">Escolha uma foto do animal:</label> <br>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                  </div>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="file" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="inputGroupFile01">Escolher arquivo</label>
-                  </div>
-                </div>
-
-                <br>
 
                 <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
               </form>
@@ -102,4 +97,5 @@
 	<%@ include file="Structs/Footer.jsp"%>
 
 </body>
+<script src="resources/js/preview.js"></script>
 </html>
