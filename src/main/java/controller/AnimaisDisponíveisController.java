@@ -1,47 +1,44 @@
-//package controller;
-//
-//import java.io.IOException;
-//import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
-//import javax.servlet.http.HttpServlet;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-//
-//import antlr.collections.List;
-//import dao.DaoGeneric;
-//import model.Animal;
-//
-//
-///**
-// * Servlet implementation class AnimaisDisponíveisController
-// */
-//@WebServlet("/AnimaisDisponíveisController")
-//public class AnimaisDisponíveisController extends HttpServlet {
-//	private static final long serialVersionUID = 1L;
-//       
-//    /**
-//     * @see HttpServlet#HttpServlet()
-//     */
-//    public AnimaisDisponíveisController() {
-//        super();
-//        // TODO Auto-generated constructor stub
-//    }
-//
-//	/**
-//	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-//	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
-//		
-//		
-//	}
-//
-//	/**
-//	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-//	 */
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		doGet(request, response);
-//	}
-//
-//}
+package controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import dao.DaoGeneric;
+import model.Animal;
+
+
+/**
+ * Servlet implementation class AnimaisDisponíveisController
+ */
+@WebServlet("/Animals")
+public class AnimaisDisponíveisController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+ 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<Animal> animais = (List<Animal>)DaoGeneric.getInstance().retrieveAll(Animal.class);
+		
+		Gson gson = new Gson();
+		
+		String jsonAnimais = gson.toJson(animais);
+		PrintWriter out = response.getWriter();
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		response.setStatus(200);
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		
+		out.write(jsonAnimais);
+		out.close();
+	}
+
+
+}
