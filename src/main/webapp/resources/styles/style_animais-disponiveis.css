@@ -2,6 +2,36 @@ body{
     margin: 0 auto;
 }
 
+.infos{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 30%;
+	height:100%;
+	margin-right: 5px;
+}
+
+.info-animal{
+	font-size: .9em;
+	text-align: left;
+}
+
+.info-tutor{
+	font-size: .9em;
+}
+
+.aviso{
+	width: 70%;
+	height:100%;
+	font-size: 1em;
+}
+.modal-body{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
 li{
     display: inline-block;
     margin: 0px 35px 0px 0px;
@@ -51,7 +81,7 @@ li:hover{
 }
 
 .card{
-    padding: 20px;
+    padding: .9em;
     text-align: justify;
 }
 
@@ -61,7 +91,7 @@ li:hover{
     color: #ffb273;
 }
 
-.btn{
+.botao{
     width: 100%;
 }
 
