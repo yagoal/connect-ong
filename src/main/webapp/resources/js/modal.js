@@ -30,6 +30,18 @@ modalCheckBox.addEventListener('click', (e) => {
 	adotarButton.toggleAttribute('disabled')
 })
 
+function adotarAnimal(id){
+	fetch("http://localhost:8080/connect-ong/Animals", {
+		method: 'POST',
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({id: id})
+	})
+		.then((response) => response.json())
+		.catch(err => console.log(err))
+}
+
 
 function preencherModal(id){
 	limparModal()
@@ -41,15 +53,29 @@ function preencherModal(id){
 	const imgModal = document.querySelector('#imgModal')
 	const nome = document.querySelector('#nome')
 	
+	const adotarButton = document.querySelector('#adotarButton')
+	adotarButton.addEventListener('click', function() {
+	fetch("http://localhost:8080/connect-ong/Animals", {
+		method: 'POST',
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({id: id})
+	})
+		.then((response) => response.json())
+		.catch(err => console.log(err))
+	})
+	
 	animais.forEach(animal => {
 		if(animal.id == id) {
 			nome.innerHTML = animal.name
-			imgModal.src = animal.imgPath? animal.imgPath : 'resources/components/adocao-gato-1.png'
+			imgModal.src = animal.imgPath? animal.imgPath : 'resources/components/no-photo.jpeg'
 			nasc.insertAdjacentText('beforeend',` ${new Date(animal.birthYearDate).getFullYear().toString()}`)
 			sexo.insertAdjacentText('beforeend',` ${animal.gender}`)
 			raca.insertAdjacentText('beforeend',` ${animal.breed}`)
 			peso.insertAdjacentText('beforeend',` ${animal.weight.toString()}`)
 			castracao.insertAdjacentText('beforeend', animal.castration ? ` Realizada` : ` Pendente`)
+			return
 		}
 	})
 }

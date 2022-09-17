@@ -21,8 +21,8 @@
 	<%@ include file="Structs/NavBar.jsp"%>
     <main>
     <% 
-    	List<Animal> animals = (List)DaoGeneric.getInstance().retrieveAll(Animal.class);
-		SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
+    	List<Animal> animals = (List)DaoGeneric.getInstance().retrieveAll(Animal.class);		
+    	SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
 		SimpleDateFormat dateFormatedYear = new SimpleDateFormat("yyyy");  
 
 		  
@@ -94,26 +94,26 @@
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-	        <button disabled id="adotarButton" type="button" class="btn btn-primary">Adotar</button>
+	        <button disabled id="adotarButton" type="button" data-bs-dismiss="modal" class="btn btn-primary">Adotar</button>
 	      </div>
 	    </div>
 	  </div>
 	</div>
 	
 	
-	
      <div class="row p-5" align="center" >
 		        <% for (Animal animal: animals) {
-					Date dateYear = animal.getYearDate();
-					String dateFromatedYearRender = dateFormatedYear.format(dateYear);
-					Date redempetion = animal.getRedempetionDate();
-					String dateFromatedRedempetionRender = dateFormated.format(redempetion);
-					String castracao = animal.getCastration() == true ? "Realizada" : "Pendente";
-					String imgPath = animal.getImgPath() == null ? "resources/components/no-photo.jpeg" : animal.getImgPath() ;
+		        		if (animal.getAvailability()) {
+							Date dateYear = animal.getYearDate();
+							String dateFromatedYearRender = dateFormatedYear.format(dateYear);
+							Date redempetion = animal.getRedempetionDate();
+							String dateFromatedRedempetionRender = dateFormated.format(redempetion);
+							String castracao = animal.getCastration() == true ? "Realizada" : "Pendente";
+							String imgPath = animal.getImgPath() == null ? "resources/components/no-photo.jpeg" : animal.getImgPath() ;
 				%>
 				<div class="col-sm-4 my-3">
 	                <div class="card">
-	                   <img class="card-img-top" src="<%= imgPath %>" alt="Imagem de capa do card">
+	                   <img class="card-img-top" width="300" height="250" src="<%= imgPath %>" alt="Imagem de capa do card">
 	                     <div class="card-body">
 		                    <h5 class="card-title"><%= animal.getName() %></h5>
 							<p class="card-text">Ano de Nascimento: <%= dateFromatedYearRender %></p>
@@ -130,7 +130,8 @@
 	                 	 </div>
 	               	</div>
 	             </div>
-                <% } %>
+                <% }
+			      } %>
 
      </div>
          
