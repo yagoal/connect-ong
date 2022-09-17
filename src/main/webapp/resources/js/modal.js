@@ -45,12 +45,11 @@ function preencherModal(id){
 		if(animal.id == id) {
 			nome.innerHTML = animal.name
 			imgModal.src = animal.imgPath? animal.imgPath : 'resources/components/adocao-gato-1.png'
-			nasc.insertAdjacentHTML('beforeend',`<span>${animal.birthYearDate}</span>`)
-			sexo.insertAdjacentHTML('beforeend',`<span>${animal.gender}</span>`)
-			raca.insertAdjacentHTML('beforeend',`<span>${animal.breed}</span>`)
-			peso.insertAdjacentHTML('beforeend',`<span>${animal.weight.toString()}</span>`)
-			castracao.insertAdjacentHTML('beforeend',animal.castration ? 
-			`<span >Realizada</span>` : `<span >Pendente</span>`)
+			nasc.insertAdjacentText('beforeend',` ${new Date(animal.birthYearDate).getFullYear().toString()}`)
+			sexo.insertAdjacentText('beforeend',` ${animal.gender}`)
+			raca.insertAdjacentText('beforeend',` ${animal.breed}`)
+			peso.insertAdjacentText('beforeend',` ${animal.weight.toString()}`)
+			castracao.insertAdjacentText('beforeend', animal.castration ? ` Realizada` : ` Pendente`)
 		}
 	})
 }

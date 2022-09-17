@@ -43,11 +43,11 @@
 	       <div class="info-animal">
 	       <img class="card-img-top" id="imgModal" src="resources/components/adocao-gato-1.png" alt="Imagem de capa do card">
 	       		<h5 id="nome" class="card-title"></h5>
-	       			<p ><span >Data de nascimento:</span ><span id="nasc" ><span>Sem Info</span></span> </p>
-                    <p ><span >Sexo:</span><span id="sexo" ><span>Sem Info</span></span> </p>
-                    <p ><span >Raça:</span><span id="raca" ><span>Sem Info</span></span> </p>
-                    <p ><span >Peso:</span><span id="peso" ><span>Sem Info</span></span> </p>
-                    <p ><span >Castração:</span><span id="castracao" ><span>Sem Info</span></span> </p>
+	       			<p ><span >Data de nascimento:</span ><span id="nasc" ><span></span></span> </p>
+                    <p ><span >Sexo:</span><span id="sexo" ><span></span></span> </p>
+                    <p ><span >Raça:</span><span id="raca" ><span></span></span> </p>
+                    <p ><span >Peso:</span><span id="peso" ><span></span></span> </p>
+                    <p ><span >Castração:</span><span id="castracao" ><span></span></span> </p>
 	       </div>
 	       <div class="info-tutor">
 	       		<h6 class="card-title">Dados do(a) Candidato(a) à Tutor(a):</h6>

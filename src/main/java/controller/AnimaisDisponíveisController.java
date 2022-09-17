@@ -24,20 +24,18 @@ public class AnimaisDisponíveisController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		List<Animal> animais = (List<Animal>)DaoGeneric.getInstance().retrieveAll(Animal.class);
-		
-		Gson gson = new Gson();
-		
-		String jsonAnimais = gson.toJson(animais);
-		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.setStatus(200);
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		
-		out.write(jsonAnimais);
-		out.close();
+		List<Animal> animais = (List<Animal>)DaoGeneric.getInstance().retrieveAll(Animal.class);
+		
+		Gson gson = new Gson();
+		
+		PrintWriter out = response.getWriter();
+		out.print(gson.toJson(animais));
+		out.flush();
 	}
 
 
