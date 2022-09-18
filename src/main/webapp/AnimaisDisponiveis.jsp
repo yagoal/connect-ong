@@ -24,8 +24,6 @@
     	List<Animal> animals = (List)DaoGeneric.getInstance().retrieveAll(Animal.class);		
     	SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
 		SimpleDateFormat dateFormatedYear = new SimpleDateFormat("yyyy");  
-
-		  
      %>
      <!-- Button trigger modal -->
 	
@@ -43,7 +41,7 @@
 	       <div class="info-animal">
 	       <img class="card-img-top" id="imgModal" src="resources/components/adocao-gato-1.png" alt="Imagem de capa do card">
 	       		<h5 id="nome" class="card-title"></h5>
-	       			<p ><span >Data de nascimento:</span ><span id="nasc" ><span></span></span> </p>
+	       			<p ><span >Data de nascimento:</span ><span id="nasc"><span></span></span> </p>
                     <p ><span >Sexo:</span><span id="sexo" ><span></span></span> </p>
                     <p ><span >Raça:</span><span id="raca" ><span></span></span> </p>
                     <p ><span >Peso:</span><span id="peso" ><span></span></span> </p>
@@ -94,12 +92,12 @@
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-	        <button disabled id="adotarButton" type="button" data-bs-dismiss="modal" class="btn btn-primary">Adotar</button>
+	        <button disabled id="adotarButton"  type="button" data-bs-dismiss="modal" class="btn btn-primary">Adotar</button>
 	      </div>
 	    </div>
 	  </div>
 	</div>
-	
+	<!-- onClick="redirectSucess()" -->
 	
      <div class="row p-5" align="center" >
 		        <% for (Animal animal: animals) {
@@ -124,7 +122,7 @@
 		                    <p class="card-text">Castração: <%= castracao %></p>
 	                 	 </div>
 	                  	<div class="card-footer" align="center">
-	                    	<button type="button" key="<%=animal.getId() %>" class="btn btn-primary modalButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+	                    	<button type="button" onClick="redirect()" class="btn btn-primary modalButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop" key="<%=animal.getId() %>">
 	  							+Informações
 							</button>
 	                 	 </div>
@@ -134,9 +132,17 @@
 			      } %>
 
      </div>
-         
+      <%if (session.getAttribute("userId") == null) {  %>
+        <script>
+        function redirect(){
+        	alert("Você precisa estar logado para saber mais informações")
+            window.location = "http://localhost:8080/connect-ong/Login.jsp"
+        }
+        </script>
+     <% } %>
+
     </main>
+    <script src="resources/js/modal.js"></script>
 	<%@ include file="Structs/Footer.jsp"%>
-<script src="resources/js/modal.js"></script>
 </body>
 </html>

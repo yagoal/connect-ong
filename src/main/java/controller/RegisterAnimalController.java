@@ -72,19 +72,18 @@ public class RegisterAnimalController extends HttpServlet {
 		animal.setAvailability(Boolean.parseBoolean(request.getParameter("inputAvailability")));
 		
 		
-		SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
-		SimpleDateFormat dateFormatedYear = new SimpleDateFormat("yyyy"); 
-		
+		SimpleDateFormat dateFormated = new SimpleDateFormat("yyyy-MM-dd");  
+		String birthYear = request.getParameter("inputBirthYearDate")+"-01-01";
 		Date redempetionDate;
 		Date birth;
 		try {
 			redempetionDate = dateFormated.parse(request.getParameter("inputRedempetionDate"));
 			animal.setRedempetionDate(redempetionDate);
-			birth = dateFormatedYear.parse(request.getParameter("inputBirthYearDate"));
+			birth = dateFormated.parse(birthYear);
 			animal.setYearDate(birth);
 		} catch (ParseException e) {
-			animal.setRedempetionDate(null);
-			animal.setYearDate(null);
+			animal.setRedempetionDate(new Date());
+			animal.setYearDate(new Date());
 			e.printStackTrace();
 			
 		}

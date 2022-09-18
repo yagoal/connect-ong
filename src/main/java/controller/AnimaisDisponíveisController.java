@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
+import java.util.Date;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 
 import dao.DaoGeneric;
+import model.Adoption;
 import model.Animal;
 import model.User;
 
@@ -32,14 +36,20 @@ public class AnimaisDisponíveisController extends HttpServlet {
 		response.setStatus(200);
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		
-		List<Animal> animais = (List<Animal>)DaoGeneric.getInstance().retrieveAll(Animal.class);
+		HttpSession httpSession = request.getSession();
 		
+		if (httpSession.getAttribute("userId") == null) {
+			response.sendRedirect("Login.jsp");
+		} else {
+			List<Animal> animais = (List<Animal>)DaoGeneric.getInstance().retrieveAll(Animal.class);
+			
+			Gson gson = new Gson();
+			
+			PrintWriter out = response.getWriter();
+			out.print(gson.toJson(animais));
+			out.flush();
+		}
 		
-		Gson gson = new Gson();
-		
-		PrintWriter out = response.getWriter();
-		out.print(gson.toJson(animais));
-		out.flush();
 	}
 	
 	/**
@@ -69,7 +79,29 @@ public class AnimaisDisponíveisController extends HttpServlet {
 		System.out.println(animalPost.getName());
 		animalPost.setAvailability(false);
 		
-		DaoGeneric.getInstance().delete(animalPost);
+		
+		String userId = request.getSession().getAttribute("userId").toString();
+		System.out.println("Meu ID:" + userId + "************");
+		
+		User user = (User) DaoGeneric.getInstance().retrieveById(User.class, Integer.parseInt(userId));
+		
+		Adoption adoption = new Adoption(new Date(), animalPost);
+		
+		List<Adoption> adoptions = user.getAdoptions();
+		
+		adoptions.add(adoption);
+		
+		user.setAdoptions(adoptions);
+		
+		DaoGeneric.getInstance().save(animalPost);
+		DaoGeneric.getInstance().save(user);
+		
+		// Resposta vazia a quem enviou a requisição
+		Map <String, String> emptyResponse = new HashMap<String, String>();
+		PrintWriter out = response.getWriter();
+		out.print(gson.toJson(emptyResponse));
+		out.flush();
+		
 	}
 
 }

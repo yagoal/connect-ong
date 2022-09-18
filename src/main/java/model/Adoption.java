@@ -21,7 +21,12 @@ public class Adoption {
 	public Adoption() {
 		super();
 	}
-
+	
+	public Adoption(Date date, Animal animal) {
+		super();
+		this.date = date;
+		this.animal = animal;
+	}
 
 	public Integer getId() {
 		return id;

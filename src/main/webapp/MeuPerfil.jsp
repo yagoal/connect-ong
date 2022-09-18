@@ -14,6 +14,11 @@
 
     <main>
         <div class="perfil">
+        <%if (session.getAttribute("userId") == null) {  %>
+        <script>
+            window.location = "http://localhost:8080/connect-ong/Login.jsp"
+        </script>
+        <% } %>
             <img class="foto" src="<%=session.getAttribute("perfilImg") %>" alt="Foto do Usuário" style="width: 10vw;">        
     
                 <div class="card">

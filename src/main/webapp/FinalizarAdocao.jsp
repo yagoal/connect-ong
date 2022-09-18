@@ -34,7 +34,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
 
