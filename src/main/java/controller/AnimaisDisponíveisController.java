@@ -57,6 +57,9 @@ public class AnimaisDisponíveisController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		HttpSession httpSession = request.getSession(true);
+		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("utf-8");
 		response.setStatus(201);
@@ -93,8 +96,11 @@ public class AnimaisDisponíveisController extends HttpServlet {
 		
 		user.setAdoptions(adoptions);
 		
+		httpSession.setAttribute("listaAdo", user.getAdoptions().size());
+		
 		DaoGeneric.getInstance().save(animalPost);
 		DaoGeneric.getInstance().save(user);
+		
 		
 		// Resposta vazia a quem enviou a requisição
 		Map <String, String> emptyResponse = new HashMap<String, String>();
