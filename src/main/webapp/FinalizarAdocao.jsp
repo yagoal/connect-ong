@@ -28,13 +28,12 @@
                     </div>
 
                     <div class="card-footer">
-                        <a class="btn btn-primary" href="Login.jsp" role="button">Retornar à Página Inicial</a>
+                        <a class="btn btn-primary" href="MeuPerfil.jsp" role="button">Retornar ao Meu Perfil</a>
                         <a class="btn btn-primary" href="Login.jsp#perguntas-frequentes" role="button">Perguntas Frequentes</a>
                         <a class="btn btn-primary" href="Login.jsp#fale-conosco" role="button">Fale Conosco</a>
                     </div>
                 </div>
             </div>
-        </div>
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
 

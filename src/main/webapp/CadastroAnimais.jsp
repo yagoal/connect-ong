@@ -85,7 +85,7 @@
                         <select id="inputAvailability" name="inputAvailability" class="form-control" required>
                             <option selected>Escolher...</option>
                             <option value="true">Disponível</option>
-                            <option value="false">Adotado</option>
+                            <option value="false">Indisponível</option>
                           </select>
                     </div>
                 </div>
