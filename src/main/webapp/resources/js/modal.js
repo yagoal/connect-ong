@@ -1,6 +1,8 @@
 let animais = []
 
-fetch("http://localhost:8080/connect-ong/Animals")
+fetch("http://localhost:8080/connect-ong/Animals",{
+	
+})
 	.then(resp => resp.json())
 	.then(json => {
 		json.forEach(data => animais.push(data))
