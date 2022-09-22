@@ -136,7 +136,7 @@
         <script>
         function redirect(){
         	alert("Você precisa estar logado para saber mais informações")
-            window.location = "http://localhost:8080/connect-ong/Login.jsp"
+            window.location = "./Login.jsp"
         }
         </script>
      <% } %>
