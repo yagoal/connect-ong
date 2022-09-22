@@ -27,14 +27,15 @@ import model.User;
  * Servlet implementation class AnimaisDisponíveisController
  */
 @WebServlet("/Animals")
-public class AnimaisDisponíveisController extends HttpServlet {
+public class AnimaisDisponiveisController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json");
+		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		response.setStatus(200);
 		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setStatus(200);
 		
 		HttpSession httpSession = request.getSession();
 		
@@ -55,15 +56,15 @@ public class AnimaisDisponíveisController extends HttpServlet {
 	/**
 	 *
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
 		HttpSession httpSession = request.getSession(true);
 		
 		response.setContentType("application/json");
-		response.setCharacterEncoding("utf-8");
-		response.setStatus(201);
 		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setCharacterEncoding("utf-8");
+		response.setStatus(200);
 		
 		Gson gson = new Gson();
 		StringBuffer sb = new StringBuffer();
