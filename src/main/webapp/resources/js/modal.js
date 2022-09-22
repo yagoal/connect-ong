@@ -1,8 +1,6 @@
 let animais = []
 
-fetch("http://localhost:8080/connect-ong/Animals",{
-	
-})
+fetch("Animals")
 	.then(resp => resp.json())
 	.then(json => {
 		json.forEach(data => animais.push(data))
@@ -27,7 +25,7 @@ function preencherModalHandler(e) {
 
 
 const modalCheckBox = document.querySelector('#inputCheck')
-modalCheckBox.addEventListener('click', (e) => {
+modalCheckBox.addEventListener('click', () => {
 	const adotarButton = document.querySelector('#adotarButton')
 	adotarButton.toggleAttribute('disabled')
 })
@@ -44,10 +42,11 @@ function preencherModal(id) {
 
 	const adotarButton = document.querySelector('#adotarButton')
 	adotarButton.addEventListener('click', function() {
-		fetch("http://localhost:8080/connect-ong/Animals", {
-			method: 'POST',
+		fetch("Animals", {
+			method: 'PUT',
 			headers: {
 				"Content-Type": "application/json",
+				
 			},
 			body: JSON.stringify({ id: id }) 
 		})
@@ -88,7 +87,7 @@ function limparModal() {
 }
 
 function redirectSucess() {
-	window.location = "http://localhost:8080/connect-ong/FinalizarAdocao.jsp"
+	window.location = "./FinalizarAdocao.jsp"
 }
 
 
