@@ -1,9 +1,9 @@
 <%@ page language="java" 
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title></title>
 </head>
 <body>
@@ -15,7 +15,7 @@
 		<div class="menu">
 			<a href="Login.jsp"><li>Home</li></a> 
 			<a href="Login.jsp#tela-dois"><li>Sobre</li></a>
-			<a href="AnimaisDisponiveis.jsp"><li>Animais Disponíveis</li></a> 
+			<a href="AnimaisDisponiveis.jsp"><li>Animais DisponÃ­veis</li></a> 
 			<a href="MeuPerfil.jsp"><li>Meu Perfil</li></a> 
 			<a href="Login.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a> 
 			<a href="Login.jsp#fale-conosco"><li>Fale Conosco</li></a>
