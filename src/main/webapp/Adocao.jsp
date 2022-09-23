@@ -3,6 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="apple-touch-icon" sizes="180x180" href="resources/components/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resources/components/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="resources/components/favicon-16x16.png">
+<link rel="manifest" href="resources/components/site.webmanifest">
+
 <meta charset="ISO-8859-1">
 <title>Adoção</title>
 <link rel="stylesheet" href="resources/styles/style_adocao.css">

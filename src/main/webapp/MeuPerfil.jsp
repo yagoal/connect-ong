@@ -3,6 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="apple-touch-icon" sizes="180x180" href="resources/components/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resources/components/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="resources/components/favicon-16x16.png">
+<link rel="manifest" href="resources/components/site.webmanifest">
+
+
 <meta charset="UTF-8">
 <title>Meu Perfil</title>
 <link rel="stylesheet" href="resources/styles/style_meu-perfil.css">
@@ -16,7 +23,7 @@
         <div class="perfil">
         <%if (session.getAttribute("userId") == null) {  %>
         <script>
-            window.location = "http://localhost:8080/connect-ong/Login.jsp"
+            window.location = "/Login.jsp"
         </script>
         <% } %>
             <img class="foto" src="<%=session.getAttribute("perfilImg") %>" alt="Foto do Usuário" style="width: 10vw;">        
