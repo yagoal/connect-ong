@@ -38,15 +38,15 @@
 	<div class="mt-5 text-warning" align="center"><h2>Minhas Adoções</h2></div>
      <div class="row px-5" align="center" >
 		        <% for (Adoption adoption: adoptions) {
-		        			Animal animal = adoption.getAnimal();
-							Date dateYear = animal.getYearDate();
-							String dateFromatedYearRender = dateFormatedYear.format(dateYear);
-							Date redempetion = animal.getRedempetionDate();
-							String dateFromatedRedempetionRender = dateFormated.format(redempetion);
-							Date adoptionDate = adoption.getDate();
-							String dateFormatedAdoption = dateFormated.format(adoptionDate);
-							String castracao = animal.getCastration() == true ? "Realizada" : "Pendente";
-							String imgPath = animal.getImgPath() == null ? "resources/components/no-photo.jpeg" : animal.getImgPath() ;
+		        		Animal animal = adoption.getAnimal();
+						Date dateYear = animal.getYearDate();
+						String dateFromatedYearRender = dateFormatedYear.format(dateYear);
+						Date redempetion = animal.getRedempetionDate();
+						String dateFromatedRedempetionRender = dateFormated.format(redempetion);
+						Date adoptionDate = adoption.getDate();
+						String dateFormatedAdoption = dateFormated.format(adoptionDate);
+						String castracao = animal.getCastration() == true ? "Realizada" : "Pendente";
+						String imgPath = animal.getImgPath() == null ? "resources/components/no-photo.jpeg" : animal.getImgPath() ;
 				%>
 				<div class="col-sm-4 my-3">
 	                <div class="card">
