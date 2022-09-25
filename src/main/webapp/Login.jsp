@@ -65,13 +65,16 @@
                     <img id="connect-ong" src="resources/components/connect-ong.png" alt="Connect-ONG">
                 </article>
                 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod at esse deleniti perspiciatis provident aut eos minus hic quia vitae ab praesentium similique repellat eveniet vero, 
-                    vel voluptas distinctio quasi architecto ducimus ullam voluptatum. Error id placeat voluptatum optio reprehenderit excepturi voluptas nostrum quas fugit nam. 
-                    Optio fugit molestias quia cum eveniet vitae voluptatem excepturi ipsam quidem placeat. Numquam quod impedit, mollitia dignissimos sunt laborum, 
-                    cumque expedita aut architecto tenetur maxime voluptate beatae porro error delectus sapiente vitae blanditiis? Magnam sequi illo sunt aspernatur dolorum, repellendus saepe,
-                    explicabo quaerat nulla autem soluta aliquam totam commodi cumque aperiam porro nisi, eligendi debitis accusamus obcaecati earum dignissimos! Reprehenderit qui hic, 
-                    blanditiis sit eum laudantium est officia molestiae facere repellat quae velit maiores. Cupiditate, veniam. Voluptate ut fugiat expedita est ullam! 
-                    Porro sit recusandae culpa fugit sint!</p>
+                <p>Olá, tudo bem? Seja bem-vindo(a)! Somos uma plataforma destinada a ONGs e parceiros.
+                <strong>Conectamos seres humanos e animais.</strong> <img alt="patinhas" src="resources/components/favicon-16x16.png"> <br> <br>
+
+				<strong>ONG</strong> <br>
+				Cadastre-se em nossa plataforma e facilite seu trabalho através do controle e do gerenciamento 
+				de adoções de animais e de doações recebidas. <br> <br>
+
+				<strong>Parceiro</strong> <br>
+				Chamamos, carinhosamente, de parceiros aqueles que são amigos dos animais e que têm interesse 
+				em adotar um amiguinho ou ajudar as ONGs, através de doações. Cadastre-se e tenha acesso a todas essas funcionalidades!</p>
                 </div>
         </aside>
             
