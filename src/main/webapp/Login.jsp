@@ -29,7 +29,7 @@
             <img class="animais" src="resources/components/index-laranja.svg" alt="Gatos e Cachorros: Adotar é um ato de amor!">
         </article>
 	
-		<%-- <%if (session.getAttribute("userId") == null) {  %> --%>
+		<%if (session.getAttribute("userId") == null) {  %>
         <aside>
             <div class="formulario">
                 <h5>Bem-vindo(a) ao <a class="boas-vindas" href=#tela-dois style="text-decoration: none;"><b>Connect-ONG</b></a></h5>
@@ -57,7 +57,11 @@
                 </form>
             </div>
         </aside>
-       <%--  <% } %> --%>
+       <% }else{%>
+       		<script>
+            window.location = "./IndexUser.jsp"
+        </script>
+       <% }%>
 
         <aside id="tela-dois">
             <div class="texto">
