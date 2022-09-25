@@ -92,50 +92,58 @@
                 <div class="question">
                     <input type='checkbox' id='question-1'>
                     <label for='question-1'>
-                        > Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident magnam natus, eligendi voluptatibus reiciendis mollitia non?
+                        > Não estou conseguindo me cadastrar. O que devo fazer?
                     </label>
                     <div class='answer'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ratione, excepturi nulla officia quibusdam commodi!
+                        Para realizar o cadastro, é necessário preencher todos os campos obrigatórios, bem como adicionar uma foto de perfil. 
+                        Sendo assim, cheque se todos os campos necessários foram preenchidos corretamente. Lembre-se, também, que seu e-mail 
+                        não deve ter sido utilizado para cadastrar outra conta de usuário.
                     </div>
                 </div>
                 
                 <div class="question">
                     <input type='checkbox' id='question-2'>
                     <label for='question-2'>
-                        > Reiciendis corporis laudantium aliquid excepturi eveniet, libero, rem hic, modi necessitatibus consequuntur iste suscipit?
+                        > Já me cadastrei, porém não estou conseguindo acessar minha conta. O que fazer?
                     </label>
                     <div class='answer'>
-                        Cupiditate, veniam. Voluptate ut fugiat expedita est ullam! Porro sit recusandae culpa fugit sint!
+                        Verifique se você digitou seu e-mail e sua senha corretamente. Caso você não se lembre qual senha utilizou no cadastro,
+                        clique em "Esqueci a senha" para redefini-la.
                     </div>
                 </div>
                 
                 <div class="question">
                     <input type='checkbox' id='question-3'>
                     <label for='question-3'>
-                        > Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, consequatur?
+                        > Como posso ter acesso à lista de animais disponíveis para adoção?
                     </label>
                         <div class='answer'>
-                        Optio fugit molestias quia cum eveniet vitae voluptatem excepturi ipsam quidem placeat. 
+                        No menu inicial, clique em "Animais Disponíveis". Você será redirecionado(a) a uma página contendo a lista de animais que
+                        estão disponíveis para adoção e terá acesso a diversas informações sobre cada um deles. 
                     </div>
                 </div>
                 
                 <div class="question">
                     <input type='checkbox' id='question-4'>
                     <label for='question-4'>
-                        > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab quidem doloribus numquam fuga in ipsum iure, animi corporis tempore laboriosam alias distinctio sunt cupiditate?
+                        > Quero adotar um animal! Como solicitar a adoção?
                     </label>
                     <div class='answer'>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate blanditiis inventore voluptas animi itaque distinctio!
+                        Na página "Animais Disponíveis", clique em "+ Informações", abaixo da foto do animal que você deseja adotar. Após isso, 
+                        será exibido uma tela contendo seus dados e os dados do animal escolhido. Leia as informações adicionais e caso esteja
+                        ciente da sua escolha e da responsabilidade de adotar um animal, clique em "Adotar". <br>
+                        Outra possibilidade é ir até a página "Meu Perfil", clicar no menu para que sejam exibidas as opções e clicar em "Adotar".
                     </div>
                 </div>
 
                 <div class="question">
                     <input type='checkbox' id='question-5'>
                     <label for='question-5'>
-                        > Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea eum blanditiis incidunt aliquid facilis nesciunt eaque magni sapiente voluptatibus recusandae?
+                        > Não estou conseguindo adotar um animal. O que fazer?
                     </label>
                     <div class='answer'>
-                        Lorem ipsum dolor sit amet consectetur.
+                        Verifique se você está logado em sua conta. Qualquer pessoa pode visualizar a lista de animais 
+                        disponíveis, porém para solicitar uma adoção é necessário estar logado em uma conta.
                     </div>
                 </div>
 
