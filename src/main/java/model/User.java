@@ -34,9 +34,20 @@ public class User extends Person {
 	
 	public User() { }
 
-	public User(String name, Date birthDate, String gender, String document, String imgPath, String email, Phone phone1,
-			Phone phone2, Address address, String password, String docType, List<Donate> donates,
-			List<Adoption> adoptions, List<Animal> animals) {
+	public User(String name, 
+			Date birthDate,
+			String gender, 
+			String document, 
+			String imgPath, 
+			String email, 
+			Phone phone1,
+			Phone phone2, 
+			Address address, 
+			String password, 
+			String docType, 
+			List<Donate> donates,
+			List<Adoption> adoptions, 
+			List<Animal> animals) {
 		super(name, birthDate, gender, document, imgPath, email, phone1, phone2, address);
 		this.password = password;
 		this.docType = docType;
