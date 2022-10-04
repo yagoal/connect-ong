@@ -1,6 +1,8 @@
+<%@page import="model.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Animal" %>
+
 <%@ page import="dao.DaoGeneric" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Date" %>
@@ -26,12 +28,16 @@
 <body>
 	<%@ include file="Structs/NavBar.jsp"%>
     <main>
+    
     <% 
-    	List<Animal> animals = (List)DaoGeneric.getInstance().retrieveAll(Animal.class);		
+
+		
+    	Integer id = (Integer)session.getAttribute("ongId");
+    	User ong = (User) DaoGeneric.getInstance().retrieveById(User.class, id);
+    	List<Animal> animals = ong.getAnimals();
     	SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
 		SimpleDateFormat dateFormatedYear = new SimpleDateFormat("yyyy");  
      %>
-     <!-- Button trigger modal -->
 	
 
 <!-- Modal -->
@@ -123,7 +129,7 @@
 							<p class="card-text">Ano de Nascimento: <%= dateFromatedYearRender %></p>
 		                    <p class="card-text">Sexo: <%= animal.getGender() %></p>
 		                    <p class="card-text">Raça: <%= animal.getBreed() %></p>
-		                    <p class="card-text">Peso: <%= animal.getWeight() %> kg</p></p>
+		                    <p class="card-text">Peso: <%= animal.getWeight() %> kg</p>
 		                    <p class="card-text">Data do resgate: <%= dateFromatedRedempetionRender %></p>
 		                    <p class="card-text">Castração: <%= castracao %></p>
 	                 	 </div>
@@ -148,7 +154,7 @@
      <% } %>
 
     </main>
-    <script src="resources/js/modal.js"></script>
 	<%@ include file="Structs/Footer.jsp"%>
+    <script src="resources/js/modal.js"></script>
 </body>
 </html>
