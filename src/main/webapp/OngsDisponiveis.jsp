@@ -17,7 +17,7 @@
 <link rel="manifest" href="resources/components/site.webmanifest">
 
 <meta charset="ISO-8859-1">
-<title>Animais Disponíveis</title>
+<title>ONGs Disponíveis</title>
 <link rel="stylesheet" href="resources/styles/style_animais-disponiveis.css">
 
 <!-- CSS only -->
