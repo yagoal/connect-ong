@@ -29,17 +29,14 @@
 	<%@ include file="Structs/NavBar.jsp"%>
     <main>
     <% 
-    	List<User> ongs = (List)DaoGeneric.getInstance().retrieveAll(User.class);		
+    	List<User> ongs = (List<User>)DaoGeneric.getInstance().retrieveUsersCnpj();		
     	SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
 		SimpleDateFormat dateFormatedYear = new SimpleDateFormat("yyyy");  
 		List<Animal> animaisDisponiveis = new ArrayList<Animal>();
      %>
- 
-	<!-- onClick="redirectSucess()" -->
 	
      <div class="row p-5" align="center" >
 		        <% for (User ong: ongs) {
-		        		if (ong.getDocType().equals("cnpj")) {
 		        			for(Animal animal : ong.getAnimals()){
 		        				if(animal.getAvailability()){
 		        					animaisDisponiveis.add(animal);
@@ -49,7 +46,8 @@
 							String dateFromatedYearRender = dateFormatedYear.format(dateYear);
 							String location = ong.getAddress().getCity();
 							Integer qtdAnimals = animaisDisponiveis.size(); 
-							String imgPath = ong.getImgPath() == null ? "resources/components/no-photo.jpeg" : ong.getImgPath() ;
+							String imgPath = ong.getImgPath() == null ? "resources/components/no-photo.jpeg" : ong.getImgPath();
+							animaisDisponiveis.clear();
 				%>
 				<div class="col-sm-4 my-3">
 	                <div class="card">
@@ -68,7 +66,7 @@
 	               	</div>
 	             </div>
                 <% }
-			      } %>
+			       %>
 
      </div>
       <%if (session.getAttribute("userId") == null) {  %>
