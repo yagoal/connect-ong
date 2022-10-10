@@ -32,11 +32,10 @@ public class OngsDisponiveisController extends HttpServlet {
 		
 		
 		HttpSession httpSession = request.getSession();
-		
 		if (httpSession.getAttribute("userId") == null) {
 			response.sendRedirect("Login.jsp");
 		} else {
-			List<User> ongs = (List<User>)DaoGeneric.getInstance().retrieveAll(User.class);
+			List<User> ongs = (List<User>)DaoGeneric.getInstance().retrieveUsersCnpj();
 			
 			Gson gson = new Gson();
 			

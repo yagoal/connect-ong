@@ -25,7 +25,7 @@ public class OngAnimalsController extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		
-		HttpSession httpSession = request.getSession(true);
+		HttpSession httpSession = request.getSession();
 		
 		System.out.println(request.getParameter("id"));
 		Integer id = Integer.parseInt(request.getParameter("id"));
