@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="model.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -30,13 +31,20 @@
     <main>
     
     <% 
-
-		
-    	Integer id = (Integer)session.getAttribute("ongId");
-    	User ong = (User) DaoGeneric.getInstance().retrieveById(User.class, id);
-    	List<Animal> animals = ong.getAnimals();
+	    Integer id;
+	    User ong;
+	    List<Animal> animals = new ArrayList();
+		try{
+	    	id = (Integer)session.getAttribute("ongId");
+    		ong = (User) DaoGeneric.getInstance().retrieveById(User.class, id);
+	    	animals = ong.getAnimals();			
+		} catch(Exception e) {
+			response.sendRedirect("Login.jsp");
+		}
     	SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
 		SimpleDateFormat dateFormatedYear = new SimpleDateFormat("yyyy");  
+		
+		
      %>
 	
 
