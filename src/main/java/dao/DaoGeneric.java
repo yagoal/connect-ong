@@ -149,6 +149,21 @@ public class DaoGeneric {
 		return users;
 	}
 	
+	public User retrieveUsersCnpjById(Integer id) {
+		User user = null;
+		Session session = openSession();
+		
+		try {
+			session.beginTransaction();
+			user = (User)session.createQuery("FROM User WHERE docType='cnpj' AND id="+id).uniqueResult();
+		} catch (Exception e) {
+			System.err.println(e);
+		} finally {
+			session.close();
+		}
+		return user;
+	}
+	
 	public User retrieveByEmail(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String email = request.getParameter("email");
 		User user = null;
