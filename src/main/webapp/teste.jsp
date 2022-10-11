@@ -19,5 +19,7 @@
 	System.out.println(cpf);
 	
  %>
+ 
+<h1>redirecionou essa peste</h1>
 </body>
 </html>

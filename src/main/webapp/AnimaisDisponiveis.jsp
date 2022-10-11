@@ -1,6 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.User"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="model.Animal" %>
+
 <%@ page import="dao.DaoGeneric" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Date" %>
@@ -14,8 +17,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="resources/components/favicon-16x16.png">
 <link rel="manifest" href="resources/components/site.webmanifest">
 
-<meta charset="ISO-8859-1">
-<title>Animais Disponíveis</title>
+<meta charset="UTF-8">
+<title>Animais DisponÃ­veis</title>
 <link rel="stylesheet" href="resources/styles/style_animais-disponiveis.css">
 
 <!-- CSS only -->
@@ -26,20 +29,34 @@
 <body>
 	<%@ include file="Structs/NavBar.jsp"%>
     <main>
+    
     <% 
-    	List<Animal> animals = (List)DaoGeneric.getInstance().retrieveAll(Animal.class);		
+	    Integer id;
+	    User ong;
+	    List<Animal> animals = new ArrayList();
+		
+	    try{
+	    	id = Integer.parseInt(request.getParameter("id"));
+    		ong = (User) DaoGeneric.getInstance().retrieveById(User.class, id);
+	    	animals = ong.getAnimals();	
+	    } catch(Exception e) {
+	    	response.sendRedirect("OngsDisponiveis.jsp");
+	    } 
+	    			
+		
     	SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
 		SimpleDateFormat dateFormatedYear = new SimpleDateFormat("yyyy");  
+		
+		
      %>
-     <!-- Button trigger modal -->
 	
-
+	
 <!-- Modal -->
 	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-xl">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="staticBackdropLabel">Informações Adicionais</h5>
+	        <h5 class="modal-title" id="staticBackdropLabel">InformaÃ§Ãµes Adicionais</h5>
 	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	      </div>
 	      <div class="modal-body">
@@ -49,12 +66,12 @@
 	       		<h5 id="nome" class="card-title"></h5>
 	       			<p ><span >Data de nascimento:</span ><span id="nasc"><span></span></span> </p>
                     <p ><span >Sexo:</span><span id="sexo" ><span></span></span> </p>
-                    <p ><span >Raça:</span><span id="raca" ><span></span></span> </p>
+                    <p ><span >RaÃ§a:</span><span id="raca" ><span></span></span> </p>
                     <p ><span >Peso:</span><span id="peso" ><span></span></span> </p>
-                    <p ><span >Castração:</span><span id="castracao" ><span></span></span> </p>
+                    <p ><span >CastraÃ§Ã£o:</span><span id="castracao" ><span></span></span> </p>
 	       </div>
 	       <div class="info-tutor">
-	       		<h6 class="card-title">Dados do(a) Candidato(a) à Tutor(a):</h6>
+	       		<h6 class="card-title">Dados do(a) Candidato(a) Ã  Tutor(a):</h6>
                     <b>Nome completo:</b><%=session.getAttribute("nome") %> <br>
                     <b>CPF:</b> <%=session.getAttribute("cpf") %> <br>
                     <b>E-mail:</b> <%=session.getAttribute("login")%> <br>
@@ -69,18 +86,18 @@
                     <div class="card-body">
                         <h5 class="card-title">IMPORTANTE</h5>
                         <p class="card-text">
-                            Não se preocupe com a castração do animal. <br>
-                            <b>A Connect-ONG se responsabiliza em castrá-lo.</b> A castração terá uma data marcada e você apenas precisará levá-lo à clínica veterinária indicada.
-                            Após o procedimento, você receberá instruções sobre os cuidados para com o animal.
-                            <b>A Connect-ONG também se responsabiliza pelos custos do animal durante o primeiro mês, desde que comprovados.</b> <br>
-                            Também temos parceiros nessa caminhada pela causa animal. 
-                            A médica e a clínica veterinária parceiras oferecem <b>15% de desconto em consultas, procedimentos cirúrgicos e produtos</b> para quem adota um animalzinho pela Connect-ONG.
-                            Além disso, a X Rações também oferecerá <b>20% de desconto em seus produtos (alimentos, brinquedos, etc).</b> <br> <br>
-                            Mas o maior presente ao realizar uma adoção é levar o novo companheiro para casa, ofertar e receber amor e carinho e conviver com ele todos os dias. <br> <br>
-                            Caso você confirme o pedido de adoção, entraremos em contato com você para informarmos nosso endereço e conversaremos sobre a data na qual você deverá buscar o animal.
-                            Além disso, serão informados quais são os documentos que você precisará apresentar no ato da adoção, no dia marcado.
-                            Trata-se de <b>documentos pessoais</b>, para comprovar sua identidade, e <b>comprovante de renda e/ou de vínculo empregatício</b>.
-                            Além disso, você assinará um <b>termo de responsabilidade</b>, comprovando seu desejo em adotar o animal.                 
+                            NÃ£o se preocupe com a castraÃ§Ã£o do animal. <br>
+                            <b>A Connect-ONG se responsabiliza em castrÃ¡-lo.</b> A castraÃ§Ã£o terÃ¡ uma data marcada e vocÃª apenas precisarÃ¡ levÃ¡-lo Ã  clÃ­nica veterinÃ¡ria indicada.
+                            ApÃ³s o procedimento, vocÃª receberÃ¡ instruÃ§Ãµes sobre os cuidados para com o animal.
+                            <b>A Connect-ONG tambÃ©m se responsabiliza pelos custos do animal durante o primeiro mÃªs, desde que comprovados.</b> <br>
+                            TambÃ©m temos parceiros nessa caminhada pela causa animal. 
+                            A mÃ©dica e a clÃ­nica veterinÃ¡ria parceiras oferecem <b>15% de desconto em consultas, procedimentos cirÃºrgicos e produtos</b> para quem adota um animalzinho pela Connect-ONG.
+                            AlÃ©m disso, a X RaÃ§Ãµes tambÃ©m oferecerÃ¡ <b>20% de desconto em seus produtos (alimentos, brinquedos, etc).</b> <br> <br>
+                            Mas o maior presente ao realizar uma adoÃ§Ã£o Ã© levar o novo companheiro para casa, ofertar e receber amor e carinho e conviver com ele todos os dias. <br> <br>
+                            Caso vocÃª confirme o pedido de adoÃ§Ã£o, entraremos em contato com vocÃª para informarmos nosso endereÃ§o e conversaremos sobre a data na qual vocÃª deverÃ¡ buscar o animal.
+                            AlÃ©m disso, serÃ£o informados quais sÃ£o os documentos que vocÃª precisarÃ¡ apresentar no ato da adoÃ§Ã£o, no dia marcado.
+                            Trata-se de <b>documentos pessoais</b>, para comprovar sua identidade, e <b>comprovante de renda e/ou de vÃ­nculo empregatÃ­cio</b>.
+                            AlÃ©m disso, vocÃª assinarÃ¡ um <b>termo de responsabilidade</b>, comprovando seu desejo em adotar o animal.                 
                         </p>
                     </div>
 
@@ -122,14 +139,14 @@
 		                    <h5 class="card-title"><%= animal.getName() %></h5>
 							<p class="card-text">Ano de Nascimento: <%= dateFromatedYearRender %></p>
 		                    <p class="card-text">Sexo: <%= animal.getGender() %></p>
-		                    <p class="card-text">Raça: <%= animal.getBreed() %></p>
-		                    <p class="card-text">Peso: <%= animal.getWeight() %> kg</p></p>
+		                    <p class="card-text">RaÃ§a: <%= animal.getBreed() %></p>
+		                    <p class="card-text">Peso: <%= animal.getWeight() %> kg</p>
 		                    <p class="card-text">Data do resgate: <%= dateFromatedRedempetionRender %></p>
-		                    <p class="card-text">Castração: <%= castracao %></p>
+		                    <p class="card-text">CastraÃ§Ã£o: <%= castracao %></p>
 	                 	 </div>
 	                  	<div class="card-footer" align="center">
 	                    	<button type="button" onClick="redirect()" class="btn btn-primary modalButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop" key="<%=animal.getId() %>">
-	  							+Informações
+	  							+InformaÃ§Ãµes
 							</button>
 	                 	 </div>
 	               	</div>
@@ -141,14 +158,14 @@
       <%if (session.getAttribute("userId") == null) {  %>
         <script>
         function redirect(){
-        	alert("Você precisa estar logado para saber mais informações")
+        	alert("VocÃª precisa estar logado para saber mais informaÃ§Ãµes")
             window.location = "./Login.jsp"
         }
         </script>
      <% } %>
 
     </main>
-    <script src="resources/js/modal.js"></script>
 	<%@ include file="Structs/Footer.jsp"%>
+    <script src="resources/js/modal.js"></script>
 </body>
 </html>
