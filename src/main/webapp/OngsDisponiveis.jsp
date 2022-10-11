@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.User"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="model.Animal" %>
 <%@ page import="dao.DaoGeneric" %>
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="resources/components/favicon-16x16.png">
 <link rel="manifest" href="resources/components/site.webmanifest">
 
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>ONGs Disponíveis</title>
 <link rel="stylesheet" href="resources/styles/style_animais-disponiveis.css">
 
@@ -59,9 +59,8 @@
 		                    <p class="card-text">Animais: <%= qtdAnimals %></p>
 	                 	 </div>
 	                  	<div class="card-footer" align="center">
-	                    	<button type="button"  class="btn btn-primary modalButton" key="<%=ong.getId() %>">
-	  							+Informações
-							</button>
+	                  	<a class="btn btn-primary modalButton" href="AnimaisDisponiveis.jsp?id=<%=ong.getId()%>">+Informações</a>
+	                    
 	                 	 </div>
 	               	</div>
 	             </div>
@@ -80,7 +79,7 @@
 
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
-    <script src="resources/js/ongs.js"></script> 
+  
 </body>
 <script src="resources/js/jquery.js"></script>
 </html>
