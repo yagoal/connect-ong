@@ -15,6 +15,9 @@
 <title>Cadastrado com sucesso</title>
 </head>
 <body>
+	<%
+		String docType = (String)session.getAttribute("docType");
+	%>
     <%@ include file="Structs/NavBar.jsp"%>
     <main>
         <div class="perfil">  
@@ -31,7 +34,7 @@
                 </div>
 
                 <div class="card-footer">
-                    <a class="btn btn-primary" href="Login.jsp" role="button">Fazer Login</a>
+                    <a class="btn btn-primary" href="<%=docType.equals("cnpj")? "OngPerfil.jsp" : "MeuPerfil.jsp" %>" role="button">Retornar para Meu perfil</a>
                 </div>
             </div>
         </div>

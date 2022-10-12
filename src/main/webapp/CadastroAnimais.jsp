@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +9,20 @@
 <link rel="icon" type="image/png" sizes="16x16" href="resources/components/favicon-16x16.png">
 <link rel="manifest" href="resources/components/site.webmanifest">
 
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="resources/styles/style_cadastro.css">
 <link rel="stylesheet" href="resources/Bootstrap/css/bootstrap.min.css">
 <title>Cadastro de Animais</title>
 </head>
 <body>
+
     <%@ include file="Structs/NavBar.jsp"%>
+    <% if(session.getAttribute("docType") == null) {
+    	response.sendRedirect("Login.jsp");
+    }
     
+    
+    %>
     <main>
         <div class="form-cadastro">
             <form class="caixa" action="RegisterAnimalController" method="post" enctype="multipart/form-data">    
@@ -43,7 +49,7 @@
                         <label for="inputGender">Sexo</label>
                         <select id="inputGender" name="inputGender" class="form-control" required>
                           <option selected>Escolher...</option>
-                          <option value="Fêmea">Fêmea</option>
+                          <option value="FÃªmea">FÃªmea</option>
                           <option value="Macho">Macho</option>
                         </select>
                     </div>
@@ -51,7 +57,7 @@
                 
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="inputSpecie">Espécie</label>
+                        <label for="inputSpecie">EspÃ©cie</label>
                         <select id="inputSpecie" name="inputSpecie" class="form-control" required>
                           <option selected>Escolher...</option>
                           <option value="Canino">Canino</option>
@@ -61,8 +67,8 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputBreed">Raça</label>
-                        <input type="text" class="form-control" id="inputBreed" name="inputBreed" placeholder="SRD (Sem Raça Definida), Pinscher..." required>
+                        <label for="inputBreed">RaÃ§a</label>
+                        <input type="text" class="form-control" id="inputBreed" name="inputBreed" placeholder="SRD (Sem RaÃ§a Definida), Pinscher..." required>
                     </div>
 
                     <div class="form-group col-md-4">
@@ -78,7 +84,7 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputCastration">Castração</label>
+                        <label for="inputCastration">CastraÃ§Ã£o</label>
                         <select id="inputCastration" name="inputCastration" class="form-control" required>
                             <option selected>Escolher...</option>
                             <option value="false">Pendente</option>
@@ -87,11 +93,11 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputAvailability">Adoção</label>
+                        <label for="inputAvailability">AdoÃ§Ã£o</label>
                         <select id="inputAvailability" name="inputAvailability" class="form-control" required>
                             <option selected>Escolher...</option>
-                            <option value="true">Disponível</option>
-                            <option value="false">Indisponível</option>
+                            <option value="true">DisponÃ­vel</option>
+                            <option value="false">IndisponÃ­vel</option>
                           </select>
                     </div>
                 </div>

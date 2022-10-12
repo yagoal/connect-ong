@@ -71,6 +71,9 @@ li:hover{
     align-items: center;
     padding-left: 120px;
 }
+.img-container{
+	width: 300px;
+}
 
 .card-deck{
     width: 90%;
