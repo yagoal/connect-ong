@@ -85,19 +85,24 @@
                         <label for="inputRua">Logradouro</label>
                         <input type="text" class="form-control" id="inputRua" name="inputStreet" placeholder="Avenida Marcondes Ferraz" required>
                     </div>
+                    
+                    <div class="form-group col-md-1">
+                        <label for="inputNumero">Número</label>
+                        <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
+                    </div>
 
-                    <div class="form-group col-md-5">
+                    <div class="form-group col-md-4">
                         <label for="inputBairro">Bairro</label>
                         <input type="text" class="form-control" id="inputBairro" name="inputNeighborhood" placeholder="General Dutra" required>
                     </div>
                 </div>     
 
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-3">
                       <label for="inputCity">Cidade</label>
                       <input type="text" class="form-control" id="inputCity" name="inputCity" required>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-2">
                       <label for="inputEstado">Estado</label>
                       <select id="inputEstado" class="form-control" name="inputState" required>
                         <option selected>Escolher...</option>
@@ -130,36 +135,16 @@
                         <option value="TO">TO</option>
                       </select>
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputNumero">Númmero</label>
-                        <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
-                    </div>
-                  </div>
-
-                
-                <br> 
-
-                <div class="form-row">
+                    
                     <div class="form-group col-md-1">
-                        <label for="inputTelefone">DDD 1</label>
+                        <label for="inputTelefone">DDD</label>
                         <input maxlength="2" type="tel" class="form-control" id="inputTelefone" name="inputDDD1">
                     </div>
-                    <div class="form-group col-md-5">
-                        <label for="inputTelefone">Telefone 1</label>
+                    <div class="form-group col-md-6">
+                        <label for="inputTelefone">Telefone</label>
                         <input type="tel" class="form-control" id="inputDDD1" name="inputPhoneNumber1">
                     </div>
-
-					<div class="form-group col-md-1">
-                        <label for="inputCelular2">DDD 2</label>
-                        <input maxlength="2" type="tel" class="form-control" id="inputDDD2" name="inputDDD2">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label for="inputCelular2">Telefone 2</label>
-                        <input type="tel" class="form-control" id="inputCelular2" name="inputPhoneNumber2">
-                    </div>
-                </div>   
-
-                <br>
+                  </div>
 
                 <br>
 

@@ -4,14 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -41,14 +36,13 @@ public class User extends Person {
 			String imgPath, 
 			String email, 
 			Phone phone1,
-			Phone phone2, 
 			Address address, 
 			String password, 
 			String docType, 
 			List<Donate> donates,
 			List<Adoption> adoptions, 
 			List<Animal> animals) {
-		super(name, birthDate, gender, document, imgPath, email, phone1, phone2, address);
+		super(name, birthDate, gender, document, imgPath, email, phone1, address);
 		this.password = password;
 		this.docType = docType;
 		this.donates = donates;

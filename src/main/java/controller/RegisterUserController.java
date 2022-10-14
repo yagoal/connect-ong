@@ -65,7 +65,6 @@ public class RegisterUserController extends HttpServlet {
 		User user = new User();
 		Address address = new Address();
 		Phone phone1 = new Phone();
-		Phone phone2 = new Phone();
 		
 		address.setCity(request.getParameter("inputCity"));
 		address.setNeighborhood(request.getParameter("inputNeighborhood"));
@@ -77,15 +76,12 @@ public class RegisterUserController extends HttpServlet {
 		phone1.setDdd(request.getParameter("inputDDD1"));
 		phone1.setNumber(request.getParameter("inputPhoneNumber1"));
 		
-		phone2.setDdd(request.getParameter("inputDDD2"));
-		phone2.setNumber(request.getParameter("inputPhoneNumber2"));
 		
 		user.setImgPath(imgPath);
 		user.setName(request.getParameter("inputName"));
 		user.setEmail(request.getParameter("inputEmail"));
 		user.setAddress(address);
 		user.setPhone1(phone1);
-		user.setPhone2(phone2);
 		
 		SimpleDateFormat dateFormated = new SimpleDateFormat("yyyy-MM-dd"); 
 		
