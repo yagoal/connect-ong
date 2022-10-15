@@ -27,8 +27,9 @@
 					<div class="form-row justify-content-center">
 						<div class="form-group col-md-4 justify-content-center text-center ">
 						  <label for="formFile" class="form-label">Escolha uma foto de perfil:</label>
-						  <input class="form-control" name="file" accept="image/*" type="file" id="formFile">
-							<span class="preview"> <img src="<%=session.getAttribute("userId") == null ? "resources/components/no-photo.jpeg" : session.getAttribute("perfilImg") %>" id="preview"/> </span>
+						  <input class="form-control" name="file" accept="image/*" type="file" id="formFile"> <br>
+						  <span class="preview"> <img src="<%=session.getAttribute("userId") == null ? "resources/components/no-photo.jpeg" : session.getAttribute("perfilImg") %>" 
+						  	id="preview" width="200px" border-radius="10px" margin-top="10px"/> </span>
 						</div>  
 					</div>
 		                  
