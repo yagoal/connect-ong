@@ -104,7 +104,7 @@ public class RegisterAnimalController extends HttpServlet {
 		
 		DaoGeneric.getInstance().save(ong);
 		
-		response.sendRedirect("SucessoCadastro.jsp");
+		response.sendRedirect("SucessoCadastroAnimal.jsp");
 	}
 	
 	//metodo para pegar o nome do arquivo atraves do header da requisição
