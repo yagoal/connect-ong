@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import dao.DaoGeneric;
@@ -65,6 +66,9 @@ public class RegisterUserController extends HttpServlet {
 		User user = new User();
 		Address address = new Address();
 		Phone phone1 = new Phone();
+		Integer id = null;
+		HttpSession httpSession = request.getSession(false);
+		
 		
 		address.setCity(request.getParameter("inputCity"));
 		address.setNeighborhood(request.getParameter("inputNeighborhood"));
@@ -76,10 +80,16 @@ public class RegisterUserController extends HttpServlet {
 		phone1.setDdd(request.getParameter("inputDDD1"));
 		phone1.setNumber(request.getParameter("inputPhoneNumber1"));
 		
+		if(httpSession.getAttribute("userId") != null) {
+			id = (Integer) httpSession.getAttribute("userId");
+			user = (User) DaoGeneric.getInstance().retrieveById(User.class, id);
+		} else {
+			user.setPassword(request.getParameter("inputPassword"));
+			user.setEmail(request.getParameter("inputEmail"));
+		}
 		
 		user.setImgPath(imgPath);
 		user.setName(request.getParameter("inputName"));
-		user.setEmail(request.getParameter("inputEmail"));
 		user.setAddress(address);
 		user.setPhone1(phone1);
 		
@@ -95,16 +105,20 @@ public class RegisterUserController extends HttpServlet {
 			
 		}
 		
+		user.setId(id);
 		user.setDocument(request.getParameter("inputDocument"));
 		user.setDocType();
 		user.setGender( request.getParameter("inputGender"));
-		user.setPassword(request.getParameter("inputPassword"));
+		
 		
 		
 		
 		DaoGeneric.getInstance().save(user);
-		
-		response.sendRedirect("SucessoCadastro.jsp");
+		if(httpSession.getAttribute("userId") != null) {
+			response.sendRedirect("SucessoAlteracao.jsp");
+		} else {
+			response.sendRedirect("SucessoCadastro.jsp");	
+		}
 	}
 	
 	//metodo para pegar o nome do arquivo atraves do header da requisição
