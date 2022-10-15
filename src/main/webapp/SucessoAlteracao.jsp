@@ -23,16 +23,15 @@
                 <div class="card-body">
                     <h5 class="card-title">SUCESSO</h5>
                     <p class="card-text">
-                        Parabéns! Seu cadastro foi realizado com sucesso! <br>
-                        Agora, você é um parceiro da ONG! <br><br>
-                        <b>Muito obrigado por estar conosco nessa caminhada.</b><br><br>
-                        Para acessar seu perfil e a lista de animais disponívels, efetue o login em nossa plataforma, 
-                        informando o e-mail e a senha utilizados durante o cadastro.
+                        Seu cadastro foi atualizado com sucesso! <br>
+                        <b>Obrigado por nos manter atualizados sobre seus dados!</b> <br><br>
+                        <br><br>
+                        Faça o Login novamente para que suas informações sejam validadas.
                         
                 </div>
 
                 <div class="card-footer">
-                    <a class="btn btn-primary" href="Login.jsp" role="button">Login</a>
+                    <a class="btn btn-primary" href="Logout.jsp" role="button">Login</a>
                 </div>
             </div>
         </div>
