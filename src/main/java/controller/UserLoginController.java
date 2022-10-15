@@ -1,9 +1,6 @@
 package controller;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,11 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.google.gson.Gson;
-
 import dao.DaoGeneric;
-import model.Id;
-import model.Login;
 import model.User;
 
 
@@ -56,7 +49,8 @@ public class UserLoginController extends HttpServlet {
 			httpSession.setAttribute("estado", user.getAddress().getState());
 			httpSession.setAttribute("cep", user.getAddress().getZipCode());
 			httpSession.setAttribute("login", user.getEmail());
-			httpSession.setAttribute("telefone1", user.getPhone1().getNumber());
+			httpSession.setAttribute("telefone", user.getPhone1().getNumber());
+			httpSession.setAttribute("ddd", user.getPhone1().getDdd());
 			
 			if(user.getDocType().equals("cpf")) {
 				response.sendRedirect("MeuPerfil.jsp");				
