@@ -1,13 +1,26 @@
 //script para verificar se todos os campos estão preenchidos corretamente para liberar o botão de submit
-let form = document.querySelector('form')
-        const botao = document.querySelector('#finalizarCadastro')
-        form.addEventListener('input', function(){
-			
+		let form = document.querySelector('form')
+		
+		checarCampos();
+        form.addEventListener('input', checarCampos)
+
+function checarCampos(){
+			const botao = document.querySelector('#finalizarCadastro')
             let libera = []
+            const fileInput = document.querySelector('#formFile')
             const campos = document.querySelectorAll('input')
             const negados = document.querySelectorAll('.negado')
-           
+           	const preview = document.querySelector('#preview')
+           	
+           	if(preview.src) {
+				libera.push(true)
+			}
+			if(fileInput.value) {
+				libera.pop()
+			}
+			console.log(campos)
 			console.log(negados)
+			console.log(libera)
 			campos.forEach(e => {
 	        	if(e.value){
 	            	libera.push(true)
@@ -19,9 +32,8 @@ let form = document.querySelector('form')
                 botao.setAttribute('disabled','')
             }
            	})
-        })
-
-
+}
+        
 function validarCPF(input){
 	$('#negadoCpf').remove()
 	
