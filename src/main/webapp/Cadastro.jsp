@@ -1,6 +1,8 @@
+<%@page import="dao.DaoGeneric"%>
+<%@ page import="model.User" %>
+<%@ page import="java.util.Enumeration" %>
 <%@ page language="java" contentType="text/html; ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.Enumeration" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +42,7 @@
                     </div>	
                 </div>
 
+                  <%if(session.getAttribute("userId") == null){ %>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCPF">CPF</label>
@@ -62,7 +65,6 @@
                 </div>                
 
                   
-                  <%if(session.getAttribute("userId") == null){ %>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
@@ -152,13 +154,30 @@
 
                 <br>
 
-                <button disabled type="submit" id="finalizarCadastro" class="btn btn-primary">Finalizar Cadastro</button>
+                <button disabled type="submit" id="finalizarCadastro" class="btn btn-primary"><%=session.getAttribute("userId") == null ? "Finalizar Cadastro" : "Finalizar Edição" %></button>
               </form>
         </div>
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
+	
+<%if(session.getAttribute("userId") != null){ 
+	Integer id = Integer.parseInt((String)request.getParameter("id")); 
+	User user = (User)DaoGeneric.getInstance().retrieveById(User.class, id);
+	String estadoSelect = user.getAddress().getState();
+%>
+<script type="text/javascript">
+	const estado = '<%=estadoSelect%>';
+	const options = document.querySelectorAll('#inputEstado option');
+	options[0].removeAttribute('selected');
+	options.forEach(option => {
+		if(option.value === estado){
+			option.setAttribute('selected','');
+		}
+	})
+	console.log(options);
+</script>
+<%} %>
 </body>
-
 <script src="resources/js/preview.js"></script>
 <script src="resources/js/cadastro.js"></script>
 <script src="resources/js/jquery.js"></script>
