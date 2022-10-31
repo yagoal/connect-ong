@@ -121,7 +121,7 @@
 	  </div>
 	</div>
 	<!-- onClick="redirectSucess()" -->
-	
+
      <div class="row p-5" align="center" >
 		        <% for (Animal animal: animals) {
 		        		if (animal.getAvailability()) {

@@ -78,3 +78,9 @@ button[disabled]:hover{
     font-size: small;
 }
 
+img{
+	width: 200px;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.Enumeration" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,29 +20,30 @@
 </head>
 <body>
 	<%@ include file="Structs/NavBar.jsp"%>
-	
+
     <main>
         <div class="form-cadastro">
             <form class="caixa" action="RegisterUserController" method="post" enctype="multipart/form-data"> 
 					<div class="form-row justify-content-center">
 						<div class="form-group col-md-4 justify-content-center text-center ">
 						  <label for="formFile" class="form-label">Escolha uma foto de perfil:</label>
-						  <input class="form-control" name="file" accept="image/*" type="file" id="formFile">
-							<span class="preview"></span>
+						  <input class="form-control" name="file" accept="image/*" type="file" id="formFile"> <br>
+						  <span class="preview"> <img src="<%=session.getAttribute("userId") == null ? "resources/components/no-photo.jpeg" : session.getAttribute("perfilImg") %>" 
+						  	id="preview" width="200px" border-radius="10px" margin-top="10px"/> </span>
 						</div>  
 					</div>
 		                  
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputName">Nome completo</label>
-                        <input type="text" class="form-control" id="inputName" name="inputName" required>
+                        <input type="text" value="<%=session.getAttribute("nome") == null ? "" : session.getAttribute("nome") %>" class="form-control" id="inputName" name="inputName" required>
                     </div>	
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCPF">CPF</label>
-                        <input type="text" oninput="mascararCPF(this);validarCPF(this)" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
+                        <input type="text" value="<%=session.getAttribute("cpf") == null ? "" : session.getAttribute("cpf") %>" oninput="mascararCPF(this);validarCPF(this)" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
                     </div>
 
                     <div class="form-group col-md-4">
@@ -55,15 +57,17 @@
 
                     <div class="form-group col-md-4">
                         <label for="inputName">Data de nascimento</label>
-                        <input type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" required>
+                        <input value="<%=session.getAttribute("dataNasc") == null ? "" : session.getAttribute("dataNasc") %>" type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" required>
                     </div>
                 </div>                
 
+                  
+                  <%if(session.getAttribute("userId") == null){ %>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
-                    <input oninput="verificarEmail(this)"  type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
-                  </div>
+                    <input value="<%=session.getAttribute("email") == null ? "" : session.getAttribute("email") %>" onblur="verificarEmail(this)"  type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
+                </div>
                   <div class="form-group col-md-3">
                     <label for="inputPassword4">Senha</label>
                     <input minlength="8" oninput="verificarSenhas(this)" type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Senha" required>
@@ -73,31 +77,36 @@
                     <input type="password" class="form-control" oninput="verificarSenhas(this)" id="inputPasswordValid" name="inputPasswordValid" placeholder="Verificar Senha" required>
                   </div>
                 </div>
-
+				<%} %>
                 <br> 
 
                 <div class="form-row">
                 	<div class="form-group col-md-2">
                       <label for="inputCEP">CEP</label>
-                      <input oninput="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
+                      <input value="<%=session.getAttribute("cep") == null ? "" : session.getAttribute("cep") %>" onblur="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
                     </div>
                     <div class="form-group col-md-5">
                         <label for="inputRua">Logradouro</label>
-                        <input type="text" class="form-control" id="inputRua" name="inputStreet" placeholder="Avenida Marcondes Ferraz" required>
+                        <input value="<%= session.getAttribute("rua") == null ? "" : session.getAttribute("rua") %>" type="text" class="form-control" id="inputRua" name="inputStreet" placeholder="Avenida Marcondes Ferraz" required>
+                    </div>
+                    
+                    <div class="form-group col-md-1">
+                        <label for="inputNumero">Número</label>
+                        <input value="<%=session.getAttribute("numero") == null ? "" : session.getAttribute("numero") %>" type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
                     </div>
 
-                    <div class="form-group col-md-5">
+                    <div class="form-group col-md-4">
                         <label for="inputBairro">Bairro</label>
-                        <input type="text" class="form-control" id="inputBairro" name="inputNeighborhood" placeholder="General Dutra" required>
+                        <input value="<%=session.getAttribute("bairro") == null ? "" : session.getAttribute("bairro") %>" type="text" class="form-control" id="inputBairro" name="inputNeighborhood" placeholder="General Dutra" required>
                     </div>
                 </div>     
 
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-3">
                       <label for="inputCity">Cidade</label>
-                      <input type="text" class="form-control" id="inputCity" name="inputCity" required>
+                      <input value="<%=session.getAttribute("cidade") == null ? "" : session.getAttribute("cidade") %>" type="text" class="form-control" id="inputCity" name="inputCity" required>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-2">
                       <label for="inputEstado">Estado</label>
                       <select id="inputEstado" class="form-control" name="inputState" required>
                         <option selected>Escolher...</option>
@@ -130,36 +139,16 @@
                         <option value="TO">TO</option>
                       </select>
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputNumero">Númmero</label>
-                        <input type="number" class="form-control" id="inputNumero" name="inputAddressNumber" required>
+                    
+                    <div class="form-group col-md-1">
+                        <label for="inputTelefone">DDD</label>
+                        <input value="<%=session.getAttribute("ddd") == null ? "" : session.getAttribute("ddd") %>" maxlength="2" type="text" class="form-control" id="inputTelefone" name="inputDDD1">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTelefone">Telefone</label>
+                        <input value="<%=session.getAttribute("telefone") == null ? "" : session.getAttribute("telefone") %>" type="text" class="form-control" id="inputDDD1" name="inputPhoneNumber1">
                     </div>
                   </div>
-
-                
-                <br> 
-
-                <div class="form-row">
-                    <div class="form-group col-md-1">
-                        <label for="inputTelefone">DDD 1</label>
-                        <input maxlength="2" type="tel" class="form-control" id="inputTelefone" name="inputDDD1">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label for="inputTelefone">Telefone 1</label>
-                        <input type="tel" class="form-control" id="inputDDD1" name="inputPhoneNumber1">
-                    </div>
-
-					<div class="form-group col-md-1">
-                        <label for="inputCelular2">DDD 2</label>
-                        <input maxlength="2" type="tel" class="form-control" id="inputDDD2" name="inputDDD2">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label for="inputCelular2">Telefone 2</label>
-                        <input type="tel" class="form-control" id="inputCelular2" name="inputPhoneNumber2">
-                    </div>
-                </div>   
-
-                <br>
 
                 <br>
 
@@ -169,6 +158,7 @@
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
 </body>
+
 <script src="resources/js/preview.js"></script>
 <script src="resources/js/cadastro.js"></script>
 <script src="resources/js/jquery.js"></script>

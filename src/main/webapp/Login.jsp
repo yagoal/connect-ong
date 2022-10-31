@@ -16,7 +16,6 @@
 </head>
 <body>
    <%@ include file="Structs/NavBar.jsp"%>
-
     <main>
         <div class="mensagem">
             <div id="alerta" class="msg alert alert-info" role="alert" style="color: black;">

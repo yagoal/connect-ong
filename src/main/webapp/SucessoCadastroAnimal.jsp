@@ -15,7 +15,9 @@
 <title>Cadastrado com sucesso</title>
 </head>
 <body>
-	
+	<%
+		String docType = (String)session.getAttribute("docType");
+	%>
     <%@ include file="Structs/NavBar.jsp"%>
     <main>
         <div class="perfil">  
@@ -23,16 +25,14 @@
                 <div class="card-body">
                     <h5 class="card-title">SUCESSO</h5>
                     <p class="card-text">
-                        Parabéns! Seu cadastro foi realizado com sucesso! <br>
-                        Agora, você é um parceiro da ONG! <br><br>
-                        <b>Muito obrigado por estar conosco nessa caminhada.</b><br><br>
-                        Para acessar seu perfil e a lista de animais disponívels, efetue o login em nossa plataforma, 
-                        informando o e-mail e a senha utilizados durante o cadastro.
+                        Parabéns! O cadastro do nosso amiguinho foi realizado com sucesso! <br>
+                        <br><br>
+                        <b>Muito obrigado por estar aumentando nossa família.</b><br><br>
                         
                 </div>
 
                 <div class="card-footer">
-                    <a class="btn btn-primary" href="Login.jsp" role="button">Login</a>
+                    <a class="btn btn-primary" href="<%=docType.equals("cnpj")? "OngPerfil.jsp" : "MeuPerfil.jsp" %>" role="button">Retornar para Meu perfil</a>
                 </div>
             </div>
         </div>

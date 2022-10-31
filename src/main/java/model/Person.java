@@ -33,9 +33,6 @@ public abstract class Person {
 	private Phone phone1;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private Phone phone2;
-	
-	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
 
 
@@ -45,7 +42,7 @@ public abstract class Person {
 
 
 	public Person(String name, Date birthDate, String gender, String document, String imgPath, String email,
-			Phone phone1, Phone phone2, Address address) {
+			Phone phone1, Address address) {
 		super();
 		this.name = name;
 		this.birthDate = birthDate;
@@ -54,7 +51,6 @@ public abstract class Person {
 		this.imgPath = imgPath;
 		this.email = email;
 		this.phone1 = phone1;
-		this.phone2 = phone2;
 		this.address = address;
 	}
 
@@ -117,17 +113,6 @@ public abstract class Person {
 	public void setPhone1(Phone phone1) {
 		this.phone1 = phone1;
 	}
-
-
-	public Phone getPhone2() {
-		return phone2;
-	}
-
-
-	public void setPhone2(Phone phone2) {
-		this.phone2 = phone2;
-	}
-
 
 	public Address getAddress() {
 		return address;
