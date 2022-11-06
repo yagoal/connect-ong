@@ -168,19 +168,21 @@ public class DaoGeneric {
 		String email = request.getParameter("email");
 		User user = null;
 		Session session = openSession();
+
+		response.setCharacterEncoding("UTF-8");
+		response.setHeader("Access-Control-Allow-Origin", "*");
 		
 		try {
 			session.beginTransaction();
-			user = (User) session.createQuery("FROM User WHERE login='"+email+"'").uniqueResult();
+			user = (User) session.createQuery("FROM User WHERE email='"+email+"'").uniqueResult();
 			if(user != null) {
 				return user;				
-			}
+			} 
 		} catch (Exception e) {
 			System.err.println(e);
 		} finally {
 			session.close();
 		}
-		response.setStatus(500);
 		return null;
 	}
 	

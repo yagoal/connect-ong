@@ -5,8 +5,8 @@
         form.addEventListener('input', checarCampos)
 
 function checarCampos(){
-			const botao = document.querySelector('#finalizarCadastro')
             let libera = []
+			const botao = document.querySelector('#finalizarCadastro')
             const fileInput = document.querySelector('#formFile')
             const campos = document.querySelectorAll('input')
             const negados = document.querySelectorAll('.negado')
@@ -151,15 +151,15 @@ function buscarCep(input) {
 function verificarEmail(input) {
 	$('#negadoEmail').remove();
 	
-	$.ajax({
-		method: 'GET',
-		url: 'RegisterUserController',
-		data:{email: input.value}
-	}).done((data) => {
-		console.log(data)
-		input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoEmail">Email ja esta em uso</p>`)
-	}).fail(()=>{
-		console.log('erro')
+	fetch(`Login?email=${input.value}`)
+	.then(resp =>{
+		if(resp.status >= 200 && resp.status <= 299){			
+			input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoEmail">Email ja esta em uso</p>`)
+		} else {
+			console.log("email pode ser cadastrado")
+		}
 	})
+	
+	
 	
 }

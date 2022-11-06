@@ -17,7 +17,13 @@ public class UserLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		User user = DaoGeneric.getInstance().retrieveByEmail(request, response);
+		
+		if(user != null) {
+			response.setStatus(200);
+		} else {
+			response.sendError(404, "not found");
+		}
 		
 	}
 

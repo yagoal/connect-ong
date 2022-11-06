@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputName">Data de nascimento</label>
+                        <label for="inputBirthDate">Data de nascimento</label>
                         <input value="<%=session.getAttribute("dataNasc") == null ? "" : session.getAttribute("dataNasc") %>" type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" required>
                     </div>
                 </div>                
@@ -68,7 +68,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
-                    <input value="<%=session.getAttribute("email") == null ? "" : session.getAttribute("email") %>" onblur="verificarEmail(this)"  type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
+                    <input value="<%=session.getAttribute("email") == null ? "" : session.getAttribute("email") %>" onchange="verificarEmail(this)"   type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
                 </div>
                   <div class="form-group col-md-3">
                     <label for="inputPassword4">Senha</label>
@@ -85,7 +85,7 @@
                 <div class="form-row">
                 	<div class="form-group col-md-2">
                       <label for="inputCEP">CEP</label>
-                      <input value="<%=session.getAttribute("cep") == null ? "" : session.getAttribute("cep") %>" onblur="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
+                      <input value="<%=session.getAttribute("cep") == null ? "" : session.getAttribute("cep") %>" onchange="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
                     </div>
                     <div class="form-group col-md-5">
                         <label for="inputRua">Logradouro</label>
