@@ -46,7 +46,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCPF">CPF</label>
-                        <input type="text" value="<%=session.getAttribute("cpf") == null ? "" : session.getAttribute("cpf") %>" oninput="mascararCPF(this);validarCPF(this)" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
+                        <input type="text" value="<%=session.getAttribute("cpf") == null ? "" : session.getAttribute("cpf") %>" onchange="verificarCPF(this)" oninput="mascararCPF(this);validarCPF(this)" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
                     </div>
 
                     <div class="form-group col-md-4">

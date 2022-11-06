@@ -147,7 +147,18 @@ function buscarCep(input) {
         console.log(json)
     })
    }
-   
+function verificarCPF(input) {
+	$('#negadoCPF').remove();
+	
+	fetch(`DocumentController?document=${input.value}`)
+	.then(resp =>{
+		if(resp.status >= 200 && resp.status <= 299){			
+			input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoCpf">CPF ja esta em uso</p>`)
+		} else {
+			console.log("cpf pode ser cadastrado")
+		}
+	})
+}
 function verificarEmail(input) {
 	$('#negadoEmail').remove();
 	
