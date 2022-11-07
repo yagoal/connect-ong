@@ -1,13 +1,26 @@
 //script para verificar se todos os campos estão preenchidos corretamente para liberar o botão de submit
-let form = document.querySelector('form')
-        const botao = document.querySelector('#finalizarCadastro')
-        form.addEventListener('input', function(){
-			
+		let form = document.querySelector('form')
+		
+		checarCampos();
+        form.addEventListener('input', checarCampos)
+
+function checarCampos(){
             let libera = []
+			const botao = document.querySelector('#finalizarCadastro')
+            const fileInput = document.querySelector('#formFile')
             const campos = document.querySelectorAll('input')
             const negados = document.querySelectorAll('.negado')
-           
+           	const preview = document.querySelector('#preview')
+           	
+           	if(preview.src) {
+				libera.push(true)
+			}
+			if(fileInput.value) {
+				libera.pop()
+			}
+			console.log(campos)
 			console.log(negados)
+			console.log(libera)
 			campos.forEach(e => {
 	        	if(e.value){
 	            	libera.push(true)
@@ -19,9 +32,8 @@ let form = document.querySelector('form')
                 botao.setAttribute('disabled','')
             }
            	})
-        })
-
-
+}
+        
 function validarCPF(input){
 	$('#negadoCpf').remove()
 	
@@ -135,19 +147,30 @@ function buscarCep(input) {
         console.log(json)
     })
    }
-   
+function verificarCPF(input) {
+	$('#negadoCPF').remove();
+	
+	fetch(`DocumentController?document=${input.value}`)
+	.then(resp =>{
+		if(resp.status >= 200 && resp.status <= 299){			
+			input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoCpf">CPF ja esta em uso</p>`)
+		} else {
+			console.log("cpf pode ser cadastrado")
+		}
+	})
+}
 function verificarEmail(input) {
 	$('#negadoEmail').remove();
 	
-	$.ajax({
-		method: 'GET',
-		url: 'RegisterUserController',
-		data:{email: input.value}
-	}).done((data) => {
-		console.log(data)
-		input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoEmail">Email ja esta em uso</p>`)
-	}).fail(()=>{
-		console.log('erro')
+	fetch(`Login?email=${input.value}`)
+	.then(resp =>{
+		if(resp.status >= 200 && resp.status <= 299){			
+			input.insertAdjacentHTML('afterend',`<p class="negado" id="negadoEmail">Email ja esta em uso</p>`)
+		} else {
+			console.log("email pode ser cadastrado")
+		}
 	})
+	
+	
 	
 }

@@ -40,35 +40,37 @@ public class RegisterUserController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String appPath = request.getServletContext().getRealPath(""); // pegando o caminho absoluto da aplicação
-		
-		String uploadImgPath = appPath + UPLOAD_DIR; // caminho da pasta onde a imagem será salva
-		System.out.println(uploadImgPath);
-		
-		File uploadDir = new File(uploadImgPath); 
-		
-		String timeStamp = Long.toString(System.currentTimeMillis()); //usando o timeStamp para se certificar que o arquivo será sempre diferente
-		
-		// criando a pasta onde será salvo as imagens caso ela não exista
-		if(!uploadDir.exists()) {
-			uploadDir.mkdirs();
-		}
-		
-		System.out.println("caminho da pasta de upload: "+ uploadDir.getAbsolutePath());
-		
-		Part part = request.getPart("file");
-		String imgName = getFilename(part);
-		String savePath = uploadImgPath + File.separator + timeStamp + imgName ;
-		String imgPath = UPLOAD_DIR + "/" + timeStamp + imgName;
-		System.out.println(savePath);
-		part.write(savePath);
+		HttpSession httpSession = request.getSession(false);
 		
 		User user = new User();
 		Address address = new Address();
 		Phone phone1 = new Phone();
 		Integer id = null;
-		HttpSession httpSession = request.getSession(false);
+		String imgPath = null;
 		
+		if(httpSession.getAttribute("userId") != null) {
+			id = (Integer) httpSession.getAttribute("userId");
+			user = (User) DaoGeneric.getInstance().retrieveById(User.class, id);
+			imgPath = user.getImgPath();
+		} else {
+			user.setPassword(request.getParameter("inputPassword"));
+			user.setEmail(request.getParameter("inputEmail"));
+			user.setDocument(request.getParameter("inputDocument"));
+			user.setDocType();
+			user.setGender( request.getParameter("inputGender"));
+			
+			SimpleDateFormat dateFormated = new SimpleDateFormat("yyyy-MM-dd"); 
+			Date birthDate;
+			
+			try {
+				birthDate = dateFormated.parse(request.getParameter("inputBirthDate"));
+				user.setBirthDate(birthDate);
+			} catch (ParseException e) {
+				user.setBirthDate(null);
+				e.printStackTrace();
+				
+			}
+		}
 		
 		address.setCity(request.getParameter("inputCity"));
 		address.setNeighborhood(request.getParameter("inputNeighborhood"));
@@ -80,40 +82,46 @@ public class RegisterUserController extends HttpServlet {
 		phone1.setDdd(request.getParameter("inputDDD1"));
 		phone1.setNumber(request.getParameter("inputPhoneNumber1"));
 		
-		if(httpSession.getAttribute("userId") != null) {
-			id = (Integer) httpSession.getAttribute("userId");
-			user = (User) DaoGeneric.getInstance().retrieveById(User.class, id);
-		} else {
-			user.setPassword(request.getParameter("inputPassword"));
-			user.setEmail(request.getParameter("inputEmail"));
-		}
-		
-		user.setImgPath(imgPath);
+	
 		user.setName(request.getParameter("inputName"));
 		user.setAddress(address);
 		user.setPhone1(phone1);
+		user.setId(id);
 		
-		SimpleDateFormat dateFormated = new SimpleDateFormat("yyyy-MM-dd"); 
+
+		Part part = request.getPart("file");
+		String imgName;
+		String savePath;
 		
-		Date birthDate;
-		try {
-			birthDate = dateFormated.parse(request.getParameter("inputBirthDate"));
-			user.setBirthDate(birthDate);
-		} catch (ParseException e) {
-			user.setBirthDate(null);
-			e.printStackTrace();
+		if(!part.getSubmittedFileName().equals("")) {
+			String appPath = request.getServletContext().getRealPath(""); // pegando o caminho absoluto da aplicação
 			
+			String uploadImgPath = appPath + UPLOAD_DIR; // caminho da pasta onde a imagem será salva
+			System.out.println(uploadImgPath);
+			
+			File uploadDir = new File(uploadImgPath); 
+			
+			String timeStamp = Long.toString(System.currentTimeMillis()); //usando o timeStamp para se certificar que o arquivo será sempre diferente
+			
+			// criando a pasta onde será salvo as imagens caso ela não exista
+			if(!uploadDir.exists()) {
+				uploadDir.mkdirs();
+			}
+			
+			System.out.println("caminho da pasta de upload: "+ uploadDir.getAbsolutePath());
+			
+			imgName = getFilename(part);
+			savePath = uploadImgPath + File.separator + timeStamp + imgName ;
+			imgPath = UPLOAD_DIR + "/" + timeStamp + imgName;
+			System.out.println(savePath);
+			part.write(savePath);
 		}
 		
-		user.setId(id);
-		user.setDocument(request.getParameter("inputDocument"));
-		user.setDocType();
-		user.setGender( request.getParameter("inputGender"));
+		user.setImgPath(imgPath);
 		
-		
-		
-		
+
 		DaoGeneric.getInstance().save(user);
+		
 		if(httpSession.getAttribute("userId") != null) {
 			response.sendRedirect("SucessoAlteracao.jsp");
 		} else {

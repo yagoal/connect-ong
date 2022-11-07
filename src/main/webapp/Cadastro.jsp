@@ -1,6 +1,8 @@
+<%@page import="dao.DaoGeneric"%>
+<%@ page import="model.User" %>
+<%@ page import="java.util.Enumeration" %>
 <%@ page language="java" contentType="text/html; ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.Enumeration" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,10 +42,11 @@
                     </div>	
                 </div>
 
+                  <%if(session.getAttribute("userId") == null){ %>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCPF">CPF</label>
-                        <input type="text" value="<%=session.getAttribute("cpf") == null ? "" : session.getAttribute("cpf") %>" oninput="mascararCPF(this);validarCPF(this)" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
+                        <input type="text" value="<%=session.getAttribute("cpf") == null ? "" : session.getAttribute("cpf") %>" onchange="verificarCPF(this)" oninput="mascararCPF(this);validarCPF(this)" class="form-control" id="inputCPF" name="inputDocument" placeholder="000.000.000-00" required>
                     </div>
 
                     <div class="form-group col-md-4">
@@ -56,17 +59,16 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputName">Data de nascimento</label>
+                        <label for="inputBirthDate">Data de nascimento</label>
                         <input value="<%=session.getAttribute("dataNasc") == null ? "" : session.getAttribute("dataNasc") %>" type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" required>
                     </div>
                 </div>                
 
                   
-                  <%if(session.getAttribute("userId") == null){ %>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
-                    <input value="<%=session.getAttribute("email") == null ? "" : session.getAttribute("email") %>" onblur="verificarEmail(this)"  type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
+                    <input value="<%=session.getAttribute("email") == null ? "" : session.getAttribute("email") %>" onchange="verificarEmail(this)"   type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
                 </div>
                   <div class="form-group col-md-3">
                     <label for="inputPassword4">Senha</label>
@@ -83,7 +85,7 @@
                 <div class="form-row">
                 	<div class="form-group col-md-2">
                       <label for="inputCEP">CEP</label>
-                      <input value="<%=session.getAttribute("cep") == null ? "" : session.getAttribute("cep") %>" onblur="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
+                      <input value="<%=session.getAttribute("cep") == null ? "" : session.getAttribute("cep") %>" onchange="buscarCep(this)" type="text" class="form-control" id="inputCEP" name="inputZipCode" required>
                     </div>
                     <div class="form-group col-md-5">
                         <label for="inputRua">Logradouro</label>
@@ -152,13 +154,30 @@
 
                 <br>
 
-                <button disabled type="submit" id="finalizarCadastro" class="btn btn-primary">Finalizar Cadastro</button>
+                <button disabled type="submit" id="finalizarCadastro" class="btn btn-primary"><%=session.getAttribute("userId") == null ? "Finalizar Cadastro" : "Finalizar Edição" %></button>
               </form>
         </div>
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
+	
+<%if(session.getAttribute("userId") != null){ 
+	Integer id = Integer.parseInt((String)request.getParameter("id")); 
+	User user = (User)DaoGeneric.getInstance().retrieveById(User.class, id);
+	String estadoSelect = user.getAddress().getState();
+%>
+<script type="text/javascript">
+	const estado = '<%=estadoSelect%>';
+	const options = document.querySelectorAll('#inputEstado option');
+	options[0].removeAttribute('selected');
+	options.forEach(option => {
+		if(option.value === estado){
+			option.setAttribute('selected','');
+		}
+	})
+	console.log(options);
+</script>
+<%} %>
 </body>
-
 <script src="resources/js/preview.js"></script>
 <script src="resources/js/cadastro.js"></script>
 <script src="resources/js/jquery.js"></script>
