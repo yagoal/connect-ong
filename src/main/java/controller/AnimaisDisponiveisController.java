@@ -52,7 +52,7 @@ public class AnimaisDisponiveisController extends HttpServlet {
 		}
 		
 	}
-	
+
 	/**
 	 *
 	 */
@@ -79,30 +79,28 @@ public class AnimaisDisponiveisController extends HttpServlet {
 		
 		Id id = gson.fromJson(sb.toString(), Id.class);
 		
-		Animal animalPost = (Animal)DaoGeneric.getInstance().retrieveById(Animal.class, id.id);
+		Animal animalPost = (Animal)DaoGeneric.getInstance().retrieveById(Animal.class, id.idAnimal);
 		System.out.println(animalPost.getName());
 		animalPost.setAvailability(false);
-		
-		
+
 		String userId = request.getSession().getAttribute("userId").toString();
 		System.out.println("Meu ID:" + userId + "************");
 		
 		User user = (User) DaoGeneric.getInstance().retrieveById(User.class, Integer.parseInt(userId));
-		
+
 		Adoption adoption = new Adoption(new Date(), animalPost);
-		
+
 		List<Adoption> adoptions = user.getAdoptions();
-		
+
 		adoptions.add(adoption);
-		
+
 		user.setAdoptions(adoptions);
-		
+
 		httpSession.setAttribute("listaAdo", user.getAdoptions().size());
-		
+
 		DaoGeneric.getInstance().save(animalPost);
 		DaoGeneric.getInstance().save(user);
-		
-		
+
 		// Resposta vazia a quem enviou a requisição
 		Map <String, String> emptyResponse = new HashMap<String, String>();
 		PrintWriter out = response.getWriter();

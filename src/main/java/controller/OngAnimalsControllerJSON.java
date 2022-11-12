@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -11,12 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import dao.DaoGeneric;
+import model.Adoption;
 import model.Animal;
+import model.Id;
 import model.ListAnimals;
 import model.User;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Servlet implementation class OngAnimalsControllerJSON
@@ -64,11 +70,46 @@ public class OngAnimalsControllerJSON extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
-		
+		response.setContentType("application/json");
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setCharacterEncoding("utf-8");
+		response.setStatus(200);
+
+		Gson gson = new Gson();
+		StringBuffer sb = new StringBuffer();
+
+		BufferedReader br = request.getReader();
+
+		String atributos = null;
+
+		while ((atributos = br.readLine()) != null) {
+			sb.append(atributos);
+		}
+
+		Id id = gson.fromJson(sb.toString(), Id.class);
+	
+		Animal animal = (Animal) DaoGeneric.getInstance().retrieveById(Animal.class, id.idAnimal);
+		User user = (User) DaoGeneric.getInstance().retrieveById(User.class, id.idUser);
+
+		animal.setAvailability(false);
+
+		Adoption adoption = new Adoption(new Date(), animal);
+
+		List<Adoption> adoptions = user.getAdoptions();
+
+		adoptions.add(adoption);
+
+		DaoGeneric.getInstance().save(animal);
+		DaoGeneric.getInstance().save(user);
+
+		// Resposta vazia a quem enviou a requisição
+		Map <String, String> emptyResponse = new HashMap<String, String>();
+		PrintWriter out = response.getWriter();
+		out.print(gson.toJson(emptyResponse));
+		out.flush();
 	}
 
 }
