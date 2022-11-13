@@ -57,6 +57,12 @@ public class UserLoginController extends HttpServlet {
 			httpSession.setAttribute("login", user.getEmail());
 			httpSession.setAttribute("telefone", user.getPhone1().getNumber());
 			httpSession.setAttribute("ddd", user.getPhone1().getDdd());
+			//httpSession.setAttribute("imgQRCode", user.getDonate().getImgQRCode());
+			//httpSession.setAttribute("razaoSocial", user.getDonate().getCompanyName());
+			//httpSession.setAttribute("agencia", user.getDonate().getBranch());
+			//httpSession.setAttribute("conta", user.getDonate().getAccount());
+			//httpSession.setAttribute("chave", user.getDonate().getKey());
+			//httpSession.setAttribute("codigoQR", user.getDonate().getCodeQR());
 			
 			if(user.getDocType().equals("cpf")) {
 				response.sendRedirect("MeuPerfil.jsp");				
