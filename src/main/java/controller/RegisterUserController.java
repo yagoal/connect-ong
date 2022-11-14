@@ -17,7 +17,6 @@ import javax.servlet.http.Part;
 import dao.DaoGeneric;
 import model.User;
 import model.Address;
-import model.Donate;
 import model.Phone;
 
 
@@ -32,8 +31,7 @@ import model.Phone;
 		)
 public class RegisterUserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String UPLOAD_DIR = "fotos-perfil"; // nome da pasta onde vai ser salvo //IMG DO PERFIL
-	private static final String UPLOAD_DIRQR = "fotos-QRCODE"; // nome da pasta onde vai ser salvo //IMG DO QR CODE
+	private static final String UPLOAD_DIR = "fotos-perfil"; // nome da pasta onde vai ser salvo
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DaoGeneric.getInstance().retrieveByEmail(request, response);
@@ -47,10 +45,8 @@ public class RegisterUserController extends HttpServlet {
 		User user = new User();
 		Address address = new Address();
 		Phone phone1 = new Phone();
-		Donate donate = new Donate();
 		Integer id = null;
 		String imgPath = null;
-		String imgQRCode = null; //IMG DO QR CODE
 		
 		if(httpSession.getAttribute("userId") != null) {
 			id = (Integer) httpSession.getAttribute("userId");
@@ -86,17 +82,10 @@ public class RegisterUserController extends HttpServlet {
 		phone1.setDdd(request.getParameter("inputDDD1"));
 		phone1.setNumber(request.getParameter("inputPhoneNumber1"));
 		
-		donate.setCompanyName(request.getParameter("inputCompanyName"));
-		donate.setBranch(request.getParameter("inputBranch"));
-		donate.setAccount(request.getParameter("inputAccount"));
-		donate.setCodeQR(request.getParameter("inputCodeQR"));
-		donate.setKey(request.getParameter("inputKey"));
-		donate.setImgQRCode(request.getParameter("inputImgQRCode"));
 	
 		user.setName(request.getParameter("inputName"));
 		user.setAddress(address);
 		user.setPhone1(phone1);
-		user.setDonate(donate);
 		user.setId(id);
 		
 
@@ -107,43 +96,30 @@ public class RegisterUserController extends HttpServlet {
 		if(!part.getSubmittedFileName().equals("")) {
 			String appPath = request.getServletContext().getRealPath(""); // pegando o caminho absoluto da aplicação
 			
-			String uploadImgPath = appPath + UPLOAD_DIR; // caminho da pasta onde a imagem será salva //IMG DO PERFIL
+			String uploadImgPath = appPath + UPLOAD_DIR; // caminho da pasta onde a imagem será salva
 			System.out.println(uploadImgPath);
 			
-			String uploadImgQRCode = appPath + UPLOAD_DIRQR; // caminho da pasta onde a imagem será salva //IMG DO QR CODE
-			System.out.println(uploadImgQRCode);
-			
-			File uploadDir = new File(uploadImgPath); //IMG DO PERFIL
-			File uploadDirQR = new File(uploadImgQRCode); //IMG DO QR CODE
+			File uploadDir = new File(uploadImgPath); 
 			
 			String timeStamp = Long.toString(System.currentTimeMillis()); //usando o timeStamp para se certificar que o arquivo será sempre diferente
 			
-			// criando a pasta onde será salvo as imagens caso ela não exista //IMG DO PERFIL
+			// criando a pasta onde será salvo as imagens caso ela não exista
 			if(!uploadDir.exists()) {
 				uploadDir.mkdirs();
 			}
 			
-			// criando a pasta onde será salvo as imagens caso ela não exista //IMG DO QR CODE
-			if(!uploadDirQR.exists()) {
-				uploadDirQR.mkdirs();
-			}
-			
-			System.out.println("caminho da pasta de upload: "+ uploadDir.getAbsolutePath()); //IMG DO PERFIL
-			
-			System.out.println("caminho da pasta de upload: "+ uploadDirQR.getAbsolutePath()); //IMG DO QR CODE
+			System.out.println("caminho da pasta de upload: "+ uploadDir.getAbsolutePath());
 			
 			imgName = getFilename(part);
-			savePath = uploadImgPath + File.separator + timeStamp + imgName ; //IMG DO PERFIL
-			savePath = uploadImgQRCode + File.separator + timeStamp + imgName ; //IMG DO QR CODE
-			imgPath = UPLOAD_DIR + "/" + timeStamp + imgName; //IMG DO PERFIL
-			imgQRCode = UPLOAD_DIRQR + "/" + timeStamp + imgName; //IMG DO QR CODE
+			savePath = uploadImgPath + File.separator + timeStamp + imgName ;
+			imgPath = UPLOAD_DIR + "/" + timeStamp + imgName;
 			System.out.println(savePath);
 			part.write(savePath);
 		}
 		
 		user.setImgPath(imgPath);
-		user.setDonate(donate); //PARA SALVAR AS INFORMAÇÕES DE DOAÇÃO
 		
+
 		DaoGeneric.getInstance().save(user);
 		
 		if(httpSession.getAttribute("userId") != null) {
