@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="model.User"%>
+<%@ page import="dao.DaoGeneric" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,23 +20,43 @@
 <body>
 	
     <%@ include file="Structs/NavBar.jsp"%>
-    <main>
-        <div class="perfil">  
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Olá, parceiro(a)!</h5>
-                    <p class="card-text">
-                        Estamos felizes em saber que você deseja realizar uma doação. <br>
-        				Para ter acesso à lista de insumos que as ONGs estão precisando, clique em <b>Insumos.</b><br>
-        				Caso você queira ajudar uma ONG financeiramente, clique em <b>Dinheiro</b>.                        
-                </div>
-
-                <div class="card-footer">
-                    <a class="btn btn-primary" href="DoacaoInsumo.jsp" role="button">Insumos</a>
-                    <a class="btn btn-primary" href="DoacaoPix.jsp" role="button">Dinheiro</a>
-                </div>
-            </div>
-        </div>
+    <main>          
+        	<br> <br> 
+			<div class="card" style="text-align: center; width: 800px; margin: auto;">
+  				<div class="card-body">  						
+					Estamos felizes em saber que você deseja realizar uma doação. <br> <br>
+                	Caso você queira ajudar uma das ONGs financeiramente, clique <a href="DoacaoPix.jsp"><b>aqui</b></a>.<br> <br>
+        			Caso você deseje doar insumos, escolha os itens que você deseja doar e a ONG que irá receber a doação e 
+        			dirija-se até o endereço disponibilizado por ela.
+				</div>
+			</div> 
+		
+		<article class="img-doacao" style="text-align: center;">
+            <img class="insumos" src="resources/components/insumos.png" alt="Insumos" style="width: 800px; margin: 20px;">
+        </article>
+        
+            <div class="card" style="text-align: center; width: 800px; margin: auto; margin-bottom: 30px;">
+  				<div class="card-body">  						
+			<% 
+    			List<User> ongs = (List<User>)DaoGeneric.getInstance().retrieveUsersCnpj();		
+    
+				for (User ong: ongs) {
+					String street = ong.getAddress().getStreet();
+					String neighborhood = ong.getAddress().getNeighborhood();
+					String number = ong.getAddress().getNumber();
+					String city = ong.getAddress().getCity();
+					String state = ong.getAddress().getState();
+					String zipCode = ong.getAddress().getZipCode();
+			%>
+		
+			<h5><%= ong.getName() %></h5>
+			<p><%=street%>, número <%=number%>, Bairro <%=neighborhood%>, <%=city%> - <%=state%>. CEP: <%=zipCode%>.</p>
+	
+			<%}%>
+			
+				</div>
+			</div>
+		    
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
 

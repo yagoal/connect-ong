@@ -3,13 +3,13 @@ body{
 }
 
 li{
+	transition: all 0.2s;
     display: inline-block;
     margin: 0px 35px 0px 0px;
     color: white;
 }
 
 li:hover{
-    font-weight: 500;
     transform: scale(1.2);
 }
 
@@ -30,32 +30,42 @@ li:hover{
     justify-content: center;
     align-items: center;
     float: left;
+    margin-bottom: 1.5vh;
 }
 
-.perfil{
-    height: 70vh;
-    width: 100vw;
+.mensagem{
+    height: 10vh;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin: 0px 0px 1vh 5%;
+}
+
+.msg{
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-info{
+    color: black;
+}
+
+.img-doacao{
+    height: fit-content;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     float: left;
 }
 
-.card-title{
-    text-align: center;
-}
-
-.card{
-    width: 650px;
-    text-align: center;
-}
-
-.card-footer{
-    text-align: center;
-}
-
-.btn{
-    width: 40%;
+.insumos{
+    float: left;
+    cursor: url(../components/cursor-patinha.svg), default;
 }
 
 .rodape{
