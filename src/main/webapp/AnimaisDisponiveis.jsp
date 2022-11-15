@@ -134,7 +134,7 @@
 				%>
 				<div style=" width: 25rem"  class="col-sm-4 my-3">
 	                <div class="card">
-	                   <img class="card-img-top" width="100%" src="<%= imgPath %>" alt="Imagem de capa do card">
+	                   <img class="card-img-top" width="350px" height="250px" src="<%= imgPath %>" alt="Imagem de capa do card">
 	                     <div class="card-body">
 		                    <h5 class="card-title"><%= animal.getName() %></h5>
 							<p class="card-text">Ano de Nascimento: <%= dateFromatedYearRender %></p>
