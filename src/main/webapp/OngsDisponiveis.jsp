@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <%@ page import="model.Animal" %>
 <%@ page import="dao.DaoGeneric" %>
 <%@ page import="java.util.List" %>
@@ -17,7 +17,7 @@
 <link rel="manifest" href="resources/components/site.webmanifest">
 
 <meta charset="UTF-8">
-<title>ONGs Disponíveis</title>
+<title>ONGs DisponÃ­veis</title>
 <link rel="stylesheet" href="resources/styles/style_animais-disponiveis.css">
 
 <!-- CSS only -->
@@ -54,12 +54,12 @@
 	                   <img class="card-img-top" width="300" height="250" src="<%= imgPath %>" alt="Imagem de capa do card">
 	                     <div class="card-body">
 		                    <h5 class="card-title"><%= ong.getName() %></h5>
-							<p class="card-text">Ano de Fundação: <%= dateFromatedYearRender %></p>
-		                    <p class="card-text">Localização: <%=location %></p>
+							<p class="card-text">Ano de FundaÃ§Ã£o: <%= dateFromatedYearRender %></p>
+		                    <p class="card-text">LocalizaÃ§Ã£o: <%=location %></p>
 		                    <p class="card-text">Animais: <%= qtdAnimals %></p>
 	                 	 </div>
 	                  	<div class="card-footer" align="center">
-	                  	<a class="btn btn-primary modalButton" href="AnimaisDisponiveis.jsp?id=<%=ong.getId()%>">+Informações</a>
+	                  	<a class="btn btn-primary modalButton" href="AnimaisDisponiveis.jsp?id=<%=ong.getId()%>">+InformaÃ§Ãµes</a>
 	                    
 	                 	 </div>
 	               	</div>
@@ -71,7 +71,7 @@
       <%if (session.getAttribute("userId") == null) {  %>
         <script>
         function redirect(){
-        	alert("Você precisa estar logado para saber mais informações")
+        	alert("VocÃª precisa estar logado para saber mais informaÃ§Ãµes!")
             window.location = "./Login.jsp"
         }
         </script>

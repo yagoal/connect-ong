@@ -55,8 +55,7 @@ public class UserLoginController extends HttpServlet {
 			httpSession.setAttribute("estado", user.getAddress().getState());
 			httpSession.setAttribute("cep", user.getAddress().getZipCode());
 			httpSession.setAttribute("login", user.getEmail());
-			httpSession.setAttribute("telefone", user.getPhone1().getNumber());
-			httpSession.setAttribute("ddd", user.getPhone1().getDdd());
+			httpSession.setAttribute("telefone", "("+user.getPhone1().getDdd() + ") " + user.getPhone1().getNumber());
 			
 			if(user.getDocType().equals("cpf")) {
 				response.sendRedirect("MeuPerfil.jsp");				

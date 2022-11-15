@@ -16,7 +16,15 @@
 			<a href="Login.jsp"><li>Home</li></a> 
 			<a href="Login.jsp#tela-dois"><li>Sobre</li></a>
 			<a href="AnimaisDisponiveis.jsp"><li>Animais Disponíveis</li></a> 
+			<%if(session.getAttribute("docType") != null) { %>
+			<%if(session.getAttribute("docType").equals("cpf")){ %>
 			<a href="MeuPerfil.jsp"><li>Meu Perfil</li></a> 
+			<%} else { %>
+			<a href="OngPerfil.jsp"><li>Meu Perfil</li></a> 
+			<%}
+			} else {%>
+			<a href="MeuPerfil.jsp"><li>Meu Perfil</li></a> 
+			<%} %>
 			<a href="Login.jsp#perguntas-frequentes"><li>Perguntas Frequentes</li></a> 
 			<a href="Login.jsp#fale-conosco"><li>Fale Conosco</li></a>
 		</div>

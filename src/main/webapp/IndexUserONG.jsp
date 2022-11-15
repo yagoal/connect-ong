@@ -10,12 +10,13 @@
 <link rel="manifest" href="resources/components/site.webmanifest">
 
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="resources/styles/style_index.css">
+<link rel="stylesheet" href="resources/styles/style_index-user-ong.css">
 <link rel="stylesheet" href="resources/Bootstrap/css/bootstrap.min.css">
 <title>Connect-ONG</title>
 </head>
 <body>
    <%@ include file="Structs/NavBar.jsp"%>
+
     <main>
         <div class="mensagem">
             <div id="alerta" class="msg alert alert-info" role="alert" style="color: black;">
@@ -28,43 +29,29 @@
             <img class="animais" src="resources/components/index-laranja.svg" alt="Gatos e Cachorros: Adotar é um ato de amor!">
         </article>
 	
-		<%if (session.getAttribute("userId") == null) {  %>
+		<%-- <%if (session.getAttribute("userId") == null) {  %> --%>
         <aside>
-            <div class="formulario">
+            <div class="caixa">
                 <h5>Bem-vindo(a) ao <a class="boas-vindas" href=#tela-dois style="text-decoration: none;"><b>Connect-ONG</b></a></h5>
-                <form action="Login" method="post" class="form">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">E-mail</label>
-                      <input type="email" name="inputLogin" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Senha</label>
-                      <input type="password" name="inputPassword" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+                <div class="user">
+                	<b>Você está logado como:</b> <br> <%=session.getAttribute("nome") %> <br> <br>
+                	<b>Quantidade de animais cadastrados:</b> <%=session.getAttribute("listaAnimais") %> <br> <br>
+                	
+                        <a href="CadastroAnimais.jsp" class="btn btn-outline-primary">Cadastrar Animais<svg class=" mx-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hearts" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z"/>
+</svg>
+						</a>
+                        
+                        <br> <br>
 
-                      <div class="senha-variante">
-                        <a href="RedefinirSenha.jsp">Esqueci a senha</a>
-                      </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" role="button">ACESSAR</button>
-
-                    <br><br>
-
-                    <div class="senha-variante text-center">
-                        Ainda não se cadastrou? <a href="Cadastro.jsp"><b>Clique aqui</b></a> <br>
-                    </div>
-                </form>
+                        <a href="Logout.jsp" class="btn btn-outline-danger">Deslogar <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/></svg>
+                        </a>             	
+                </div>
             </div>
         </aside>
-       <%}else if(session.getAttribute("docType").equals("cpf")){%>
-       		<script>
-            	window.location = "./IndexUser.jsp"
-        	</script>
-       <%}else if(session.getAttribute("docType").equals("cnpj")){%>
-       		<script>
-            	window.location = "./IndexUserONG.jsp"
-        	</script>
-       <%}%>
+       <%--  <% } %> --%>
 
         <aside id="tela-dois">
             <div class="texto">
