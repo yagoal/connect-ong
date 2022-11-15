@@ -22,6 +22,7 @@
     <%@ include file="Structs/NavBar.jsp"%>
     <main>          
         	<br> <br> 
+        	<div class="container">
 			<div class="card" style="text-align: center; width: 800px; margin: auto;">
   				<div class="card-body">  						
 					Estamos felizes em saber que você deseja realizar uma doação. <br> <br>
@@ -30,32 +31,33 @@
         			dirija-se até o endereço disponibilizado por ela.
 				</div>
 			</div> 
-		
-		<article class="img-doacao" style="text-align: center;">
-            <img class="insumos" src="resources/components/insumos.png" alt="Insumos" style="width: 800px; margin: 20px;">
-        </article>
-        
-            <div class="card" style="text-align: center; width: 800px; margin: auto; margin-bottom: 30px;">
-  				<div class="card-body">  						
-			<% 
-    			List<User> ongs = (List<User>)DaoGeneric.getInstance().retrieveUsersCnpj();		
-    
-				for (User ong: ongs) {
-					String street = ong.getAddress().getStreet();
-					String neighborhood = ong.getAddress().getNeighborhood();
-					String number = ong.getAddress().getNumber();
-					String city = ong.getAddress().getCity();
-					String state = ong.getAddress().getState();
-					String zipCode = ong.getAddress().getZipCode();
-			%>
-		
-			<h5><%= ong.getName() %></h5>
-			<p><%=street%>, número <%=number%>, Bairro <%=neighborhood%>, <%=city%> - <%=state%>. CEP: <%=zipCode%>.</p>
+
+			<div>
+	            <img class="insumos justify-content-center" src="resources/components/insumos.png" alt="Insumos" style="width: 800px; margin: 20px;">
+	        </div>
+	        
+	            <div class="card" style="text-align: center; width: 800px; margin: auto; margin-bottom: 30px;">
+	  				<div class="card-body">  						
+				<% 
+	    			List<User> ongs = (List<User>)DaoGeneric.getInstance().retrieveUsersCnpj();		
+	    
+					for (User ong: ongs) {
+						String street = ong.getAddress().getStreet();
+						String neighborhood = ong.getAddress().getNeighborhood();
+						String number = ong.getAddress().getNumber();
+						String city = ong.getAddress().getCity();
+						String state = ong.getAddress().getState();
+						String zipCode = ong.getAddress().getZipCode();
+				%>
 	
-			<%}%>
-			
+				<h5><%= ong.getName() %></h5>
+				<p><%=street%>, número <%=number%>, Bairro <%=neighborhood%>, <%=city%> - <%=state%>. CEP: <%=zipCode%>.</p>
+		
+				<%}%>
+		
+					</div>
 				</div>
-			</div>
+		</div>
 		    
     </main>
 	<%@ include file="Structs/Footer.jsp"%>

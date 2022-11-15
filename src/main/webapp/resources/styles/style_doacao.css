@@ -63,8 +63,14 @@ li:hover{
     float: left;
 }
 
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .insumos{
-    float: left;
     cursor: url(../components/cursor-patinha.svg), default;
 }
 
