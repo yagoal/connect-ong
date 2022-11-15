@@ -2,44 +2,14 @@ body{
     margin: 0 auto;
 }
 
-.infos{
-	display:flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 30%;
-	height:100%;
-	margin-right: 5px;
-}
-
-.info-animal{
-	font-size: .9em;
-	text-align: left;
-}
-
-.info-tutor{
-	font-size: .9em;
-}
-
-.aviso{
-	width: 70%;
-	height:100%;
-	font-size: 1em;
-}
-.modal-body{
-	display:flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
 li{
+	transition: all 0.2s;
     display: inline-block;
     margin: 0px 35px 0px 0px;
     color: white;
 }
 
 li:hover{
-    font-weight: 500;
     transform: scale(1.2);
 }
 
@@ -60,11 +30,12 @@ li:hover{
     justify-content: center;
     align-items: center;
     float: left;
+    margin-bottom: 1.5vh;
 }
 
 .mensagem{
     height: 10vh;
-    width: 50%;
+    width: 90%;
     justify-content: center;
     align-items: center;
     float: left;
@@ -72,7 +43,7 @@ li:hover{
 }
 
 .msg{
-    height: 20vh;
+    height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,40 +54,13 @@ li:hover{
     color: black;
 }
 
-.caixa{
+.qrcode{
     height: fit-content;
-    width: 100%;
-    background-color: #E3EFF2;
-    float: left;
-    justify-items: center;
-    align-items: center;
-    padding-left: 120px;
-}
-.img-container{
-	width: 300px;
-}
-
-.card-deck{
-    width: 90%;
+    width: 40%;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
-    margin-top: 50px;
-}
-
-.card{
-    padding: .9em;
-    text-align: justify;
-}
-
-.card-title{
-    text-align: center;
-    font-weight: 700;
-    color: #ffb273;
-}
-
-.botao{
-    width: 100%;
+    align-items: center;
+    cursor: url(../components/cursor-patinha.svg), default;
 }
 
 .rodape{
