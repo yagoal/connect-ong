@@ -76,8 +76,7 @@
                     <b>CPF:</b> <%=session.getAttribute("cpf") %> <br>
                     <b>E-mail:</b> <%=session.getAttribute("login")%> <br>
                     <b>CEP:</b> <%=session.getAttribute("cep") %> <br>
-                    <b>Telefone 1:</b> <%=session.getAttribute("telefone1") %> <br>
-                    <b>Telefone 2:</b> <%=session.getAttribute("telefone2") %> <br> 
+                    <b>Telefone: </b> <%=(String)session.getAttribute("ddd")+(String)session.getAttribute("telefone") %><br> 
 	       </div>
 	       </div>
 	       <div class="aviso">
