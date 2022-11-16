@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <h5 class="card-title">MUITO OBRIGADO!</h5>
                     <p class="card-text">
-                        Temos certeza que Lilica ficará muito feliz e animada ao saber que existe algúem que quer tê-la em sua família. <b>Muito obrigado por esse ato de amor.</b> <br> <br>
+                        Temos certeza que o animal escolhido por você ficará muito feliz e animado ao saber que existe algúem que quer tê-lo em sua família. <b>Muito obrigado por esse ato de amor.</b> <br> <br>
                         Entraremos em contato com você pelo email e número de celular fornecidos e combinaremos todos os detalhes sobre a adoção, incluindo endereço, data e horário. <br> <br>
                         <b>Por favor, não deixe de comparecer!</b> Somos flexíveis em relação a datas e horários. Então, tudo será combinado de forma que ambas as partes concordem.
                         Entraremos em contato com você, novamente, no dia marcado para confirmar que você irá comparecer. 
