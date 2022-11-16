@@ -162,12 +162,12 @@
             <form class="formulario-mensagem">
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1"><h6>Por favor, digite sua mensagem no espaço abaixo:</h6></label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" required></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1"><h6>Informe seu e-mail:</h6></label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail" required>
                   </div>
             
                 <label for="exampleFormControlFile1"><h6>Caso deseje, anexe um arquivo à mensagem:</h6></label> <br>
@@ -181,14 +181,21 @@
                     </div>
                   </div>
 
-                <a class="btn btn-primary" href="#" role="button">Enviar mensagem</a>
+                <button type="button" onClick="redirect()" class="btn btn-primary">Enviar mensagem</button>
             </form>
         </div>
         
     </main>
 	<%@ include file="Structs/Footer.jsp"%>
-
-        <script src="resources/app.js"></script>
-        <noscript>You need to enable Javascript to view the full site.</noscript>
+	<script>
+    	function redirect(){
+      		alert("Sua mensagem foi enviada! Fique à vontade para nos contatar quando desejar. - Equipe Connect-ONG")
+            	window.location = "./Login.jsp"
+        }
+    </script>
+    
+   	<script src="resources/app.js"></script>
+    <noscript>You need to enable Javascript to view the full site.</noscript>
+    
 </body>
 </html>
