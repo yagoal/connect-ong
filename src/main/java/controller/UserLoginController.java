@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,12 +35,15 @@ public class UserLoginController extends HttpServlet {
 		String password;
 		User user;
 		
+    	SimpleDateFormat dateFormated = new SimpleDateFormat("dd/MM/yyyy"); 
+    	
+    
 		login = request.getParameter("inputLogin");
 		password = request.getParameter("inputPassword");
 		user = DaoGeneric.getInstance().hasUser(login, password);
 		if(user != null) {
 			HttpSession httpSession = request.getSession(true);
-			
+			String date = dateFormated.format(user.getBirthDate());
 			httpSession.setAttribute("userId", user.getId());
 			httpSession.setAttribute("docType", user.getDocType());
 			httpSession.setAttribute("perfilImg", user.getImgPath());

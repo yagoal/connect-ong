@@ -130,6 +130,8 @@
 							String dateFromatedRedempetionRender = dateFormated.format(redempetion);
 							String castracao = animal.getCastration() == true ? "Realizada" : "Pendente";
 							String imgPath = animal.getImgPath() == null ? "resources/components/no-photo.jpeg" : animal.getImgPath() ;
+							System.out.println(animal.getGender());
+							String gender = animal.getGender().equals("Macho") ? "Macho" : "Fêmea";
 				%>
 				<div style=" width: 25rem"  class="col-sm-4 my-3">
 	                <div class="card">
@@ -137,7 +139,7 @@
 	                     <div class="card-body">
 		                    <h5 class="card-title"><%= animal.getName() %></h5>
 							<p class="card-text">Ano de Nascimento: <%= dateFromatedYearRender %></p>
-		                    <p class="card-text">Sexo: <%= animal.getGender() %></p>
+		                    <p class="card-text">Sexo: <%= gender %></p>
 		                    <p class="card-text">Raça: <%= animal.getBreed() %></p>
 		                    <p class="card-text">Peso: <%= animal.getWeight() %> kg</p>
 		                    <p class="card-text">Data do resgate: <%= dateFromatedRedempetionRender %></p>
