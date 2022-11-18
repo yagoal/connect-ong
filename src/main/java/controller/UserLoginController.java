@@ -51,7 +51,7 @@ public class UserLoginController extends HttpServlet {
 			httpSession.setAttribute("cpf", user.getDocument());
 			httpSession.setAttribute("listaAnimais", user.getAnimals().size());
 			httpSession.setAttribute("sexo", user.getGender());
-			httpSession.setAttribute("dataNasc", user.getBirthDate());
+			httpSession.setAttribute("dataNasc", date);
 			httpSession.setAttribute("listaAdo", user.getAdoptions().size());
 			httpSession.setAttribute("rua", user.getAddress().getStreet());
 			httpSession.setAttribute("numero", user.getAddress().getNumber());

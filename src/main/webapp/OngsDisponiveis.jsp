@@ -49,8 +49,8 @@
 							String imgPath = ong.getImgPath() == null ? "resources/components/no-photo.jpeg" : ong.getImgPath();
 							animaisDisponiveis.clear();
 				%>
-				<div class="col-sm-4 my-3">
-	                <div class="card">
+				<div class="col-sm-4 my-3" >
+	                <div class="card" height="600">
 	                   <img class="card-img-top" width="300" height="250" src="<%= imgPath %>" alt="Imagem de capa do card">
 	                     <div class="card-body">
 		                    <h5 class="card-title"><%= ong.getName() %></h5>

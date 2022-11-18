@@ -43,7 +43,7 @@ public class RegisterAnimalController extends HttpServlet {
 		
 		String appPath = request.getServletContext().getRealPath(""); // pegando o caminho absoluto da aplicação
 		
-		String uploadImgPath = appPath + UPLOAD_DIR; // caminho da pasta onde a imagem será salva
+		String uploadImgPath = "/" + UPLOAD_DIR; // caminho da pasta onde a imagem será salva
 		System.out.println(uploadImgPath);
 		
 		File uploadDir = new File(uploadImgPath); 
