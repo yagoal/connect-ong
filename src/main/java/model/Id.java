@@ -10,4 +10,7 @@ public class Id {
 		this.idUser = idUser;
 	}
 	
+	public Id(Integer idAnimal) {
+		this.idAnimal = idAnimal;
+	}
 }

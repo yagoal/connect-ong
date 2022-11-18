@@ -90,6 +90,7 @@ public class OngAnimalsControllerJSON extends HttpServlet {
 		}
 
 		Id id = gson.fromJson(sb.toString(), Id.class);
+		System.out.println(id); 
 	
 		Animal animal = (Animal) DaoGeneric.getInstance().retrieveById(Animal.class, id.idAnimal);
 		User user = (User) DaoGeneric.getInstance().retrieveById(User.class, id.idUser);

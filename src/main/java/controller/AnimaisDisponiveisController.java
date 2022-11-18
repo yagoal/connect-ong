@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 
 import dao.DaoGeneric;
+import dto.IdDto;
 import model.Adoption;
 import model.Animal;
 import model.User;
@@ -58,7 +59,6 @@ public class AnimaisDisponiveisController extends HttpServlet {
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		HttpSession httpSession = request.getSession(true);
 		
 		response.setContentType("application/json");
@@ -76,10 +76,11 @@ public class AnimaisDisponiveisController extends HttpServlet {
 		while ((atributos = br.readLine()) != null) {
 			sb.append(atributos);
 		}
-		
-		Id id = gson.fromJson(sb.toString(), Id.class);
-		
-		Animal animalPost = (Animal)DaoGeneric.getInstance().retrieveById(Animal.class, id.idAnimal);
+
+		System.out.println(atributos);
+		IdDto id = gson.fromJson(sb.toString(), IdDto.class);
+
+		Animal animalPost = (Animal)DaoGeneric.getInstance().retrieveById(Animal.class, id.id);
 		System.out.println(animalPost.getName());
 		animalPost.setAvailability(false);
 
